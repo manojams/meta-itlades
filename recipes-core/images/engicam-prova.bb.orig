@@ -1,0 +1,83 @@
+inherit core-image
+inherit distro_features_check
+inherit populate_sdk 
+inherit populate_sdk_${@base_contains('MACHINE', 'geam6ul', 'qt5_geam6ul', 'qt5', d)}
+
+IMAGE_FEATURES += "x11-base"
+
+EXTRA_IMAGE_FEATURES = "debug-tweaks ssh-server-openssh tools-debug"
+
+IMAGE_INSTALL_append_mx6 = " \
+    firmware-imx-vpu-imx6q \
+"
+IMAGE_INSTALL_append_mx6 = " \
+    packagegroup-qt5-qtcreator-debug \    
+    binutils \   
+    qtbase-dev \
+    qtbase-fonts \
+    qtbase-mkspecs \
+    qtbase-plugins \
+    qtbase-staticdev \
+    qtconnectivity-dev \
+    qtconnectivity-mkspecs \
+    qtconnectivity-qmlplugins \
+    qtdeclarative-dev \
+    qtdeclarative-mkspecs \
+    qtdeclarative-plugins \
+    qtdeclarative-qmlplugins \
+    qtdeclarative-staticdev \
+    qtenginio-dev \
+    qtenginio-mkspecs \
+    qtenginio-qmlplugins \
+    qtgraphicaleffects-qmlplugins \
+    qtimageformats-dev \
+    qtimageformats-plugins \
+    qtsvg-dev \
+    qtsvg-mkspecs \
+    qtsvg-plugins \
+    qtxmlpatterns-dev \
+    qtxmlpatterns-mkspecs \
+    tslib evtest tslib-conf tslib-tests tslib-calibrate \
+    psplash \
+    engicam-startup-demo \ 
+    engicam-qtdemo \
+    engicam-mtd-script \
+    engicam-emmc-script \
+    iproute2 \
+    canutils \
+    cantest \
+    mtd-utils imx-kobs mtd-utils-ubifs \
+    "
+ 
+IMAGE_INSTALL_append_mx6ul = " \
+    packagegroup-qt5-qtcreator-debug \ 
+    openssh-sftp-server \   
+    binutils \   
+    qtbase-dev \
+    qtbase-fonts \
+    qtbase-mkspecs \
+    qtbase-plugins \
+    qtbase-staticdev \
+    qtimageformats-dev \
+    qtimageformats-plugins \
+    qtsvg-dev \
+    qtsvg-mkspecs \
+    qtsvg-plugins \
+    tslib evtest tslib-conf tslib-tests tslib-calibrate \
+    psplash \
+    engicam-mtd-script \
+    engicam-emmc-script \
+    mtd-utils imx-kobs mtd-utils-ubifs \
+    ${@base_contains('STARTUPDEMO', 'hydrophenia-capacitive', ' qwt-6ul hydrophenia engicam-startup-hydrophenia-cap', '', d)} \	
+    ${@base_contains('STARTUPDEMO', 'hydrophenia-resistive', ' qwt-6ul hydrophenia engicam-startup-hydrophenia', '', d)} \
+    libcgi-java libcgi-jni libcgi-jni-dbg \
+    libunixsocket-java libunixsocket-jni libunixsocket-jni-dbg \
+    libmatthew-io-java libmatthew-debug-java \
+    openjdk-7-jre openjdk-7-vm-zero \
+    dbus \	
+    "
+ 
+export IMAGE_BASENAME = "engicam-demo-qt"
+ 
+#    qtscript-dev 
+#    qtscript-mkspecs 
