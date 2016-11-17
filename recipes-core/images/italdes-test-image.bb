@@ -39,7 +39,7 @@ IMAGE_INSTALL_append_mx6 = " \
     psplash \
     engicam-mtd-script \
     mtd-utils imx-kobs mtd-utils-ubifs \
-    "
+"
  
 IMAGE_INSTALL_append_mx6ul = " \
     packagegroup-qt5-qtcreator-debug \ 
@@ -68,13 +68,10 @@ IMAGE_INSTALL_append_mx6ul = " \
     libunix-java-dev \
     openct opensc \
     pcsc-tools \
-    ccid-last \
     dbus-settings \
     sqlite3 \
     qca \    
- "
-
-#    ccid-last 
+"
  
 export IMAGE_BASENAME = "italdes-test-image"
 
@@ -89,8 +86,4 @@ update_rootfs() {
 	mv ${IMAGE_ROOTFS}/etc/dbus-1/system.conf.my  ${IMAGE_ROOTFS}/etc/dbus-1/system.conf
 }
 
-
 ROOTFS_POSTPROCESS_COMMAND += "update_rootfs;"
-
-
-
