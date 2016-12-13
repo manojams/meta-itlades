@@ -1,7 +1,7 @@
 inherit core-image
 inherit distro_features_check
-#inherit populate_sdk 
-#inherit populate_sdk_${@base_contains('MACHINE', 'geam6ul', 'qt5_geam6ul', 'qt5', d)}
+inherit populate_sdk 
+inherit populate_sdk_${@base_contains('MACHINE', 'italdesgeam6ul', 'qt5_geam6ul', 'qt5', d)}
 
 EXTRA_IMAGE_FEATURES = "debug-tweaks ssh-server-openssh tools-debug"
 
@@ -72,6 +72,8 @@ IMAGE_INSTALL_append_mx6ul = " \
     sqlite3 \
     qca \    
 "
+
+PACKAGECONFIG_pn-qtbase += "sql-sqlite"
  
 export IMAGE_BASENAME = "italdes-test-image"
 
