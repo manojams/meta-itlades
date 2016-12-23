@@ -72,8 +72,6 @@ IMAGE_INSTALL_append_mx6ul = " \
     sqlite3 \
     qca \    
 "
-
-PACKAGECONFIG_pn-qtbase += "sql-sqlite"
  
 export IMAGE_BASENAME = "italdes-test-image"
 
