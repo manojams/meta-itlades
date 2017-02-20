@@ -74,6 +74,7 @@ IMAGE_INSTALL_append_mx6ul = " \
     ntp \
     tzdata \ 
     u-boot-eng-fw-utils \
+    fw-nandautosize \
 "
  
 export IMAGE_BASENAME = "italdes-test-image"
