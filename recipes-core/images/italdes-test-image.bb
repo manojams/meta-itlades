@@ -70,7 +70,10 @@ IMAGE_INSTALL_append_mx6ul = " \
     pcsc-tools \
     dbus-settings \
     sqlite3 \
-    qca \    
+    qca \ 
+    ntp \
+    tzdata \ 
+    u-boot-eng-fw-utils \
 "
  
 export IMAGE_BASENAME = "italdes-test-image"
