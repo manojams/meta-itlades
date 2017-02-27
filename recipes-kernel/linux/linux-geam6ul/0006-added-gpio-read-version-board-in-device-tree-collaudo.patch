@@ -1,0 +1,42 @@
+From 27fb35b704c1d6f13b3d33a54223eb408205f41f Mon Sep 17 00:00:00 2001
+From: Domenico Acri <domenico.acri@engicam.com>
+Date: Tue, 21 Feb 2017 16:39:49 +0100
+Subject: [PATCH] added gpio read version board in device tree collaudo
+
+---
+ arch/arm/boot/dts/imx6ul-italdes-collaudo.dts | 12 ++++++++++++
+ 1 file changed, 12 insertions(+)
+
+diff --git a/arch/arm/boot/dts/imx6ul-italdes-collaudo.dts b/arch/arm/boot/dts/imx6ul-italdes-collaudo.dts
+index 9b28d33..10f51ef 100644
+--- a/arch/arm/boot/dts/imx6ul-italdes-collaudo.dts
++++ b/arch/arm/boot/dts/imx6ul-italdes-collaudo.dts
+@@ -117,6 +117,16 @@
+ 		        gpio-export,name = "RFID_INTn";
+ 		        gpios = <&gpio1 26 0>;
+ 		};
++
++		GPIO_SOM_UMTS_WIRELESS_OFFn {
++		        gpio-export,name = "SOM_UMTS_WIRELESS_OFFn";
++		        gpios = <&gpio5 3 0>;
++		};
++
++		SOM_OUT1_SPARE {
++		        gpio-export,name = "SOM_OUT1_SPARE";
++		        gpios = <&gpio5 9 0>;
++		};
+ 	};
+ 
+ 	backlight {
+@@ -443,6 +453,8 @@
+ 				MX6UL_PAD_NAND_CE1_B__GPIO4_IO14 0x17059 /*LVDS_ON*/
+ 				MX6UL_PAD_UART3_RTS_B__GPIO1_IO27 0x17059 /*GPIO_RFID_RESET*/
+ 				MX6UL_PAD_UART3_CTS_B__GPIO1_IO26 0x17059 /*GPIO_RFID_INTn*/
++				MX6UL_PAD_SNVS_TAMPER3__GPIO5_IO03 0x13059 /*GPIO_SOM_UMTS_WIRELESS_OFFn*/
++				MX6UL_PAD_SNVS_TAMPER9__GPIO5_IO09 0x1B059 /*SOM_OUT1_SPARE*/
+ 			>;
+ 		};
+ 
+-- 
+2.7.4
+
