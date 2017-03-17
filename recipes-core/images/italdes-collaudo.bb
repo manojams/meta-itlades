@@ -1,7 +1,7 @@
 inherit core-image
 inherit distro_features_check
 inherit populate_sdk 
-inherit populate_sdk_${@base_contains('MACHINE', 'italdesgeam6ul', 'qt5_geam6ul', 'qt5', d)}
+inherit populate_sdk_${@base_contains('MACHINE', 'italdesgeam6ul', 'qt5_geam6ul', 'qt5_icore', d)}
 
 EXTRA_IMAGE_FEATURES = "debug-tweaks ssh-server-openssh tools-debug"
 
@@ -93,5 +93,7 @@ IMAGE_INSTALL_append = " \
 	alsa-lib \
 	alsa-utils-alsaconf \
 "
+
+IMAGE_INSTALL_remove ="qt3d nativesdk-qt3d qt3d-native ruby-native"
 
 export IMAGE_BASENAME = "italdes-collaudo"

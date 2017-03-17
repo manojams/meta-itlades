@@ -1,7 +1,7 @@
 inherit core-image
 inherit distro_features_check
 inherit populate_sdk 
-inherit populate_sdk_${@base_contains('MACHINE', 'italdesgeam6ul', 'qt5_geam6ul', 'qt5', d)}
+inherit populate_sdk_${@base_contains('MACHINE', 'italdesgeam6ul', 'qt5_geam6ul', 'qt5_icore', d)}
 
 EXTRA_IMAGE_FEATURES = "debug-tweaks ssh-server-openssh tools-debug"
 
@@ -39,6 +39,20 @@ IMAGE_INSTALL_append_mx6 = " \
     psplash \
     engicam-mtd-script \
     mtd-utils imx-kobs mtd-utils-ubifs \
+    dbus \	
+    openvpn \
+    pcsc-lite \
+    nano \
+    libunix-java-dev \
+    openct opensc \
+    pcsc-tools \
+    dbus-settings \
+    sqlite3 \
+    qca \ 
+    ntp \
+    tzdata \ 
+    u-boot-eng-fw-utils \
+    fw-nandautosize \
 "
  
 IMAGE_INSTALL_append_mx6ul = " \
@@ -76,7 +90,9 @@ IMAGE_INSTALL_append_mx6ul = " \
     u-boot-eng-fw-utils \
     fw-nandautosize \
 "
- 
+
+IMAGE_INSTALL_remove ="qt3d nativesdk-qt3d qt3d-native ruby-native"
+
 export IMAGE_BASENAME = "italdes-test-image"
 
 IMAGE_INSTALL_append += "jdk8"
