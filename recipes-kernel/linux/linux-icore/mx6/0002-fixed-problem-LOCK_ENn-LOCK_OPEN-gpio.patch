@@ -1,0 +1,31 @@
+From 5378a68c832a0475e411519315b88ea6e91884e3 Mon Sep 17 00:00:00 2001
+From: Domenico Acri <domenico.acri@engicam.com>
+Date: Fri, 31 Mar 2017 17:40:18 +0200
+Subject: [PATCH] fixed problem gpio LOCK_ENn/LOCK_OPEN for icoremx6dl
+
+---
+ arch/arm/boot/dts/icorem6dl-italdes.dts | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/arch/arm/boot/dts/icorem6dl-italdes.dts b/arch/arm/boot/dts/icorem6dl-italdes.dts
+index 1c36870..8de8831 100644
+--- a/arch/arm/boot/dts/icorem6dl-italdes.dts
++++ b/arch/arm/boot/dts/icorem6dl-italdes.dts
+@@ -107,12 +107,12 @@
+ 		        gpio-export,name = "LOCK_ENn";
+ 			gpio-export,output = <1>;
+ 			gpio-export,direction_may_change;
+-		        gpios = <&gpio6 3 0>;
++		        gpios = <&gpio6 4 0>;
+ 		};
+ 
+ 		LOCK_OPEN {
+ 		        gpio-export,name = "LOCK_OPEN";
+-		        gpios = <&gpio6 4 0>;
++		        gpios = <&gpio6 3 0>;
+ 		};
+ 
+ 		RTC_ALARMn {
+-- 
+2.7.4
+
