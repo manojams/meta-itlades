@@ -53,6 +53,9 @@ IMAGE_INSTALL_append_mx6 = " \
     tzdata \ 
     u-boot-eng-fw-utils \
     fw-nandautosize \
+    gst-meta-video \
+    packagegroup-fslc-gstreamer1.0-full \
+    gstreamer1.0-plugins-imx \
 "
  
 IMAGE_INSTALL_append_mx6ul = " \
