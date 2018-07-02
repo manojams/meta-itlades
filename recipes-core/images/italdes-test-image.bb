@@ -1,6 +1,6 @@
 inherit core-image
 inherit distro_features_check
-inherit populate_sdk 
+inherit populate_sdk
 inherit populate_sdk_${@base_contains('MACHINE', 'italdesgeam6ul', 'qt5_geam6ul', 'qt5_icore', d)}
 
 EXTRA_IMAGE_FEATURES = "debug-tweaks ssh-server-openssh tools-debug"
@@ -9,8 +9,8 @@ IMAGE_INSTALL_append_mx6 = " \
     firmware-imx-vpu-imx6q \
 "
 IMAGE_INSTALL_append_mx6 = " \
-    packagegroup-qt5-qtcreator-debug \    
-    binutils \   
+    packagegroup-qt5-qtcreator-debug \
+    binutils \
     qtbase-dev \
     qtbase-fonts \
     qtbase-mkspecs \
@@ -20,7 +20,7 @@ IMAGE_INSTALL_append_mx6 = " \
     qtconnectivity-mkspecs \
     qtconnectivity-qmlplugins \
     qtdeclarative-dev \
-    qtdeclarative-mkspecs \
+   qtdeclarative-mkspecs \
     qtdeclarative-plugins \
     qtdeclarative-qmlplugins \
     qtdeclarative-staticdev \
@@ -35,33 +35,37 @@ IMAGE_INSTALL_append_mx6 = " \
     qtsvg-plugins \
     qtxmlpatterns-dev \
     qtxmlpatterns-mkspecs \
+    qtserialport \
     tslib evtest tslib-conf tslib-tests tslib-calibrate \
     psplash \
     engicam-mtd-script \
     mtd-utils imx-kobs mtd-utils-ubifs \
-    dbus \	
+    dbus \
     openvpn \
-    pcsc-lite \
     nano \
     libunix-java-dev \
     openct opensc \
     pcsc-tools \
     dbus-settings \
     sqlite3 \
-    qca \ 
+    qca \
     ntp \
-    tzdata \ 
+    tzdata \
     u-boot-eng-fw-utils \
     fw-nandautosize \
     gst-meta-video \
     packagegroup-fslc-gstreamer1.0-full \
     gstreamer1.0-plugins-imx \
-"
- 
+    java-dbus \
+    common-files \
+    black-arm \
+    "
+
+
 IMAGE_INSTALL_append_mx6ul = " \
-    packagegroup-qt5-qtcreator-debug \ 
-    openssh-sftp-server \   
-    binutils \   
+    packagegroup-qt5-qtcreator-debug \
+    openssh-sftp-server \
+    binutils \
     qtbase-dev \
     qtbase-fonts \
     qtbase-mkspecs \
@@ -73,12 +77,12 @@ IMAGE_INSTALL_append_mx6ul = " \
     qtsvg-mkspecs \
     qtsvg-plugins \
     qtxmlpatterns-dev \
-    qtxmlpatterns-mkspecs \    
+    qtxmlpatterns-mkspecs \
     tslib evtest tslib-conf tslib-tests tslib-calibrate \
     psplash \
     engicam-mtd-script \
     mtd-utils imx-kobs mtd-utils-ubifs \
-    dbus \	
+    dbus \
     openvpn \
     pcsc-lite \
     nano \
@@ -87,9 +91,9 @@ IMAGE_INSTALL_append_mx6ul = " \
     pcsc-tools \
     dbus-settings \
     sqlite3 \
-    qca \ 
+    qca \
     ntp \
-    tzdata \ 
+    tzdata \
     u-boot-eng-fw-utils \
     fw-nandautosize \
 "

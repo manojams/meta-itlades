@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='utf-8'?>
+<config version="1.0" name="italdes_bna">
+    <italdes>
+        <config value="" name="serial"/>
+        <config value="" name="assistenza"/>
+    </italdes>
+    <servers>
+        <config value="https://guardian.italdes.it/guardian/public/api/config" name="setup"/>
+        <config value="https://guardian.italdes.it/guardian/public/api/media" name="media"/>
+    </servers>
+    <devices>
+      <device class="shutter" dbus_command="shutter_status" dbus_interface="" name="shutter_italdes" port="" requirement="required"/>
+    </devices>
+</config>
