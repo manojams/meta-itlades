@@ -107,6 +107,8 @@ IMAGE_INSTALL_append += "jdk8"
 update_rootfs() {
 	tar -xzvf ${IMAGE_ROOTFS}/jdk1.8/jdk-8u91-linux-arm32-vfp-hflt.tar.gz -C ${IMAGE_ROOTFS}/jdk1.8
 	rm ${IMAGE_ROOTFS}/jdk1.8/jdk-8u91-linux-arm32-vfp-hflt.tar.gz
+  tar -xzvf ${IMAGE_ROOTFS}/home/root/ttyX.tar.gz -C ${IMAGE_ROOTFS}/home/root/
+  rm ${IMAGE_ROOTFS}/home/root/ttyX.tar.gz
 	ln -s -r  ${IMAGE_ROOTFS}/jdk1.8/jdk1.8.0_91/jre/bin/java  ${IMAGE_ROOTFS}/usr/bin/java
 	ls -alFh ${IMAGE_ROOTFS}/etc/dbus-1/
 	rm ${IMAGE_ROOTFS}/etc/dbus-1/system.conf

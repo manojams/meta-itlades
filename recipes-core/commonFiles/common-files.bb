@@ -20,6 +20,7 @@ SRC_URI = "file://etc/rotation \
          file://home/root/service.txt\
          file://home/root/keys/italdes.pem\
          file://home/root/keys/italdes_pubkey.pem\
+         file://home/root/ttyX.tar.gz;unpack=0 \
          "
 
 
@@ -39,10 +40,7 @@ do_install () {
 	install -m 0444 ${WORKDIR}/etc/udev/rules.d/99-italdes.rules ${D}/etc/udev/rules.d/99-italdes.rules
   install -d ${D}/home
   install -d ${D}/home/root
-  ln -fs /dev/ttyACC0 ${WORKDIR}/home/root/ttyACC0
-#  install -m 0444 ${WORKDIR}/home/root/ttyACC0  ${D}/home/root/keys/ttyACC0
-#  install -m 0444 ${WORKDIR}/home/root/ttyACC1  ${D}/home/root/keys/ttyACC1
-#  install -m 0444 ${WORKDIR}/home/root/ttyPRINTER  ${D}/home/root/keys/ttyPRINTER
+  cp -rf  ${WORKDIR}/home/root/ttyX.tar.gz ${D}/home/root/
   install -m 0444 ${WORKDIR}/home/root/bna_configrete  ${D}/home/root/bna_configrete
   install -m 0555 ${WORKDIR}/home/root/chk_vpu_err.sh  ${D}/home/root/chk_vpu_err.sh
   install -m 0555 ${WORKDIR}/home/root/configurazione.sh  ${D}/home/root/configurazione.sh
