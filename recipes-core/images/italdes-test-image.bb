@@ -40,13 +40,9 @@ IMAGE_INSTALL_append_mx6 = " \
     psplash \
     engicam-mtd-script \
     mtd-utils imx-kobs mtd-utils-ubifs \
-    dbus \
     openvpn \
     nano \
-    libunix-java-dev \
     openct opensc \
-    pcsc-tools \
-    dbus-settings \
     sqlite3 \
     qca \
     ntp \
@@ -56,7 +52,6 @@ IMAGE_INSTALL_append_mx6 = " \
     gst-meta-video \
     packagegroup-fslc-gstreamer1.0-full \
     gstreamer1.0-plugins-imx \
-    java-dbus \
     common-files \
     black-arm \
     "
