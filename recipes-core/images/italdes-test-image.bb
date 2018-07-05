@@ -56,6 +56,7 @@ IMAGE_INSTALL_append_mx6 = " \
     ca10\
     black-arm \
     iptables \
+    init-ifupdown\
     "
 
 
