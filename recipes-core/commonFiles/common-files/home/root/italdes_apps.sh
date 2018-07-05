@@ -1,13 +1,11 @@
-#! /bin/sh 
+#! /bin/sh
 
 echo "Avvio applicazioni Italdes"
 QT_APP=blackarm
-java -jar /home/root/dist/bna_daemon.jar & 
+/home/root/grg/GrgCommManager &
 
 #loop per gestire il riavvio in caso i crash dell'applicazione Qt
-while [ true ] 
+while [ true ]
 do
-  /home/root/$QT_APP -platform linuxfb 
+  /home/root/$QT_APP -platform linuxfb
 done
-
- 

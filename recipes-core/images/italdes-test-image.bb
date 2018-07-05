@@ -53,6 +53,7 @@ IMAGE_INSTALL_append_mx6 = " \
     packagegroup-fslc-gstreamer1.0-full \
     gstreamer1.0-plugins-imx \
     common-files \
+    ca10\
     black-arm \
     iptables \
     "
@@ -98,17 +99,9 @@ IMAGE_INSTALL_remove ="qt3d nativesdk-qt3d qt3d-native ruby-native"
 
 export IMAGE_BASENAME = "italdes-test-image"
 
-IMAGE_INSTALL_append += "jdk8"
-
 update_rootfs() {
-	tar -xzvf ${IMAGE_ROOTFS}/jdk1.8/jdk-8u91-linux-arm32-vfp-hflt.tar.gz -C ${IMAGE_ROOTFS}/jdk1.8
-	rm ${IMAGE_ROOTFS}/jdk1.8/jdk-8u91-linux-arm32-vfp-hflt.tar.gz
   tar -xzvf ${IMAGE_ROOTFS}/home/root/ttyX.tar.gz -C ${IMAGE_ROOTFS}/home/root/
   rm ${IMAGE_ROOTFS}/home/root/ttyX.tar.gz
-	ln -s -r  ${IMAGE_ROOTFS}/jdk1.8/jdk1.8.0_91/jre/bin/java  ${IMAGE_ROOTFS}/usr/bin/java
-	ls -alFh ${IMAGE_ROOTFS}/etc/dbus-1/
-	rm ${IMAGE_ROOTFS}/etc/dbus-1/system.conf
-	mv ${IMAGE_ROOTFS}/etc/dbus-1/system.conf.my  ${IMAGE_ROOTFS}/etc/dbus-1/system.conf
 }
 
 ROOTFS_POSTPROCESS_COMMAND += "update_rootfs;"
