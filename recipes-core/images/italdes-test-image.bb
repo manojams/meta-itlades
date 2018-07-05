@@ -54,6 +54,7 @@ IMAGE_INSTALL_append_mx6 = " \
     gstreamer1.0-plugins-imx \
     common-files \
     black-arm \
+    iptables \
     "
 
 

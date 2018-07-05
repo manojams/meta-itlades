@@ -2,8 +2,10 @@ SUMMARY = "Copy Italdes common files "
 DESCRIPTION = "Copy Italdes common files"
 LICENSE = "CLOSED"
 
+
 SRC_URI = "file://etc/rotation \
     	   file://etc/openvpn/chiave.key \
+         file://etc/iptables-save \
     	   file://etc/openvpn/client.conf \
     	   file://etc/openvpn/italdes-ca.crt \
     	   file://etc/rc5.d/S99z_Italdes.sh \
@@ -23,12 +25,12 @@ SRC_URI = "file://etc/rotation \
          file://home/root/ttyX.tar.gz;unpack=0 \
          "
 
-
 S = "${WORKDIR}"
 
 do_install () {
 	install -d ${D}/etc
 	install -m 0444 ${WORKDIR}/etc/rotation ${D}/etc/rotation
+  install -m 0444 ${WORKDIR}/etc/iptables-save ${D}/etc/iptables-save
 	install -d ${D}/etc/openvpn
 	install -m 0444 ${WORKDIR}/etc/openvpn/chiave.key ${D}/etc/openvpn/chiave.key
 	install -m 0444 ${WORKDIR}/etc/openvpn/client.conf ${D}/etc/openvpn/client.conf
