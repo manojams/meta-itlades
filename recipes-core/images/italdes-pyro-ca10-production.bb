@@ -50,51 +50,20 @@ IMAGE_INSTALL_append_mx6 = " \
     u-boot-eng-fw-utils \
     fw-nandautosize \
     gst-meta-video \
-    packagegroup-fslc-gstreamer1.0-full \
     gstreamer1.0-plugins-imx \
     common-files \
     ca10\
     black-arm \
     iptables \
     init-ifupdown\
+    libgal-mx6 \
+    libegl-mx6 \
+    libvsc-mx6 \
+    libglslc-mx6 \
+    libgles2-mx6 \
     "
+DISTRO_FEATURES_append = " opengl"
 
-
-IMAGE_INSTALL_append_mx6ul = " \
-    packagegroup-qt5-qtcreator-debug \
-    openssh-sftp-server \
-    binutils \
-    qtbase-dev \
-    qtbase-fonts \
-    qtbase-mkspecs \
-    qtbase-plugins \
-    qtbase-staticdev \
-    qtimageformats-dev \
-    qtimageformats-plugins \
-    qtsvg-dev \
-    qtsvg-mkspecs \
-    qtsvg-plugins \
-    qtxmlpatterns-dev \
-    qtxmlpatterns-mkspecs \
-    tslib evtest tslib-conf tslib-tests tslib-calibrate \
-    psplash \
-    engicam-mtd-script \
-    mtd-utils imx-kobs mtd-utils-ubifs \
-    dbus \
-    openvpn \
-    pcsc-lite \
-    nano \
-    libunix-java-dev \
-    openct opensc \
-    pcsc-tools \
-    dbus-settings \
-    sqlite3 \
-    qca \
-    ntp \
-    tzdata \
-    u-boot-eng-fw-utils \
-    fw-nandautosize \
-"
 
 IMAGE_INSTALL_remove ="qt3d nativesdk-qt3d qt3d-native ruby-native"
 
