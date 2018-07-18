@@ -8,11 +8,11 @@ EXTRA_IMAGE_FEATURES = "debug-tweaks ssh-server-openssh tools-debug"
 IMAGE_INSTALL_append_mx6 = " \
     firmware-imx-vpu-imx6q \
 "
+
 IMAGE_INSTALL_append_mx6 = " \
     packagegroup-qt5-qtcreator-debug \
     binutils \
     qtbase-dev \
-    qtbase-fonts \
     qtbase-mkspecs \
     qtbase-plugins \
     qtbase-staticdev \
@@ -64,10 +64,9 @@ IMAGE_INSTALL_append_mx6 = " \
     "
 DISTRO_FEATURES_append = " opengl"
 
-
 IMAGE_INSTALL_remove ="qt3d nativesdk-qt3d qt3d-native ruby-native"
 
-export IMAGE_BASENAME = "italdes-test-image"
+export IMAGE_BASENAME = "italdes-pyro-ca10-production"
 
 update_rootfs() {
   tar -xzvf ${IMAGE_ROOTFS}/home/root/ttyX.tar.gz -C ${IMAGE_ROOTFS}/home/root/
