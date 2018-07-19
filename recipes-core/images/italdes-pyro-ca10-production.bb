@@ -51,6 +51,8 @@ IMAGE_INSTALL_append_mx6 = " \
     fw-nandautosize \
     gst-meta-video \
     gstreamer1.0-plugins-imx \
+    packagegroup-fsl-gstreamer1.0-full \
+    alsa-utils \
     common-files \
     ca10\
     black-arm \
