@@ -7,5 +7,5 @@ QT_APP=blackarm
 #loop per gestire il riavvio in caso i crash dell'applicazione Qt
 while [ true ]
 do
-  /home/root/$QT_APP -platform linuxfb
+  /home/root/$QT_APP 
 done

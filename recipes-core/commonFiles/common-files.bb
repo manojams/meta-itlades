@@ -4,6 +4,7 @@ LICENSE = "CLOSED"
 
 
 SRC_URI = "file://etc/rotation \
+        file://sbin/autoupdate.sh \
     	   file://etc/openvpn/chiave.key \
          file://etc/iptables-save \
     	   file://etc/openvpn/client.conf \
@@ -28,6 +29,8 @@ SRC_URI = "file://etc/rotation \
 S = "${WORKDIR}"
 
 do_install () {
+	install -d ${D}/sbin
+  install -m 0555 ${WORKDIR}/sbin/autoupdate.sh ${D}/sbin/autoupdate.sh
 	install -d ${D}/etc
 	install -m 0444 ${WORKDIR}/etc/rotation ${D}/etc/rotation
   install -m 0444 ${WORKDIR}/etc/iptables-save ${D}/etc/iptables-save
@@ -60,7 +63,8 @@ do_install () {
 }
 
 
-INSANE_SKIP_${PN} += "already-stripped"
+#INSANE_SKIP_${PN} += "already-stripped"
+FILES_${PN} += "sbin/"
 FILES_${PN} += "etc/"
 FILES_${PN} += "home/root/"
-INSANE_SKIP_${PN} += "installed-vs-shipped "
+#INSANE_SKIP_${PN} += "installed-vs-shipped "
