@@ -1,0 +1,156 @@
+<?xml version='1.0' encoding='utf-8'?>
+<config version="1.0" name="italdes_bna">
+    <italdes>
+        <config value="10011274" name="serial"/>
+        <config value="0456717569" name="assistenza"/>
+        <config value="03925500237" name="partitaIva"/>
+    </italdes>
+    <aziende>
+        <config cap="37062" codiceBanca="00001" comune="Villafranca di Verona" azienda="Italdes S.R.L." name="10011274.1" address="Via Staffali 8"/>
+        <config cap="37062" codiceBanca="00002" comune="Villafranca di Verona" azienda="Italdes S.R.L. Over 1000" name="10011274.2" address="Via Staffali 8"/>
+    </aziende>
+    <knox>
+        <config value="1" name="numberOfSignal"/>
+        <config value="BNA-21" name="model"/>
+        <config value="100000.00" name="insuranceStockLevel"/>
+        <config value="98000.00" name="insuranceLevel"/>
+        <config value="80000.00" name="insuranceWarnLevel"/>
+        <config value="2200" name="quantityMaxLevel"/>
+        <config value="2100" name="quantityLevel"/>
+        <config value="1800" name="quantityWarnLevel"/>
+        <config value="100" name="cashDiff"/>
+    </knox>
+    <optional_functions>
+        <config value="enabled" name="smartcard_identification"/>
+        <config value="disabled" name="keypad_identification"/>
+        <config value="enabled" name="safebag_request"/>
+        <config value="enabled" name="safebag_cheque_request"/>
+        <config value="enabled" name="safebag_multi_request"/>
+        <config value="enabled" name="safebag_coin_request"/>
+        <config value="disabled" name="auth_cit"/>
+        <config value="disabled" name="upgrade"/>
+        <config value="disabled" name="double_copy"/>
+        <config value="disabled" name="rear_access"/>
+    </optional_functions>
+    <blacklist_cashboxes>
+        <config value="101" name="cashbox"/>
+        <config value="100" name="cashbox"/>
+        <config value="00007551" name="cashbox"/>
+        <config value="000000000101" name="cashbox"/>
+        <config value="0" name="cashbox"/>
+        <config value="0000000100" name="cashbox"/>
+        <config value="101" name="cashbox"/>
+        <config value="100" name="cashbox"/>
+        <config value="103" name="cashbox"/>
+        <config value="102" name="cashbox"/>
+        <config value="00007552" name="cashbox"/>
+        <config value="00007551" name="cashbox"/>
+        <config value="00007554" name="cashbox"/>
+        <config value="00007553" name="cashbox"/>
+        <config value="00007556" name="cashbox"/>
+        <config value="000007555" name="cashbox"/>
+        <config value="00007558" name="cashbox"/>
+        <config value="00007557" name="cashbox"/>
+        <config value="00007560" name="cashbox"/>
+        <config value="00007559" name="cashbox"/>
+        <config value="AAB" name="cashbox"/>
+        <config value="AAA" name="cashbox"/>
+        <config value="AAD" name="cashbox"/>
+        <config value="AAC" name="cashbox"/>
+        <config value="AAG" name="cashbox"/>
+        <config value="AAF" name="cashbox"/>
+        <config value="GHJJJJ" name="cashbox"/>
+        <config value="YHJJK" name="cashbox"/>
+        <config value="AAL" name="cashbox"/>
+        <config value="AAI" name="cashbox"/>
+        <config value="AAO" name="cashbox"/>
+        <config value="AAN" name="cashbox"/>
+        <config value="AAQ" name="cashbox"/>
+        <config value="AAP" name="cashbox"/>
+        <config value="AAS" name="cashbox"/>
+        <config value="AAR" name="cashbox"/>
+        <config value="1520848987" name="cashbox"/>
+        <config value="1520848988" name="cashbox"/>
+        <config value="1520849293" name="cashbox"/>
+        <config value="1520849294" name="cashbox"/>
+        <config value="6GR6UNK" name="cashbox"/>
+        <config value="4YEGGRTU" name="cashbox"/>
+        <config value="AAU" name="cashbox"/>
+        <config value="AAT" name="cashbox"/>
+        <config value="AAW" name="cashbox"/>
+        <config value="AAV" name="cashbox"/>
+        <config value="AAZ" name="cashbox"/>
+        <config value="AAY" name="cashbox"/>
+        <config value="ABB" name="cashbox"/>
+        <config value="ABA" name="cashbox"/>
+        <config value="ABF" name="cashbox"/>
+        <config value="ABE" name="cashbox"/>
+        <config value="11111111" name="cashbox"/>
+        <config value="22222222" name="cashbox"/>
+        <config value="33333333" name="cashbox"/>
+        <config value="00000000" name="cashbox"/>
+    </blacklist_cashboxes>
+    <servers>
+        <config value="http://192.168.12.11/guardian/public/api/log" name="events"/>
+        <config value="http://192.168.12.11/guardian/public/api/transaction" name="finance"/>
+        <config value="http://192.168.12.11/guardian/public/api/cashbox" name="cashboxes"/>
+        <config value="http://192.168.12.11/guardian/public/api/config" name="setup"/>
+        <config value="http://192.168.12.11/guardian/public/api/translation" name="translation"/>
+        <config value="http://192.168.12.11/guardian/public/api/alive" name="alive"/>
+        <config value="http://192.168.12.11/guardian/public/api/update" name="version"/>
+        <config value="http://192.168.12.11/guardian/public/api/media" name="media"/>
+        <config value="http://192.168.12.11/acceptor/" name="acceptor"/>
+        <config value="http://192.168.12.11/radio/" name="radio"/>
+        <config value="http://192.168.12.11/door/" name="door"/>
+        <config value="http://192.168.12.11/guardian/public/multimedia/" name="mediadownloader"/>
+        <config value="http://192.168.12.11/guardian/public/api/audit" name="audit"/>
+        <config value="http://192.168.12.11/guardian/public/api/info" name="info"/>
+        <config value="" name="finance-ext"/>
+        <config value="" name="proxy" port=""/>
+        <config value="" name="ws"/>
+        <config value="https://ticket.mondialpol.it/api/create-ticket" name="ticket"/>
+    </servers>
+    <smartcards>
+        <config idcustomer="10011274.1" codice="1234" azienda="ITALDES" ruolo="SUPERVISORE" value="0000005155"/>
+        <config idcustomer="10011274.1" codice="" azienda="ITALDES" ruolo="DEPOSITO" value="0000004852"/>
+        <config idcustomer="10011274.1" codice="" azienda="ITALDES" ruolo="PRELIEVO" value="0000003308"/>
+        <config idcustomer="10011274.1" codice="" azienda="MANUTENZIONE" ruolo="ITALDES" value="0000013000"/>
+        <config idcustomer="10011274.1" codice="" azienda="MANUTENZIONE" ruolo="ITALDES" value="0000013100"/>
+        <config idcustomer="10011274.1" azienda="MANUTENZIONE" ruolo="ITALDES" value="0000099999"/>
+    </smartcards>
+    <pin_level1 scan="enabled" value="enabled" name="Scontrino" auth="disabled">
+        <config azienda="10011274.1" value="*"/>
+    </pin_level1>
+    <settings>
+        <config value="it" name="language"/>
+        <config value="0" name="mei_timeout"/>
+        <config value="60" name="alive_timeout"/>
+        <config value="M" name="mode"/>
+        <config value="MC" name="customer_mode"/>
+        <config value="60" name="audio"/>
+        <config date="06.07.2018" time="15:16:10" value="N" name="maintenance_mode"/>
+    </settings>
+    <safe_detail>
+        <config value="1521735610" name="last_update_online"/>
+        <config value="1465287709" name="last_update_request"/>
+        <config value="666" name="random"/>
+        <config value="" name="current_version"/>
+    </safe_detail>
+    <devices>
+        <device dbus_command="shutter_status" name="shutter_italdes" dbus_interface="" requirement="required" port="" class="shutter"/>
+        <device dbus_command="radio_status" name="radio_italdes" dbus_interface="" requirement="required" port="/dev/ttyRFID" class="radio"/>
+        <device dbus_command="meistatus" serial="00001111" name="mei_acceptor_1" dbus_interface="/it/italdes/meiacceptor_1" requirement="required_class" port="/home/root/ttyACC0" class="mei_acceptor">
+            <sub_device dbus_command="mei_BNF_status" name="bnf" dbus_interface="/bnf" requirement="required" class="bnf"/>
+            <sub_device dbus_command="mei_cashbox_attached" name="cashbox" dbus_interface="/cashbox" requirement="required" class="cashbox"/>
+        </device>
+        <device dbus_command="meistatus" serial="00002222" name="mei_acceptor_2" dbus_interface="/it/italdes/meiacceptor_2" requirement="required_class" port="/home/root/ttyACC1" class="mei_acceptor">
+            <sub_device dbus_command="mei_BNF_status" name="bnf" dbus_interface="/bnf" requirement="required" class="bnf"/>
+            <sub_device dbus_command="mei_cashbox_attached" name="cashbox" dbus_interface="/cashbox" requirement="required" class="cashbox"/>
+        </device>
+        <device dbus_command="printer_status" name="bna_printer" dbus_interface="" requirement="required" port="/home/root/ttyPRINTER" class="custom_printer"/>
+    </devices>
+    <starting_cashboxes>
+        <config value="ABF" name="cashbox_1"/>
+        <config value="ABE" name="cashbox_2"/>
+    </starting_cashboxes>
+</config>
