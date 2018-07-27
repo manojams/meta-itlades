@@ -21,7 +21,6 @@ IMAGE_INSTALL_append_mx6 = " \
     qtconnectivity-qmlplugins \
     qtdeclarative-dev \
    qtdeclarative-mkspecs \
-    qtdeclarative-plugins \
     qtdeclarative-qmlplugins \
     qtdeclarative-staticdev \
     qtenginio-dev \
