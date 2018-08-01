@@ -59,7 +59,7 @@ echo "Scaricato certificati"
 sed -ri s/italdes-.{8}/italdes-$matricola/ client.conf
 
 # Cambia la password di root
-echo -e "I7ALd3s-$matricola\nI7ALd3s-$matricola" | passwd root
+echo "root:I7ALd3s-$matricola" | chpasswd
 echo "Cambiato la password di root "
 
 echo -e "\n Password di amministrazione modificata.\n"
