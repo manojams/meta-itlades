@@ -62,10 +62,11 @@ IMAGE_INSTALL_append_mx6 = " \
     libvsc-mx6 \
     libglslc-mx6 \
     libgles2-mx6 \
+    yum-repo \
     "
 DISTRO_FEATURES_append = " opengl"
 
-IMAGE_INSTALL_remove ="qt3d nativesdk-qt3d qt3d-native ruby-native"
+IMAGE_INSTALL_remove ="qt3d nativesdk-qt3d qt3d-native ruby-native wpa-supplicant wireless-tools perl-module packagegroup-base-wifi"
 
 export IMAGE_BASENAME = "italdes-pyro-ca10-production"
 

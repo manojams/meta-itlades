@@ -1,0 +1,6 @@
+[italdes-packages]
+name=Italdes repo Yocto VM 130
+enabled=1
+metadata_expire=0
+gpgcheck=0
+baseurl=http://192.168.12.130/italdes-rpm/
