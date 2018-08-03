@@ -6,6 +6,7 @@ LICENSE = "CLOSED"
 SRC_URI = "file://sbin/autoupdate.sh \
     	   file://etc/openvpn/chiave.key \
          file://etc/iptables-save \
+         file://etc/rotation \
     	   file://etc/openvpn/client.conf \
     	   file://etc/openvpn/italdes-ca.crt \
     	   file://etc/rc5.d/S99z_Italdes.sh \
@@ -21,7 +22,6 @@ SRC_URI = "file://sbin/autoupdate.sh \
          file://home/root/comandi.txt\
          file://home/root/config.xml\
          file://home/root/dhcp_enabled\
-         file://home/root/error_list.csv\
          file://home/root/italdes_apps.sh\
          file://home/root/ntpd_check.sh\
          file://home/root/rfid_update.sh\
@@ -38,6 +38,7 @@ do_install () {
   install -m 0555 ${WORKDIR}/sbin/autoupdate.sh ${D}/sbin/autoupdate.sh
 	install -d ${D}/etc
   install -m 0444 ${WORKDIR}/etc/iptables-save ${D}/etc/iptables-save
+  install -m 0444 ${WORKDIR}/etc/rotation ${D}/etc/rotation
   install -d ${D}/etc/init.d
   install -m 0444 ${WORKDIR}/etc/init.d/update_media.sh ${D}/etc/init.d/update_media.sh
 	install -d ${D}/etc/openvpn
@@ -62,7 +63,6 @@ do_install () {
   install -m 0555 ${WORKDIR}/home/root/configurazione.sh  ${D}/home/root/configurazione.sh
   install -m 0666 ${WORKDIR}/home/root/config.xml  ${D}/home/root/config.xml
   install -m 0444 ${WORKDIR}/home/root/dhcp_enabled  ${D}/home/root/dhcp_enabled
-  install -m 0444 ${WORKDIR}/home/root/error_list.csv  ${D}/home/root/error_list.csv
   install -m 0555 ${WORKDIR}/home/root/italdes_apps.sh  ${D}/home/root/italdes_apps.sh
   install -m 0555 ${WORKDIR}/home/root/ntpd_check.sh  ${D}/home/root/ntpd_check.sh
   install -m 0555 ${WORKDIR}/home/root/rfid_update.sh  ${D}/home/root/rfid_update.sh
