@@ -1,0 +1,6 @@
+[dnf-packages-dev]
+name=Italdes dev
+enabled=1
+metadata_expire=0
+gpgcheck=0
+baseurl=http://192.168.12.17/italdes-rpm/
