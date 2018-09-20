@@ -660,7 +660,7 @@ index 0000000..be601ae
 +&gpmi {
 +	pinctrl-names = "default";
 +	pinctrl-0 = <&pinctrl_gpmi_nand_1>;
-+	status = "okay";
++	status = "okay"; fsl,legacy-bch-geometry; nand-on-flash-bbt;
 +};
 +
 +&usbh1 {
