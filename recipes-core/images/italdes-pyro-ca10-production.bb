@@ -10,6 +10,18 @@ IMAGE_INSTALL_append_mx6 = " \
 "
 
 IMAGE_INSTALL_append_mx6 = " \
+  qtquick1 \
+  qtquick1-plugins \
+  qtquick1-qmlplugins \
+  qtquickcontrols-qmlplugins \
+  qtquickcontrols \
+  qtquickcontrols2 \
+  qtquickcontrols2-qmlplugins \
+  qtmultimedia \
+  qtmultimedia-plugins\
+  qtmultimedia-qmlplugins\
+  liberation-fonts\
+  giflib\
     packagegroup-qt5-qtcreator-debug \
     binutils \
     qtbase-dev \
@@ -23,6 +35,8 @@ IMAGE_INSTALL_append_mx6 = " \
    qtdeclarative-mkspecs \
     qtdeclarative-qmlplugins \
     qtdeclarative-staticdev \
+    qtgraphicaleffects \
+    pulseaudio \
     qtenginio-dev \
     qtenginio-mkspecs \
     qtenginio-qmlplugins \
@@ -62,11 +76,14 @@ IMAGE_INSTALL_append_mx6 = " \
     libvsc-mx6 \
     libglslc-mx6 \
     libgles2-mx6 \
-    yum-repo \
+    dnf-repo-dev \
+    my-qml \
     "
 DISTRO_FEATURES_append = " opengl"
 
-IMAGE_INSTALL_remove ="qt3d nativesdk-qt3d qt3d-native ruby-native wpa-supplicant wireless-tools perl-module packagegroup-base-wifi"
+IMAGE_INSTALL_remove ="qt3d nativesdk-qt3d qt3d-native ruby-native wpa-supplicant wireless-tools perl-module \
+                      packagegroup-base-wifi qtlocation qtsensors"
+
 
 export IMAGE_BASENAME = "italdes-pyro-ca10-production"
 
