@@ -13,7 +13,7 @@ server="guardian.italdes.it"
 
 if [ $1"x" = "x" ] ; then
    echo -e "\n\n Per eseguire lanciare: ./configurazione.sh matricola. \n\n"
-   exit 0
+   exit 1
 fi
 
 matricola=$1
@@ -32,12 +32,8 @@ if [ $NUM -gt 65535 ] ; then
    echo -e "\n\n*** Numero di matricola $matricola non accettabile ***\n\n"
    exit 1
 fi
- 
-# Scrive matricola in un file
-echo "Scrivo matricola $matricola nel file matricola.dat sotto $dir1"
-echo $matricola > $dir1/matricola.dat
-#chown italdes.italdes $dir1/matricola.dat
- 
+
+
 # Crea la configurazione VPN
 ssh -p 22622 helpdesk@$server sudo /home/helpdesk/vpn.sh $matricola
 if [ $? -ne 0 ] ; then
@@ -57,6 +53,11 @@ fi
 echo "Scaricato certificati"
 
 sed -ri s/italdes-.{8}/italdes-$matricola/ client.conf
+
+# Scrive matricola in un file
+echo "Scrivo matricola $matricola nel file matricola.dat sotto $dir1"
+echo $matricola > $dir1/matricola.dat
+#chown italdes.italdes $dir1/matricola.dat
 
 # Cambia la password di root
 echo "root:I7ALd3s-$matricola" | chpasswd
