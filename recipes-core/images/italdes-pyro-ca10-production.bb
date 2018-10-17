@@ -78,6 +78,7 @@ IMAGE_INSTALL_append_mx6 = " \
     libgles2-mx6 \
     dnf-repo-dev \
     my-qml \
+    qtvirtualkeyboard \
     "
 DISTRO_FEATURES_append = " opengl"
 
