@@ -3150,7 +3150,7 @@ CONFIG_MXC_MIPI_CSI2=y
 #
 # MXC VPU(Video Processing Unit) support
 #
-# CONFIG_MXC_VPU is not set
+CONFIG_MXC_VPU=m
 # CONFIG_MXC_VPU_DEBUG is not set
 # CONFIG_MX6_VPU_352M is not set
 

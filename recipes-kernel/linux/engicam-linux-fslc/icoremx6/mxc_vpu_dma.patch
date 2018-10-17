@@ -1,0 +1,121 @@
+diff --git a/drivers/mxc/vpu/mxc_vpu.c b/drivers/mxc/vpu/mxc_vpu.c
+index c571182..860fa84 100644
+--- a/drivers/mxc/vpu/mxc_vpu.c
++++ b/drivers/mxc/vpu/mxc_vpu.c
+@@ -18,7 +18,6 @@
+  *
+  * @ingroup VPU
+  */
+-
+ #include <linux/kernel.h>
+ #include <linux/mm.h>
+ #include <linux/interrupt.h>
+@@ -78,6 +77,29 @@
+ #define pgprot_noncachedxn(prot) \
+ 	__pgprot_modify(prot, L_PTE_MT_MASK, L_PTE_MT_UNCACHED | L_PTE_XN)
+ 
++/***********************/
++/* Store a pool of continuous memory areas for DMA */
++/* Use MAX_CHUNKSIZES different bins, with MAX_CHUNKS each */
++#define DMA_MEM_MAX_CHUNKSIZES 128
++#define DMA_MEM_MAX_CHUNKS 8
++/* Pool graqnularity: must be power of 2, 128k or 256k are recommended */
++#define DMA_MEM_CHUNKSIZE (1 << 18)
++static u32 vpu_dma_mem_free_list[DMA_MEM_MAX_CHUNKSIZES][DMA_MEM_MAX_CHUNKS] = {{ 0 }};
++static u32 vpu_dma_mem_phys_free_list[DMA_MEM_MAX_CHUNKSIZES][DMA_MEM_MAX_CHUNKS] = {{ 0 }};
++static u32 vpu_dma_mem_nof_free[DMA_MEM_MAX_CHUNKSIZES] = { 0 };
++static u32 vpu_dma_mem_total_allocs = 0;
++static u32 vpu_dma_mem_in_use = 0;
++static u32 vpu_dma_mem_pooled = 0;
++static u32 vpu_dma_mem_peak_usage = 0;
++static spinlock_t vpu_dma_mem_lock;
++
++/* Helper function for the pooled dma allocator */
++static u32 chunkify(u32 size) {
++        return (size | (DMA_MEM_CHUNKSIZE - 1)) + 1;
++}
++/*********************************************************/
++
++
+ struct vpu_priv {
+ 	struct fasync_struct *async_queue;
+ 	struct work_struct work;
+@@ -260,11 +282,41 @@ static int cpu_is_mx51(void)
+  */
+ static int vpu_alloc_dma_buffer(struct vpu_mem_desc *mem)
+ {
+-	mem->cpu_addr = (unsigned long)
+-	    dma_alloc_coherent(NULL, PAGE_ALIGN(mem->size),
+-			       (dma_addr_t *) (&mem->phy_addr),
+-			       GFP_DMA | GFP_KERNEL);
+-	dev_dbg(vpu_dev, "[ALLOC] mem alloc cpu_addr = 0x%x\n", mem->cpu_addr);
++//	mem->cpu_addr = (unsigned long)
++//	    dma_alloc_coherent(NULL, PAGE_ALIGN(mem->size),
++//			       (dma_addr_t *) (&mem->phy_addr),
++//			       GFP_DMA | GFP_KERNEL);
++//	dev_dbg(vpu_dev, "[ALLOC] mem alloc cpu_addr = 0x%x\n", mem->cpu_addr);
++
++/************/
++	u32 chunked_size = chunkify(mem->size);
++	u32 size_in_chunks = chunked_size / DMA_MEM_CHUNKSIZE;
++
++	vpu_dma_mem_total_allocs++;
++
++	spin_lock(&vpu_dma_mem_lock);
++	if (size_in_chunks < DMA_MEM_MAX_CHUNKSIZES && vpu_dma_mem_nof_free[size_in_chunks] > 0) {
++		vpu_dma_mem_nof_free[size_in_chunks]--;
++		mem->cpu_addr = vpu_dma_mem_free_list[size_in_chunks][vpu_dma_mem_nof_free[size_in_chunks]];
++		mem->phy_addr = vpu_dma_mem_phys_free_list[size_in_chunks][vpu_dma_mem_nof_free[size_in_chunks]];
++		vpu_dma_mem_pooled -= size_in_chunks * DMA_MEM_CHUNKSIZE;
++		vpu_dma_mem_in_use += size_in_chunks * DMA_MEM_CHUNKSIZE;
++		spin_unlock(&vpu_dma_mem_lock);
++	} else {
++		spin_unlock(&vpu_dma_mem_lock);
++		mem->cpu_addr = (unsigned long)
++			dma_alloc_coherent(NULL, PAGE_ALIGN(size_in_chunks * DMA_MEM_CHUNKSIZE),
++				(dma_addr_t *) (&mem->phy_addr),
++				GFP_DMA | GFP_KERNEL);
++		if ((void *)mem->cpu_addr != NULL)
++			vpu_dma_mem_in_use += size_in_chunks * DMA_MEM_CHUNKSIZE;
++	}
++        
++	if (vpu_dma_mem_in_use > vpu_dma_mem_peak_usage) vpu_dma_mem_peak_usage = vpu_dma_mem_in_use;
++
++
++
++/***********/
+ 	if ((void *)(mem->cpu_addr) == NULL) {
+ 		dev_err(vpu_dev, "Physical memory allocation error!\n");
+ 		return -1;
+@@ -277,8 +329,29 @@ static int vpu_alloc_dma_buffer(struct vpu_mem_desc *mem)
+  */
+ static void vpu_free_dma_buffer(struct vpu_mem_desc *mem)
+ {
+-	if (mem->cpu_addr != 0) {
+-		dma_free_coherent(0, PAGE_ALIGN(mem->size),
++	//if (mem->cpu_addr != 0) {
++	//	dma_free_coherent(0, PAGE_ALIGN(mem->size),
++/*********************/
++u32 chunked_size = chunkify(mem->size);
++	u32 size_in_chunks = chunked_size / DMA_MEM_CHUNKSIZE;
++
++	spin_lock(&vpu_dma_mem_lock);
++
++	if (size_in_chunks < DMA_MEM_MAX_CHUNKSIZES && vpu_dma_mem_nof_free[size_in_chunks] < DMA_MEM_MAX_CHUNKS) {
++		vpu_dma_mem_in_use -= PAGE_ALIGN(chunked_size);
++		vpu_dma_mem_free_list[size_in_chunks][vpu_dma_mem_nof_free[size_in_chunks]] = mem->cpu_addr;
++		vpu_dma_mem_phys_free_list[size_in_chunks][vpu_dma_mem_nof_free[size_in_chunks]] = mem->phy_addr;
++		vpu_dma_mem_nof_free[size_in_chunks]++;
++		vpu_dma_mem_pooled += size_in_chunks * DMA_MEM_CHUNKSIZE;
++		spin_unlock(&vpu_dma_mem_lock);
++	} else {                
++		spin_unlock(&vpu_dma_mem_lock);
++		vpu_dma_mem_in_use -= PAGE_ALIGN(chunked_size);
++		dma_free_coherent(0, PAGE_ALIGN(chunked_size),
++/************/
++
++
++
+ 				  (void *)mem->cpu_addr, mem->phy_addr);
+ 	}
+ }
