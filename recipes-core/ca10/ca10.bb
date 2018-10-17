@@ -10,6 +10,7 @@ SRC_URI = "file://GRGCA10DevCfg.ini \
          file://libDevDriverLog.so \
          file://libGRGCA10Dev.so\
          file://libGrgDevBase.so\
+         file://interfaces_ca10.txt\
          "
 
 S = "${WORKDIR}"
@@ -26,6 +27,7 @@ do_install () {
   install -m 0555 ${WORKDIR}/GrgCommManager ${D}/home/root/grg/GrgCommManager
   install -m 0444 ${WORKDIR}/GRGDTATM_CommCfg.ini ${D}/home/root/grg/GRGDTATM_CommCfg.ini
   install -m 0444 ${WORKDIR}/GrgLogServer.cfg ${D}/home/root/grg/GrgLogServer.cfg
+  install -m 0444 ${WORKDIR}/interfaces_ca10.txt ${D}/home/root/grg/interfaces_ca10.txt
 }
 
 #INHIBIT_PACKAGE_DEBUG_SPLIT = "1"
