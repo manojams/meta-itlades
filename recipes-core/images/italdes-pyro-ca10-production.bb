@@ -69,7 +69,6 @@ IMAGE_INSTALL_append_mx6 = " \
     alsa-utils \
     common-files \
     ca10\
-    black-arm \
     iptables \
     init-ifupdown\
     libgal-mx6 \
@@ -77,11 +76,15 @@ IMAGE_INSTALL_append_mx6 = " \
     libvsc-mx6 \
     libglslc-mx6 \
     libgles2-mx6 \
-    dnf-repo-dev \
     my-qml \
     qtvirtualkeyboard \
     black-arm-git \
-    bna_confignetwork \
+    confignetwork-git \
+    python3-paho-mqtt \
+    ital-cert-knox \
+    ital-cert-ssh-guardian \
+    ital-conf-vpn \
+    ital-cert-https \
     "
 
 DISTRO_FEATURES_append = " opengl"
