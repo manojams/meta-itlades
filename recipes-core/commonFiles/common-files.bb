@@ -5,8 +5,6 @@ LICENSE = "CLOSED"
 
 SRC_URI = "file://sbin/autoupdate.sh \
          file://etc/iptables-save \
-         file://etc/rotation \
-         file://etc/ssl/certs/ca-certificates.crt \
     	   file://etc/rc5.d/S99z_Italdes.sh \
          file://etc/init.d/update_media.sh \
 	       file://etc/udev/rules.d/99-italdes.rules\
@@ -28,8 +26,6 @@ S = "${WORKDIR}"
 do_install () {
 	install -d ${D}/sbin
   install -m 0555 ${WORKDIR}/sbin/autoupdate.sh ${D}/sbin/autoupdate.sh
-  install -d ${D}/etc/ssl/certs/
-  install -m 0555 ${WORKDIR}/etc/ssl/certs/ca-certificates.crt ${D}/etc/ssl/certs/ca-certificates.crt
 	install -d ${D}/etc
   install -m 0444 ${WORKDIR}/etc/iptables-save ${D}/etc/iptables-save
   install -d ${D}/etc/init.d
