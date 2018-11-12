@@ -5,7 +5,7 @@ LICENSE = "CLOSED"
 
 DEPENDS = "qtdeclarative qtgraphicaleffects qtmultimedia qtsvg qtserialport qca"
 
-SRCREV = "f55e28f205c1503e0a48785e2793deba939eb58b"
+SRCREV = "bb42b613ff9fd47e49872db305819b5587d2abd3"
 SRC_URI = "git://git@192.168.12.15/qt-group/arm/blackarm-qt-ca10.git;protocol=ssh;branch=ca10qml"
 
 
