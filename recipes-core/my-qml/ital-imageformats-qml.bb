@@ -14,5 +14,5 @@ do_install () {
 }
 
 PACKAGES = "${PN}"
-#INSANE_SKIP_${PN} += "already-stripped"
+INSANE_SKIP_${PN} += "already-stripped"
 FILES_${PN} += "usr/lib/qt5/plugins/imageformats"
