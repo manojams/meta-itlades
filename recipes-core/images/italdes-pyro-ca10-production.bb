@@ -1,8 +1,8 @@
 inherit core-image
 inherit distro_features_check
-inherit populate_sdk_qt5
-inherit populate_sdk
-inherit populate_sdk_${@base_contains('MACHINE', 'italdesgeam6ul', 'qt5_geam6ul', 'qt5_icore', d)}
+#inherit populate_sdk_qt5
+#inherit populate_sdk
+#inherit populate_sdk_${@base_contains('MACHINE', 'italdesgeam6ul', 'qt5_geam6ul', 'qt5_icore', d)}
 
 EXTRA_IMAGE_FEATURES = "debug-tweaks ssh-server-openssh tools-debug package-management"
 
@@ -25,29 +25,20 @@ IMAGE_INSTALL_append_mx6 = " \
   giflib\
     packagegroup-qt5-qtcreator-debug \
     binutils \
-    qtbase-dev \
     qtbase-mkspecs \
     qtbase-plugins \
-    qtbase-staticdev \
-    qtconnectivity-dev \
     qtconnectivity-mkspecs \
     qtconnectivity-qmlplugins \
-    qtdeclarative-dev \
    qtdeclarative-mkspecs \
     qtdeclarative-qmlplugins \
-    qtdeclarative-staticdev \
     qtgraphicaleffects \
     pulseaudio \
-    qtenginio-dev \
     qtenginio-mkspecs \
     qtenginio-qmlplugins \
     qtgraphicaleffects-qmlplugins \
-    qtimageformats-dev \
     qtimageformats-plugins \
-    qtsvg-dev \
     qtsvg-mkspecs \
     qtsvg-plugins \
-    qtxmlpatterns-dev \
     qtxmlpatterns-mkspecs \
     qtserialport \
     tslib evtest tslib-conf tslib-tests tslib-calibrate \
@@ -76,8 +67,7 @@ IMAGE_INSTALL_append_mx6 = " \
     libvsc-mx6 \
     libglslc-mx6 \
     libgles2-mx6 \
-    my-qml \
-    qtvirtualkeyboard \
+    ital-imageformats-qml \
     black-arm-git \
     confignetwork-git \
     python3-paho-mqtt \
@@ -85,12 +75,15 @@ IMAGE_INSTALL_append_mx6 = " \
     ital-cert-ssh-guardian \
     ital-conf-vpn \
     ital-cert-https \
+    libpulse-mainloop-glib \
     "
 
 DISTRO_FEATURES_append = " opengl"
 
 IMAGE_INSTALL_remove ="qt3d nativesdk-qt3d qt3d-native ruby-native wpa-supplicant wireless-tools perl-module \
-                      packagegroup-base-wifi qtlocation qtsensors"
+                      packagegroup-base-wifi qtlocation qtsensors "
+
+DISTRO_FEATURES_remove = "bluez5 bluetooth irda pcmcia wifi nfc usbgadget 3g"
 
 
 export IMAGE_BASENAME = "italdes-pyro-ca10-production"
