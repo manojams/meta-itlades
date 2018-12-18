@@ -2,7 +2,6 @@ SUMMARY = "Copy Italdes common files "
 DESCRIPTION = "Copy Italdes common files"
 LICENSE = "CLOSED"
 
-
 SRC_URI = "file://sbin/autoupdate.sh \
          file://etc/iptables-save \
     	   file://etc/rc5.d/S99z_Italdes.sh \
