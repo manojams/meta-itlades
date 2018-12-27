@@ -33,7 +33,7 @@ do_install () {
 #INHIBIT_PACKAGE_DEBUG_SPLIT = "1"
 PACKAGES = "${PN}"
 #INSANE_SKIP_${PN} += "dev-deps"
-#INSANE_SKIP_${PN} += "already-stripped"
+INSANE_SKIP_${PN} += "already-stripped"
 FILES_${PN} += "usr/lib"
 FILES_${PN} += "home/root/grg"
 #FILES_{PN}-dev += "usr/lib/*.so"
