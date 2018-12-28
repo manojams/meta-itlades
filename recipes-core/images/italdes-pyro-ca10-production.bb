@@ -58,8 +58,8 @@ IMAGE_INSTALL_append_mx6 = " \
     gstreamer1.0-plugins-imx \
     packagegroup-fsl-gstreamer1.0-full \
     alsa-utils \
-    common-files \
-    ca10\
+    ital-common-files \
+    ca10-CommManager\
     iptables \
     init-ifupdown\
     libgal-mx6 \
@@ -68,8 +68,8 @@ IMAGE_INSTALL_append_mx6 = " \
     libglslc-mx6 \
     libgles2-mx6 \
     ital-imageformats-qml \
-    black-arm-git \
-    confignetwork-git \
+    ital-black-arm-git \
+    ital-confignetwork-git \
     python3-paho-mqtt \
     ital-cert-knox \
     ital-cert-ssh-guardian \
