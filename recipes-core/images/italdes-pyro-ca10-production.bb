@@ -76,6 +76,8 @@ IMAGE_INSTALL_append_mx6 = " \
     ital-conf-vpn \
     ital-cert-https \
     libpulse-mainloop-glib \
+    ca10-service \
+    ital-qtapp-service \
     "
 
 DISTRO_FEATURES_append = " opengl"

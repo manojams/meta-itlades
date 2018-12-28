@@ -4,8 +4,6 @@ LICENSE = "CLOSED"
 
 inherit update-rc.d
 
-#RDEPENDS_${PN} = "initscripts"
-
 SRC_URI = "file://grgca10"
 
 INITSCRIPT_PARAMS = "defaults 99"
