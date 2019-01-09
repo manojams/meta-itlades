@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config version="1.0" name="italdes_bna">
+  <italdes>
+    <config name="serial" value="00000000"/>
+    <config name="assistenza" value="012345678"/>
+    <config name="partitaIva" value="03925500237"/>
+  </italdes>
+  <aziende>
+    <config name="10000001.1" azienda="Italdes Srl" address="Via Staffali nr.8" cap="37062" comune="Verona" codiceBanca="00000"/>
+  </aziende>
+  <knox>
+    <config name="numberOfSignal" value="1"/>
+    <config name="model" value="BNA-21"/>
+    <config name="insuranceStockLevel" value="100000.00"/>
+    <config name="insuranceLevel" value="98000.00"/>
+    <config name="insuranceWarnLevel" value="80000.00"/>
+    <config name="quantityMaxLevel" value="4000"/>
+    <config name="quantityLevel" value="3900"/>
+    <config name="quantityWarnLevel" value="3700"/>
+    <config name="cashDiff" value="100"/>
+  </knox>
+  <optional_functions>
+    <config name="smartcard_identification" value="enabled"/>
+    <config name="keypad_identification" value="disabled"/>
+    <config name="safebag_request" value="enabled"/>
+    <config name="safebag_cheque_request" value="enabled"/>
+    <config name="safebag_multi_request" value="enabled"/>
+    <config name="safebag_coin_request" value="enabled"/>
+    <config name="auth_cit" value="disabled"/>
+    <config name="upgrade" value="disabled"/>
+    <config name="double_copy" value="disabled"/>
+    <config name="rear_access" value="disabled"/>
+    <config name="ext_door" value="disabled"/>
+  </optional_functions>
+  <blacklist_cashboxes>
+    <config name="cashbox" value="11111111"/>
+    <config name="cashbox" value="22222222"/>
+    <config name="cashbox" value="33333333"/>
+    <config name="cashbox" value="00000000"/>
+  </blacklist_cashboxes>
+  <servers>
+    <config name="events" value="http://192.168.12.11/guardian/public/api/log"/>
+    <config name="finance" value="http://192.168.12.11/guardian/public/api/transaction"/>
+    <config name="cashboxes" value="http://192.168.12.11/guardian/public/api/cashbox"/>
+    <config name="setup" value="http://192.168.12.11/guardian/public/api/config"/>
+    <config name="translation" value="http://192.168.12.11/guardian/public/api/translation"/>
+    <config name="alive" value="http://192.168.12.11/guardian/public/api/alive"/>
+    <config name="version" value="http://192.168.12.11/guardian/public/api/update"/>
+    <config name="media" value="http://192.168.12.11/guardian/public/api/media"/>
+    <config name="acceptor" value="http://192.168.12.11/acceptor/"/>
+    <config name="radio" value="http://192.168.12.11/radio/"/>
+    <config name="door" value="http://192.168.12.11/door/"/>
+    <config name="mediadownloader" value="http://192.168.12.11/guardian/public/multimedia/"/>
+    <config name="audit" value="http://192.168.12.11/guardian/public/api/audit"/>
+    <config name="info" value="http://192.168.12.11/guardian/public/api/info"/>
+    <config name="finance-ext" value=""/>
+    <config name="proxy" value="" port=""/>
+    <config name="ws" value="https://knox.mondialpol.it/index.php?gcsitaldes"/>
+    <config name="ticket" value="https://ticket.mondialpol.it/api/create-ticket"/>
+  </servers>
+  <smartcards>
+    <config value="0000003308" azienda="ITALDES" ruolo="PRELIEVO" codice="" idcustomer="10000001.1"/>
+    <config value="0000005155" azienda="ITALDES" ruolo="SUPERVISORE" codice="1234" idcustomer="10000001.1"/>
+    <config value="0000004852" azienda="ITALDES" ruolo="DEPOSITO" idcustomer="10000001.1"/>
+  </smartcards>
+  <settings>
+    <config name="language" value="it"/>
+    <config name="mei_timeout" value="0"/>
+    <config name="alive_timeout" value="60"/>
+    <config name="mode" value="D"/>
+    <config name="customer_mode" value="SC"/>
+    <config name="reject_notes" value=""/>
+  </settings>
+  <safe_detail>
+    <config name="last_update_online" value="1544712228"/>
+    <config name="last_update_request" value="1544430796"/>
+    <config name="random" value="666"/>
+    <config name="current_version" value="2.0.1"/>
+  </safe_detail>
+  <devices>
+    <device name="shutter_italdes" port="" requirement="required"/>
+    <device name="acceptor_grgca10" port="" requirement="required"/>
+    <device name="radio_italdes" port="/dev/ttyRFID" requirement="required"/>
+    <device name="custom_printer" port="/home/root/ttyPRINTER" requirement="required"/>
+  </devices>
+  <starting_cashboxes>
+    <config name="cashbox_1" value="11111111"/>
+  </starting_cashboxes>
+</config>

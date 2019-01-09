@@ -1,7 +1,8 @@
 inherit core-image
 inherit distro_features_check
-inherit populate_sdk
-inherit populate_sdk_${@base_contains('MACHINE', 'italdesgeam6ul', 'qt5_geam6ul', 'qt5_icore', d)}
+#inherit populate_sdk_qt5
+#inherit populate_sdk
+#inherit populate_sdk_${@base_contains('MACHINE', 'italdesgeam6ul', 'qt5_geam6ul', 'qt5_icore', d)}
 
 EXTRA_IMAGE_FEATURES = "debug-tweaks ssh-server-openssh tools-debug package-management"
 
@@ -10,30 +11,34 @@ IMAGE_INSTALL_append_mx6 = " \
 "
 
 IMAGE_INSTALL_append_mx6 = " \
+  qtquick1 \
+  qtquick1-plugins \
+  qtquick1-qmlplugins \
+  qtquickcontrols-qmlplugins \
+  qtquickcontrols \
+  qtquickcontrols2 \
+  qtquickcontrols2-qmlplugins \
+  qtmultimedia \
+  qtmultimedia-plugins\
+  qtmultimedia-qmlplugins\
+  liberation-fonts\
+  giflib\
     packagegroup-qt5-qtcreator-debug \
     binutils \
-    qtbase-dev \
     qtbase-mkspecs \
     qtbase-plugins \
-    qtbase-staticdev \
-    qtconnectivity-dev \
     qtconnectivity-mkspecs \
     qtconnectivity-qmlplugins \
-    qtdeclarative-dev \
    qtdeclarative-mkspecs \
-    qtdeclarative-plugins \
     qtdeclarative-qmlplugins \
-    qtdeclarative-staticdev \
-    qtenginio-dev \
+    qtgraphicaleffects \
+    pulseaudio \
     qtenginio-mkspecs \
     qtenginio-qmlplugins \
     qtgraphicaleffects-qmlplugins \
-    qtimageformats-dev \
     qtimageformats-plugins \
-    qtsvg-dev \
     qtsvg-mkspecs \
     qtsvg-plugins \
-    qtxmlpatterns-dev \
     qtxmlpatterns-mkspecs \
     qtserialport \
     tslib evtest tslib-conf tslib-tests tslib-calibrate \
@@ -43,7 +48,7 @@ IMAGE_INSTALL_append_mx6 = " \
     openvpn \
     nano \
     openct opensc \
-    sqlite3 \
+    postgresql \
     qca \
     ntp \
     tzdata \
@@ -53,9 +58,8 @@ IMAGE_INSTALL_append_mx6 = " \
     gstreamer1.0-plugins-imx \
     packagegroup-fsl-gstreamer1.0-full \
     alsa-utils \
-    common-files \
-    ca10\
-    black-arm \
+    ital-common-files \
+    ca10-CommManager\
     iptables \
     init-ifupdown\
     libgal-mx6 \
@@ -63,10 +67,26 @@ IMAGE_INSTALL_append_mx6 = " \
     libvsc-mx6 \
     libglslc-mx6 \
     libgles2-mx6 \
+    ital-imageformats-qml \
+    ital-black-arm-git \
+    ital-confignetwork-git \
+    python3-paho-mqtt \
+    ital-cert-knox \
+    ital-cert-ssh-guardian \
+    ital-conf-vpn \
+    ital-cert-https \
+    libpulse-mainloop-glib \
+    ca10-service \
+    ital-qtapp-service \
     "
+
 DISTRO_FEATURES_append = " opengl"
 
-IMAGE_INSTALL_remove ="qt3d nativesdk-qt3d qt3d-native ruby-native"
+IMAGE_INSTALL_remove ="qt3d nativesdk-qt3d qt3d-native ruby-native wpa-supplicant wireless-tools perl-module \
+                      packagegroup-base-wifi qtlocation qtsensors "
+
+DISTRO_FEATURES_remove = "bluez5 bluetooth irda pcmcia wifi nfc usbgadget 3g"
+
 
 export IMAGE_BASENAME = "italdes-pyro-ca10-production"
 

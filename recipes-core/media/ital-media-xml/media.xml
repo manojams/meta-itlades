@@ -1,0 +1,51 @@
+<?xml version='1.0' encoding='utf-8'?>
+<config version="1.0" name="italdes_bna">
+    <audios>
+        <file short_name="audio_short_1.wav" name="audio_1.wav" title="Inizio Deposito" downloaded="yes" code="3" second_downloaded="yes"/>
+        <file short_name="" name="audio_10.wav" title="Inserisci importo assegno" downloaded="yes" code="205"/>
+        <file short_name="" name="audio_11.wav" title="Pin supervisore" downloaded="yes" code="53"/>
+        <file short_name="" name="audio_12.wav" title="Pin default" downloaded="yes" code="133"/>
+        <file short_name="" name="audio_13.wav" title="Elenco transazioni" downloaded="yes" code="63"/>
+        <file short_name="" name="audio_14.wav" title="Altre info" downloaded="yes" code="135"/>
+        <file short_name="" name="audio_15.wav" title="Apri la porta" downloaded="yes" code="20,24,116"/>
+        <file short_name="" name="audio_16.wav" title="Estrai il cassetto" downloaded="yes" code="21"/>
+        <file short_name="" name="audio_17.wav" title="Estrai safebag" downloaded="yes" code="22"/>
+        <file short_name="" name="audio_18.wav" title="Inserisci nuovo sigillo" downloaded="yes" code="30"/>
+        <file short_name="" name="audio_19.wav" title="Verifica sigillo" downloaded="yes" code="33"/>
+        <file short_name="audio_short_2.wav" name="audio_2.wav" title="Deposito in corso" downloaded="yes" code="14" second_downloaded="yes"/>
+        <file short_name="" name="audio_20.wav" title="Inserisci il cassetto" downloaded="yes" code="34,110"/>
+        <file short_name="" name="audio_21.wav" title="Chiudi la porta" downloaded="yes" code="35"/>
+        <file short_name="" name="audio_22.wav" title="Pulisci cassetto" downloaded="yes" code="37"/>
+        <file short_name="" name="audio_23.wav" title="Lascia cassetto inserito" downloaded="yes" code="38,113"/>
+        <file short_name="" name="audio_24.wav" title="Errore durante prelievo" downloaded="yes" code="39"/>
+        <file short_name="" name="audio_25.wav" title="Verifica rimozione cassetto" downloaded="yes" code="45"/>
+        <file short_name="" name="audio_26.wav" title="Estrazione accettatore" downloaded="yes" code="10021,20021,10022,20022"/>
+        <file short_name="" name="audio_27.wav" title="Sigillo errato" downloaded="yes" code="32,108"/>
+        <file short_name="" name="audio_28.wav" title="Inizio manutenzione" downloaded="yes" code="100"/>
+        <file short_name="" name="audio_29.wav" title="Esegui manutenzione" downloaded="yes" code="101"/>
+        <file short_name="" name="audio_3.wav" title="Deposito Completato" downloaded="yes" code="6"/>
+        <file short_name="" name="audio_30.wav" title="Estrai cassetto test" downloaded="yes" code="114"/>
+        <file short_name="" name="audio_31.wav" title="Inserisci sigillo originale" downloaded="yes" code="106"/>
+        <file short_name="" name="audio_32.wav" title="Inserisci cassetti test" downloaded="yes" code="117"/>
+        <file short_name="" name="audio_33.wav" title="Errore durante manutenzione" downloaded="yes" code="115"/>
+        <file short_name="" name="audio_35.wav" title="Sblocco serrature" downloaded="yes" code="150,151"/>
+        <file short_name="" name="audio_36.wav" title="Apertura Battenti" downloaded="yes" code="152,153"/>
+        <file short_name="" name="audio_4.wav" title="Ritira la ricevuta" downloaded="yes" code="11"/>
+        <file short_name="" name="audio_5.wav" title="Scegli safebag" downloaded="yes" code="211"/>
+        <file short_name="" name="audio_6.wav" title="Inserisci codice safebag" downloaded="yes" code="18,8,207"/>
+        <file short_name="" name="audio_7.wav" title="Inserisci valori safebag" downloaded="yes" code="7,212"/>
+        <file short_name="" name="audio_8.wav" title="Scegli valuta safebag" downloaded="yes" code="206"/>
+        <file short_name="" name="audio_9.wav" title="Inserisci numero assegno" downloaded="yes" code="203"/>
+    </audios>
+    <videos>
+        <file name="video02.mp4" error_code="" title="2 - Deposito" downloaded="yes" preview="video02.png" code="3" second_downloaded="yes"/>
+        <file name="video01.mp4" error_code="" title="1 - Presentazione generale" downloaded="yes" preview="video01.png" code="" second_downloaded="yes"/>
+        <file name="video03.mp4" error_code="" title="3 - Menu' Supervisore" downloaded="yes" preview="video03.png" code="53" second_downloaded="yes"/>
+        <file name="video04.mp4" error_code="" title="4 - Anomalie durante il deposito" downloaded="yes" preview="video04.png" code="" second_downloaded="yes"/>
+        <file name="video05.mp4" error_code="" title="5 - Errori: Gestione generale" downloaded="yes" preview="video05.png" code="134" second_downloaded="yes"/>
+        <file name="video06.mp4" error_code="10022,10007,10008,10030,10031,10032,20021,20022,20007,20008,20030,20031,20032,10134,10136,10137,10138,10139,10140,20134,20136,20137,20138,20139,20140" title="6 - Errori: Inceppamenti estrazione della testa" downloaded="yes" preview="video06.png" code="" second_downloaded="yes"/>
+        <file name="video07.mp4" error_code="1007,1008" title="7 - Errori: Cambio carta stampante" downloaded="yes" preview="video07.png" code="" second_downloaded="yes"/>
+        <file name="video08.mp4" error_code="" title="8 - Prelievo" downloaded="yes" preview="video08.png" code="20" second_downloaded="yes"/>
+        <file name="video09.mp4" error_code="" title="9 - Cambio codice serratura" downloaded="yes" preview="video09.png" code="" second_downloaded="yes"/>
+    </videos>
+</config>

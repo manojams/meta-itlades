@@ -1,11 +1,10 @@
-SUMMARY = "Qt5 everywhere demo"
-DESCRIPTION = "Quick tour of Qt 5.0, primarily focusing on its graphical capabilities."
-HOMEPAGE = "https://code.qt.io"
+SUMMARY = "Italdes Qt Main App"
+DESCRIPTION = "Italdes Qt main app"
 LICENSE = "CLOSED"
 
 DEPENDS = "qtdeclarative qtgraphicaleffects qtmultimedia qtsvg qtserialport qca"
 
-SRCREV = "b22615ee9f24f8ea146c17ec4a0a31502f15597a"
+SRCREV = "6e07f377b47cca130cdd8c3f6cce4510f0c30135"
 SRC_URI = "git://git@192.168.12.15/qt-group/arm/blackarm-qt-ca10.git;protocol=ssh;branch=ca10qml"
 
 

@@ -1,6 +1,5 @@
-SUMMARY = "Qt5 everywhere demo"
-DESCRIPTION = "Quick tour of Qt 5.0, primarily focusing on its graphical capabilities."
-HOMEPAGE = "https://code.qt.io"
+SUMMARY = "Italdes Qt app for network"
+DESCRIPTION = "Italdes Qt app for configure network"
 LICENSE = "CLOSED"
 
 DEPENDS = "qtdeclarative qtgraphicaleffects qtmultimedia"

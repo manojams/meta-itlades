@@ -28,7 +28,7 @@ if ! [ -d '/sdcard/log' ]; then
         mkdir /sdcard/log
 fi
 #idem
-if ! [ -d '/sdcard/multimedia' ]; then
+if ! [ -d '/sdcard/media' ]; then
         echo "creo cartella multimedia"
         mkdir /sdcard/multimedia
 fi
@@ -53,38 +53,9 @@ else
   echo "Pendrive non inserita"
 fi
 
-#script esterno (lanciato per primo)
-if [ -e "/mnt/operazioni.sh" ]; then
-  echo "eseguo operazioni.sh"
-  sh /mnt/operazioni.sh
-fi
-
-#aggiornamento
-if [ -e "/mnt/update.tar.gz" ]; then
-  echo -n "copio update.tar.gz... "
-  cp /mnt/update.tar.gz /
-  echo -n "scompatto... "
-  tar xvzf update.tar.gz
-  rm update.tar.gz
-  echo "fine"
-fi
-
-#copio contenuti multimediali se presenti
-if [ -e "/mnt/media" ]; then
-  cp /mnt/media/* /sdcard/multimedia
-fi
 sync
 
 umount /mnt 2> /dev/null
-
-#copia dei dati multimediali dal server Italdes
-if [ -x /etc/init.d/update_media.sh ]; then
-	echo "Update dei dati multimediali da server Italdes..."
-	cd /etc/init.d/
-	./update_media.sh
-	cd -
-	echo "fatto."
-fi
 
 ###########################################
 ## Controllo flag allarme RTC
@@ -147,7 +118,3 @@ umount -l /mnt/.psplash
 
 #alza l'audio al massimo
 amixer set Headphone 127 &> /dev/null
-
-#avvia applicazioni
-#con loop per riavvio in caso di crash applicazione Qt
-/home/root//italdes_apps.sh &

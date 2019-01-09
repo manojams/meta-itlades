@@ -58,8 +58,6 @@ IMAGE_INSTALL_append_mx6 = " \
     gstreamer1.0-plugins-imx \
     packagegroup-fsl-gstreamer1.0-full \
     alsa-utils \
-    ital-common-files \
-    ca10-CommManager\
     iptables \
     init-ifupdown\
     libgal-mx6 \
@@ -68,16 +66,9 @@ IMAGE_INSTALL_append_mx6 = " \
     libglslc-mx6 \
     libgles2-mx6 \
     ital-imageformats-qml \
-    ital-black-arm-git \
-    ital-confignetwork-git \
     python3-paho-mqtt \
-    ital-cert-knox \
-    ital-cert-ssh-guardian \
-    ital-conf-vpn \
-    ital-cert-https \
     libpulse-mainloop-glib \
-    ca10-service \
-    ital-qtapp-service \
+    ital-common-files \
     "
 
 DISTRO_FEATURES_append = " opengl"

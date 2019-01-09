@@ -1,5 +1,5 @@
-SUMMARY = "Copy Italdes common files "
-DESCRIPTION = "Copy Italdes common files"
+SUMMARY = "GRG CommManager"
+DESCRIPTION = "Ca10 lib and CommManager"
 LICENSE = "CLOSED"
 
 SRC_URI = "file://GRGCA10DevCfg.ini \
