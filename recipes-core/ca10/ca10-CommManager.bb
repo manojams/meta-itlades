@@ -30,6 +30,8 @@ do_install () {
   install -m 0444 ${WORKDIR}/interfaces_ca10.txt ${D}/home/root/grg/interfaces_ca10.txt
 }
 
+RDEPENDS_${PN} = "ca10-service"
+
 #INHIBIT_PACKAGE_DEBUG_SPLIT = "1"
 PACKAGES = "${PN}"
 #INSANE_SKIP_${PN} += "dev-deps"

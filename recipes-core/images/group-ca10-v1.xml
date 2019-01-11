@@ -10,7 +10,6 @@
    <name>CA10</name>
    <description>CA10</description>
     <packagelist>
-      <packagereq type="mandatory">ca10-service</packagereq>
       <packagereq type="mandatory">ca10-CommManager</packagereq>
       <packagereq type="mandatory">ital-main-app-git</packagereq>
       <packagereq type="mandatory">ital-confignetwork-git</packagereq>
@@ -20,9 +19,6 @@
       <packagereq type="mandatory">ital-cert-https</packagereq>
       <packagereq type="mandatory">ital-media-audio</packagereq>
       <packagereq type="mandatory">ital-media-video</packagereq>
-      <packagereq type="mandatory">ital-qtapp-service</packagereq>
-      <packagereq type="mandatory">ital-config-model-ca10</packagereq>
-      <packagereq type="mandatory">ital-media-xml</packagereq>      
     </packagelist>
   </group>
 </comps>

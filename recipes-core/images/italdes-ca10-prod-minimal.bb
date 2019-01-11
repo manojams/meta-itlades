@@ -65,10 +65,12 @@ IMAGE_INSTALL_append_mx6 = " \
     libvsc-mx6 \
     libglslc-mx6 \
     libgles2-mx6 \
-    ital-imageformats-qml \
-    python3-paho-mqtt \
+    imageformats-qml \
     libpulse-mainloop-glib \
+    bash \
     ital-common-files \
+    ital-py-supervisor \
+    ital-py-app-git \
     "
 
 DISTRO_FEATURES_append = " opengl"
@@ -78,8 +80,7 @@ IMAGE_INSTALL_remove ="qt3d nativesdk-qt3d qt3d-native ruby-native wpa-supplican
 
 DISTRO_FEATURES_remove = "bluez5 bluetooth irda pcmcia wifi nfc usbgadget 3g"
 
-
-export IMAGE_BASENAME = "italdes-pyro-ca10-production"
+export IMAGE_BASENAME = "italdes-ca10-prod-minimal"
 
 update_rootfs() {
   tar -xzvf ${IMAGE_ROOTFS}/home/root/ttyX.tar.gz -C ${IMAGE_ROOTFS}/home/root/
