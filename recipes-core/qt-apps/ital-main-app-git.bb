@@ -4,7 +4,7 @@ LICENSE = "CLOSED"
 
 DEPENDS = "qtdeclarative qtgraphicaleffects qtmultimedia qtsvg qtserialport qca"
 
-SRCREV = "6e07f377b47cca130cdd8c3f6cce4510f0c30135"
+SRCREV = "0a7acac71512e5299714ea2e89916db2ab7470bb"
 SRC_URI = "git://git@192.168.12.15/qt-group/arm/blackarm-qt-ca10.git;protocol=ssh;branch=ca10qml"
 
 
@@ -13,11 +13,11 @@ S = "${WORKDIR}/git"
 require recipes-qt/qt5/qt5.inc
 
 do_install() {
-    install -d ${D}/home/root/
-    install -m 0755 ${B}/blackarm ${D}/home/root/
+    install -d ${D}/opt/bin/
+    install -m 0755 ${B}/blackarm ${D}/opt/bin/
 }
 
 #FILES_${PN}-dbg += "${datadir}/${P}/.debug"
-FILES_${PN} += "home/root/"
+FILES_${PN} += "opt/bin/"
 
-RDEPENDS_${PN} = "qtdeclarative-qmlplugins qtgraphicaleffects-qmlplugins"
+RDEPENDS_${PN} = "qtdeclarative-qmlplugins qtgraphicaleffects-qmlplugins ital-qt-main-app-service"

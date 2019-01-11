@@ -1,6 +1,6 @@
-SCRIPT=/home/root/blackarm
+SCRIPT=/opt/bin/qt-py-app
 RUNAS=root
-NAME=qtmainapp
+NAME=qtpyapp
 
 PIDFILE=/var/run/$NAME.pid
 LOGFILE=/sdcard/log/$NAME.log
