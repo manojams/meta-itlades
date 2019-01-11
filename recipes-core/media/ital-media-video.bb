@@ -48,3 +48,5 @@ do_install () {
 }
 
 FILES_${PN} += "sdcard/media/video"
+
+RDEPENDS_${PN} = "ital-media-xml"

@@ -1,5 +1,5 @@
-SUMMARY = "Copy Italdes common files "
-DESCRIPTION = "Copy Italdes common files"
+SUMMARY = "Italdes Install  libqgif.so"
+DESCRIPTION = "Install  libqgif.so"
 LICENSE = "CLOSED"
 
 SRC_URI = "file://libqgif.so \

@@ -64,3 +64,5 @@ do_install () {
 }
 
 FILES_${PN} += "sdcard/media/audio"
+
+RDEPENDS_${PN} = "ital-media-xml"
