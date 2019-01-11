@@ -4,12 +4,12 @@ LICENSE = "CLOSED"
 
 inherit update-rc.d
 
-SRC_URI = "file://qtmainapp"
+SRC_URI = "file://pysupervisor"
 
 INITSCRIPT_PARAMS = "defaults 99"
-INITSCRIPT_NAME = "qtmainapp"
+INITSCRIPT_NAME = "pysupervisor"
 
 do_install() {
     install -d "${D}${sysconfdir}/init.d/"
-    install -m 500 "${WORKDIR}/qtmainapp" "${D}${sysconfdir}/init.d/"
+    install -m 500 "${WORKDIR}/pysupervisor" "${D}${sysconfdir}/init.d/"
 }
