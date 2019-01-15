@@ -7,10 +7,7 @@ inherit distro_features_check
 EXTRA_IMAGE_FEATURES = "debug-tweaks ssh-server-openssh tools-debug package-management"
 
 IMAGE_INSTALL_append_mx6 = " \
-    firmware-imx-vpu-imx6q \
-"
-
-IMAGE_INSTALL_append_mx6 = " \
+  firmware-imx-vpu-imx6q \
   qtquick1 \
   qtquick1-plugins \
   qtquick1-qmlplugins \
@@ -23,7 +20,6 @@ IMAGE_INSTALL_append_mx6 = " \
   qtmultimedia-qmlplugins\
   liberation-fonts\
   giflib\
-    packagegroup-qt5-qtcreator-debug \
     binutils \
     qtbase-mkspecs \
     qtbase-plugins \
@@ -43,8 +39,6 @@ IMAGE_INSTALL_append_mx6 = " \
     qtserialport \
     tslib evtest tslib-conf tslib-tests tslib-calibrate \
     psplash \
-    engicam-mtd-script \
-    mtd-utils imx-kobs mtd-utils-ubifs \
     openvpn \
     nano \
     openct opensc \
@@ -52,8 +46,6 @@ IMAGE_INSTALL_append_mx6 = " \
     qca \
     ntp \
     tzdata \
-    u-boot-eng-fw-utils \
-    fw-nandautosize \
     gst-meta-video \
     gstreamer1.0-plugins-imx \
     packagegroup-fsl-gstreamer1.0-full \
@@ -69,8 +61,8 @@ IMAGE_INSTALL_append_mx6 = " \
     libpulse-mainloop-glib \
     bash \
     ital-common-files \
-    ital-py-supervisor \
-    ital-py-app-git \
+    ital-py-supervisor-git \
+    ital-script-service \    
     "
 
 DISTRO_FEATURES_append = " opengl"
