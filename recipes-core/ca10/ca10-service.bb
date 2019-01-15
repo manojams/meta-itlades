@@ -6,7 +6,7 @@ inherit update-rc.d
 
 SRC_URI = "file://grgca10"
 
-INITSCRIPT_PARAMS = "defaults 99"
+INITSCRIPT_PARAMS = "defaults 70"
 INITSCRIPT_NAME = "grgca10"
 
 do_install() {
