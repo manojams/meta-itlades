@@ -3,8 +3,6 @@ DESCRIPTION = "Copy Italdes common files"
 LICENSE = "CLOSED"
 
 SRC_URI = "file://etc/iptables-save \
-    	   file://etc/rc5.d/S99z_Italdes.sh \
-         file://etc/init.d/update_media.sh \
 	       file://etc/udev/rules.d/99-italdes.rules\
          file://home/root/chk_vpu_err.sh\
          file://home/root/configurazione.sh\
@@ -22,10 +20,6 @@ S = "${WORKDIR}"
 do_install () {
 	install -d ${D}/etc
   install -m 0444 ${WORKDIR}/etc/iptables-save ${D}/etc/iptables-save
-  install -d ${D}/etc/init.d
-  install -m 0444 ${WORKDIR}/etc/init.d/update_media.sh ${D}/etc/init.d/update_media.sh
-	install -d ${D}/etc/rc5.d
-	install -m 0555 ${WORKDIR}/etc/rc5.d/S99z_Italdes.sh ${D}/etc/rc5.d/S99z_Italdes.sh
 	install -d ${D}/etc/udev
 	install -d ${D}/etc/udev/rules.d
 	install -m 0444 ${WORKDIR}/etc/udev/rules.d/99-italdes.rules ${D}/etc/udev/rules.d/99-italdes.rules
@@ -39,7 +33,7 @@ do_install () {
   install -m 0555 ${WORKDIR}/home/root/rfid_update.sh  ${D}/home/root/rfid_update.sh
   install -m 0444 ${WORKDIR}/home/root/service.txt  ${D}/home/root/service.txt
   install -m 0444 ${WORKDIR}/home/root/comandi.txt  ${D}/home/root/comandi.txt
-  install -m 0444 ${WORKDIR}/home/root/drop_cache.sh  ${D}/home/root/drop_cache.sh
+  install -m 0555 ${WORKDIR}/home/root/drop_cache.sh  ${D}/home/root/drop_cache.sh
 }
 
 FILES_${PN} += "etc/"
