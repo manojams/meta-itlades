@@ -1,0 +1,21 @@
+From 8b2790c7aac6f6e8ac9eadc2866419490d0ca2d0 Mon Sep 17 00:00:00 2001
+From: pyro-engicam <you@example.com>
+Date: Fri, 11 Jan 2019 17:18:17 +0100
+Subject: [PATCH] added path for dnf cache
+
+---
+ etc/dnf/dnf.conf | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/etc/dnf/dnf.conf b/etc/dnf/dnf.conf
+index 81b3e44..7395713 100644
+--- a/etc/dnf/dnf.conf
++++ b/etc/dnf/dnf.conf
+@@ -2,3 +2,4 @@
+ gpgcheck=1
+ installonly_limit=3
+ clean_requirements_on_remove=True
++cachedir=/sdcard/dnfcache
+-- 
+2.1.4
+
