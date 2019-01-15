@@ -1,4 +1,5 @@
-SCRIPT=python3.5 /usr/lib/python3.5/site-packages/italdes/supervisor/main.py
+SCRIPT=/usr/lib/python3.5/site-packages/italdes/supervisor/main.py
+PYTHON=/usr/bin/python3.5
 RUNAS=root
 NAME=pysupervisor
 
@@ -11,7 +12,7 @@ start() {
     return 1
   fi
   echo 'Starting service…' >&2
-  local CMD="$SCRIPT &> \"$LOGFILE\" & echo \$!"
+  local CMD="$PYTHON $SCRIPT &> \"$LOGFILE\" & echo \$!"
   su -c "$CMD" $RUNAS > "$PIDFILE"
   echo 'Service started' >&2
 }
