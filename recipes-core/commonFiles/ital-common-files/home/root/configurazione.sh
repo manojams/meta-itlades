@@ -35,24 +35,24 @@ fi
 
 
 # Crea la configurazione VPN
-ssh -p 22622 helpdesk@$server sudo /home/helpdesk/vpn.sh $matricola
-if [ $? -ne 0 ] ; then
-   echo -e "\n\n*** Errore nella connessione al server. ***\n\n"
-   exit 1
-fi
-echo "Connesso al server"
+#ssh -p 22622 helpdesk@$server sudo /home/helpdesk/vpn.sh $matricola
+#if [ $? -ne 0 ] ; then
+#   echo -e "\n\n*** Errore nella connessione al server. ***\n\n"
+#   exit 1
+#fi
+#echo "Connesso al server"
 
 # Configura la VPN
-cd /etc/openvpn
-rm -f italdes-????????.*
-scp -P 22622 helpdesk@$server:/etc/openvpn/easy-rsa/2.0/keys/italdes-$matricola.* .
-if [ $? -ne 0 ] ; then
-   echo -e "\n\n*** Errore nella connessione al server. ***\n\n"
-   exit 1
-fi
-echo "Scaricato certificati"
+#cd /etc/openvpn
+#rm -f italdes-????????.*
+#scp -P 22622 helpdesk@$server:/etc/openvpn/easy-rsa/2.0/keys/italdes-$matricola.* .
+#if [ $? -ne 0 ] ; then
+#   echo -e "\n\n*** Errore nella connessione al server. ***\n\n"
+#   exit 1
+#fi
+#echo "Scaricato certificati"
 
-sed -ri s/italdes-.{8}/italdes-$matricola/ client.conf
+#sed -ri s/italdes-.{8}/italdes-$matricola/ client.conf
 
 # Scrive matricola in un file
 echo "Scrivo matricola $matricola nel file matricola.dat sotto $dir1"
@@ -60,8 +60,8 @@ echo $matricola > $dir1/matricola.dat
 #chown italdes.italdes $dir1/matricola.dat
 
 # Cambia la password di root
-echo "root:I7ALd3s-$matricola" | chpasswd
-echo "Cambiato la password di root "
+#echo "root:I7ALd3s-$matricola" | chpasswd
+#echo "Cambiato la password di root "
 
 echo -e "\n Password di amministrazione modificata.\n"
 
