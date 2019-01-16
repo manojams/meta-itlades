@@ -37,12 +37,11 @@ IMAGE_INSTALL_append_mx6 = " \
     qtsvg-plugins \
     qtxmlpatterns-mkspecs \
     qtserialport \
-    tslib evtest tslib-conf tslib-tests tslib-calibrate \
     psplash \
     openvpn \
     nano \
     openct opensc \
-    sqlite3 \
+    mariadb \
     qca \
     ntp \
     tzdata \
@@ -62,7 +61,8 @@ IMAGE_INSTALL_append_mx6 = " \
     bash \
     ital-common-files \
     ital-py-supervisor-git \
-    ital-script-service \    
+    ital-script-service \
+    ital-conf-mariadb \
     "
 
 DISTRO_FEATURES_append = " opengl"

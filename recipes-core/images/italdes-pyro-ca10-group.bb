@@ -13,5 +13,5 @@ RDEPENDS_${PN} = "\
     ital-media-video \
     ital-main-app-git \
     ital-config-model-ca10-test \
-    ital-config-model-ca10-prod \
+    ital-config-model-ca10-prod \    
     "
