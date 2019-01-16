@@ -42,7 +42,7 @@
     <config name="events" value="https://guardian.italdes.it/guardian/public/api/log"/>
     <config name="finance" value="https://guardian.italdes.it/guardian/public/api/transaction"/>
     <config name="cashboxes" value="https://guardian.italdes.it/guardian/public/api/cashbox"/>
-    <config name="setup" value="https://guardian.italdes.it/guardian/public/api/config"/>
+    <config name="setup" value="https://guardian.italdes.it/guardian/public/api/config2"/>
     <config name="translation" value="https://guardian.italdes.it/guardian/public/api/translation"/>
     <config name="alive" value="https://guardian.italdes.it/guardian/public/api/alive"/>
     <config name="version" value="https://guardian.italdes.it/guardian/public/api/update"/>

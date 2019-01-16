@@ -42,7 +42,7 @@
     <config name="events" value="http://192.168.12.11/guardian/public/api/log"/>
     <config name="finance" value="http://192.168.12.11/guardian/public/api/transaction"/>
     <config name="cashboxes" value="http://192.168.12.11/guardian/public/api/cashbox"/>
-    <config name="setup" value="http://192.168.12.11/guardian/public/api/config"/>
+    <config name="setup" value="http://192.168.12.11/guardian/public/api/config2"/>
     <config name="translation" value="http://192.168.12.11/guardian/public/api/translation"/>
     <config name="alive" value="http://192.168.12.11/guardian/public/api/alive"/>
     <config name="version" value="http://192.168.12.11/guardian/public/api/update"/>
