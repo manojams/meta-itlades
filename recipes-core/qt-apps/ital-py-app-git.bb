@@ -4,7 +4,7 @@ LICENSE = "CLOSED"
 
 DEPENDS = "qtdeclarative qtsvg"
 
-SRCREV = "909ef9d85dfc611025f5d37f3f5efbe216027c2d"
+SRCREV = "0b581fdca73075ed5da6b27be82c0884c5c6778e"
 SRC_URI = "git://git@192.168.12.15/qt-group/arm/qt-python-service-app.git;protocol=ssh;branch=master"
 
 

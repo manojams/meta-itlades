@@ -3,7 +3,7 @@ LICENSE = "CLOSED"
 
 inherit setuptools3
 
-SRCREV = "7f99e62904e44f23df5d9056904dea4695010f54"
+SRCREV = "23c5891e41c97b79f23381e2aa0348195d4d35b0"
 SRC_URI = "git://git@192.168.12.15/qt-group/arm/python_manager.git;protocol=ssh;branch=master"
 
 #DEPENDS += "${PYTHON_PN}-pytest-runner-native"
