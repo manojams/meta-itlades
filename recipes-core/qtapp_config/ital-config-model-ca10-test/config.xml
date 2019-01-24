@@ -39,24 +39,7 @@
     <config name="cashbox" value="00000000"/>
   </blacklist_cashboxes>
   <servers>
-    <config name="events" value="http://192.168.12.11/guardian/public/api/log"/>
-    <config name="finance" value="http://192.168.12.11/guardian/public/api/transaction"/>
-    <config name="cashboxes" value="http://192.168.12.11/guardian/public/api/cashbox"/>
-    <config name="setup" value="http://192.168.12.11/guardian/public/api/config2"/>
-    <config name="translation" value="http://192.168.12.11/guardian/public/api/translation"/>
-    <config name="alive" value="http://192.168.12.11/guardian/public/api/alive"/>
-    <config name="version" value="http://192.168.12.11/guardian/public/api/update"/>
-    <config name="media" value="http://192.168.12.11/guardian/public/api/media"/>
-    <config name="acceptor" value="http://192.168.12.11/acceptor/"/>
-    <config name="radio" value="http://192.168.12.11/radio/"/>
-    <config name="door" value="http://192.168.12.11/door/"/>
-    <config name="mediadownloader" value="http://192.168.12.11/guardian/public/multimedia/"/>
-    <config name="audit" value="http://192.168.12.11/guardian/public/api/audit"/>
-    <config name="info" value="http://192.168.12.11/guardian/public/api/info"/>
-    <config name="finance-ext" value=""/>
-    <config name="proxy" value="" port=""/>
-    <config name="ws" value="https://knox.mondialpol.it/index.php?gcsitaldes"/>
-    <config name="ticket" value="https://ticket.mondialpol.it/api/create-ticket"/>
+    <config name="setup" value="http://192.168.12.11/guardian/public/jupiter/config"/>    
   </servers>
   <smartcards>
     <config value="0000003308" azienda="ITALDES" ruolo="PRELIEVO" codice="" idcustomer="10000001.1"/>
