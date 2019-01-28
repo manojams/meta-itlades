@@ -1,0 +1,11 @@
+--- a/my.cnf	2017-09-20 16:52:12.000000000 +0200
++++ b/my_patched.dnf	2019-01-16 09:09:17.838291327 +0100
+@@ -10,7 +10,7 @@
+ port 						= 3306
+ socket 						= /var/lib/mysql/mysql.sock
+ pid-file 					= /var/lib/mysql/mysqld.pid
+-log-error 					= /var/log/mysqld.err
++log-error 					= /var/log/mysqld.log
+ basedir 					= /usr
+ datadir 					= /var/lib/mysql
+ skip-external-locking
