@@ -18,6 +18,7 @@
     <config name="quantityLevel" value="3900"/>
     <config name="quantityWarnLevel" value="3700"/>
     <config name="cashDiff" value="100"/>
+    <config name="escrowMaxLevel" value="50"/>
   </knox>
   <optional_functions>
     <config name="smartcard_identification" value="enabled"/>
@@ -39,7 +40,7 @@
     <config name="cashbox" value="00000000"/>
   </blacklist_cashboxes>
   <servers>
-    <config name="setup" value="https://guardian.italdes.it/guardian/public/jupiter/config"/>        
+    <config name="setup" value="https://guardian.italdes.it/guardian/public/jupiter/config"/>
   </servers>
   <smartcards>
     <config value="0000003308" azienda="ITALDES" ruolo="PRELIEVO" codice="" idcustomer="10000001.1"/>
@@ -61,7 +62,7 @@
     <config name="current_version" value="2.0.1"/>
   </safe_detail>
   <devices>
-    <device name="shutter_italdes" port="" requirement="required"/>
+    <device name="door_italdes" port="" requirement="required"/>
     <device name="acceptor_grgca10" port="" requirement="required"/>
     <device name="radio_italdes" port="/dev/ttyRFID" requirement="required"/>
     <device name="custom_printer" port="/home/root/ttyPRINTER" requirement="required"/>
