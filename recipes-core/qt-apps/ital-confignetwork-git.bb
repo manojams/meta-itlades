@@ -13,11 +13,11 @@ S = "${WORKDIR}/git"
 require recipes-qt/qt5/qt5.inc
 
 do_install() {
-    install -d ${D}/home/root/
-    install -m 0755 ${B}/bna_configrete ${D}/home/root/
+    install -d ${D}/opt/bin/
+    install -m 0755 ${B}/bna_configrete ${D}/opt/bin/
 }
 
 #FILES_${PN}-dbg += "${datadir}/${P}/.debug"
-FILES_${PN} += "home/root/"
+FILES_${PN} += "opt/bin/"
 
 RDEPENDS_${PN} = "qtdeclarative-qmlplugins qtgraphicaleffects-qmlplugins"
