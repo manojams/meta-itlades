@@ -1,0 +1,98 @@
+Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: autossh
+Upstream-Contact: Carson Harding <harding@motd.ca>
+Source: http://www.harding.motd.ca/autossh/
+
+Files: *
+Copyright: 2002-2015 Carson Harding <harding@motd.ca>
+License: autossh
+
+Files: configure.ac
+Copyright: 2002-2015 Carson Harding <harding@motd.ca>
+           1999-2004 Damien Miller
+License: autossh and ISC-OpenBSD-Flavour
+Comment: Most of the file is autossh licensed except where state
+ otherwise inside the file
+
+Files: debian/*
+Copyright: 2002-2010 Filippo Giunchedi <filippo@debian.org>
+           2011-2015 Axel Beckert <abe@debian.org>
+License: autossh
+
+Files: debian/patches/030_manpage_fix.diff debian/patches/040_manpage_debian.diff
+Copyright: 2008-2010 Filippo Giunchedi <filippo@debian.org>
+           2010      Thorsten Glaser <tg@mirbsd.org>
+           2011-2015 Axel Beckert <abe@debian.org>
+License: autossh and autossh or ISC-OpenBSD-Flavour or MirOS or ISC-MirOS-Flavour
+Comment: All changes not containing code from commit b1bc0f59 are only
+ autossh-licensed. All changes in and derivating from commit b1bc0f59
+ are quadruple-licensed.
+
+Files: debian/rscreen
+Copyright: 2002 Carson Harding <harding@motd.ca>
+           2011 Axel Beckert <abe@debian.org>
+License: autossh
+
+License: autossh
+ All rights reserved.
+ .
+ Redistribution and use in source and binary forms, with or without
+ modification, are freely permitted.
+ .
+ THIS SOFTWARE IS PROVIDED ``AS IS'' AND ANY EXPRESS OR IMPLIED WARRANTIES,
+ INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY
+ AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL
+ THE AUTHOR OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+ SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+ PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS;
+ OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+ WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR
+ OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
+ ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+License: ISC-OpenBSD-Flavour
+ Permission to use, copy, modify, and distribute this software for any
+ purpose with or without fee is hereby granted, provided that the above
+ copyright notice and this permission notice appear in all copies.
+ .
+ THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES
+ WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF
+ MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR
+ ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+ WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
+ ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
+ OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+Comment: See also
+ http://cvsweb.openbsd.org/cgi-bin/cvsweb/~checkout~/src/share/misc/license.template?content-type=text/plain
+
+License: ISC-MirOS-Flavour
+ Permission to use, copy, modify, and/or distribute this software for any
+ purpose with or without fee is hereby granted, provided that the above
+ copyright notice, this permission notice and the disclaimer appear in
+ all copies.
+ .
+ THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES
+ WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF
+ MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR
+ ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+ WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
+ ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
+ OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+Comment: Source is https://www.mirbsd.org/ISC-Licence
+
+License: MirOS
+ Provided that these terms and disclaimer and all copyright notices
+ are retained or reproduced in an accompanying document, permission
+ is granted to deal in this work without restriction, including un‐
+ limited rights to use, publicly perform, distribute, sell, modify,
+ merge, give away, or sublicence.
+ .
+ This work is provided “AS IS” and WITHOUT WARRANTY of any kind, to
+ the utmost extent permitted by applicable law, neither express nor
+ implied; without malicious intent or gross negligence. In no event
+ may a licensor, author or contributor be held liable for indirect,
+ direct, other damage, loss, or other issues arising in any way out
+ of dealing in the work, even if advised of the possibility of such
+ damage or existence of a defect, except proven that it results out
+ of said person’s immediate fault when using the work as intended.
+Comment: Source is https://www.mirbsd.org/MirOS-Licence
