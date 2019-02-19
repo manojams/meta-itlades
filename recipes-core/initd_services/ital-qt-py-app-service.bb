@@ -1,4 +1,4 @@
-SUMMARY = "Italdes Service for starting the qt amin app"
+SUMMARY = "Italdes Service for starting the qt main app"
 SECTION = "CAN"
 LICENSE = "CLOSED"
 
