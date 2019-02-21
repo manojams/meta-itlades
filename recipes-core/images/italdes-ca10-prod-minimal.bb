@@ -38,10 +38,11 @@ IMAGE_INSTALL_append_mx6 = " \
     qtxmlpatterns-mkspecs \
     qtserialport \
     psplash \
-    openvpn \
     nano \
+    openssh-misc \
+    sshpass \
     openct opensc \
-    mariadb \
+    sqlite3 \
     qca \
     ntp \
     tzdata \
@@ -60,9 +61,9 @@ IMAGE_INSTALL_append_mx6 = " \
     libpulse-mainloop-glib \
     bash \
     ital-common-files \
-    ital-py-supervisor-git \
+    ital-py-supervisor-gitprod \
     ital-script-service \
-    ital-conf-mariadb \
+    autossh \
     "
 
 DISTRO_FEATURES_append = " opengl"

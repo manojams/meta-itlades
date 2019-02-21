@@ -1,0 +1,13 @@
+SUMMARY = "Italdes python supervisor"
+LICENSE = "CLOSED"
+
+RDEPENDS_${PN} = "\
+    ca10-CommManager \
+    ital-main-app-gitrel \
+    ital-py-supervisor-gitrel \
+    ital-config-model-ca10-test \
+    ital-confignetwork-git \  
+    ital-media-audio \
+    ital-media-video \
+    ital-config-model-ca10-test \
+    "
