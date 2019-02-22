@@ -1,10 +1,12 @@
 SUMMARY = "Italdes Qt Python App"
 DESCRIPTION = "Italdes Qt Python app"
 LICENSE = "CLOSED"
+inherit gitpkgv
 
 DEPENDS = "qtdeclarative qtsvg"
 
-SRCREV = "0b581fdca73075ed5da6b27be82c0884c5c6778e"
+#SRCREV = "0b581fdca73075ed5da6b27be82c0884c5c6778e"
+SRCREV = "${AUTOREV}"
 SRC_URI = "git://git@192.168.12.15/qt-group/arm/qt-python-service-app.git;protocol=ssh;branch=master"
 
 
@@ -18,5 +20,6 @@ do_install() {
 }
 
 FILES_${PN} += "opt/bin/"
+PKGV = "${GITPKGVTAG}"
 
 RDEPENDS_${PN} = "qtdeclarative-qmlplugins qtgraphicaleffects-qmlplugins ital-qt-py-app-service"
