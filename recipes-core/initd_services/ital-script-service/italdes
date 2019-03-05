@@ -3,7 +3,7 @@ RUNAS=root
 NAME=italdes_service
 
 PIDFILE=/var/run/$NAME.pid
-LOGFILE=/sdcard/log/$NAME.log
+LOGFILE=/var/log/$NAME.log
 
 start() {
   if [ -f /var/run/$PIDNAME ] && kill -0 $(cat /var/run/$PIDNAME); then
