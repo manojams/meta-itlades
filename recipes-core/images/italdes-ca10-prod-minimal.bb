@@ -64,6 +64,8 @@ IMAGE_INSTALL_append_mx6 = " \
     ital-py-supervisor-gitprod \
     ital-script-service \
     autossh \
+    ital-wvdialChat \
+    wvdial \
     "
 
 DISTRO_FEATURES_append = " opengl"
