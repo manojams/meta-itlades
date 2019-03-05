@@ -13,7 +13,6 @@
       <packagereq type="mandatory">ca10-CommManager</packagereq>
       <packagereq type="mandatory">ital-main-app-gitdev</packagereq>
       <packagereq type="mandatory">ital-py-supervisor-gitprod</packagereq>
-      <packagereq type="mandatory">ital-config-model-ca10-test</packagereq>
       <packagereq type="mandatory">ital-confignetwork-git</packagereq>
       <packagereq type="mandatory">ital-media-audio</packagereq>
       <packagereq type="mandatory">ital-media-video</packagereq>
