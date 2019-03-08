@@ -1,4 +1,4 @@
-SUMMARY = "Italdes Service for starting the qt amin app"
+SUMMARY = "Italdes Python supervisor"
 SECTION = "CAN"
 LICENSE = "CLOSED"
 
@@ -6,7 +6,7 @@ inherit update-rc.d
 
 SRC_URI = "file://pysupervisor"
 
-INITSCRIPT_PARAMS = "defaults 99"
+INITSCRIPT_PARAMS = "defaults 90"
 INITSCRIPT_NAME = "pysupervisor"
 
 do_install() {
