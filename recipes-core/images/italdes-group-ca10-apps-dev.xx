@@ -1,7 +1,9 @@
 SUMMARY = "Italdes python supervisor"
 LICENSE = "CLOSED"
 
-RDEPENDS_${PN} = "\
+inherit packagegroup
+
+RDEPENDS_${PN}_mx6 = "\
     ca10-CommManager \
     ital-main-app-gitdev \
     ital-py-supervisor-gitprod \
