@@ -66,7 +66,7 @@ tar xvf $FILES_DIR/rootfs.tar.bz2 -C /rootfs
 
 echo -n -e \\x08 > /proc/$PROCESSO/fd/0
 fw_setenv fdt_file icorem6dl-italdes.dtb
-fw_setenv bootargs console=ttymxc3,115200 vt.global_cursor_default=0 cma=0MB video=${video_type},${lcd_panel}
+fw_setenv bootargs console=ttymxc3,115200 vt.global_cursor_default=0 cma=0MB video=mxcfb0:dev=lcd,LCD-DENST
 fw_setenv lcd_panel LCD-DENST
 sync
 echo -n -e \\x09 > /proc/$PROCESSO/fd/0
