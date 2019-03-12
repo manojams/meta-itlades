@@ -3,6 +3,7 @@ DESCRIPTION = "Copy Italdes common files"
 LICENSE = "CLOSED"
 
 SRC_URI = "file://etc/iptables-save \
+					file://etc/rotation \
 	       file://etc/udev/rules.d/99-italdes.rules\
          file://home/root/chk_vpu_err.sh\
          file://home/root/configurazione.sh\
@@ -20,6 +21,7 @@ S = "${WORKDIR}"
 do_install () {
 	install -d ${D}/etc
   install -m 0444 ${WORKDIR}/etc/iptables-save ${D}/etc/iptables-save
+	install -m 0444 ${WORKDIR}/etc/rotation ${D}/etc/rotation
 	install -d ${D}/etc/udev
 	install -d ${D}/etc/udev/rules.d
 	install -m 0444 ${WORKDIR}/etc/udev/rules.d/99-italdes.rules ${D}/etc/udev/rules.d/99-italdes.rules
