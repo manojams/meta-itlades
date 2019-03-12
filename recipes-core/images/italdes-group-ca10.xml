@@ -11,6 +11,7 @@
    <description>CA10</description>
     <packagelist>
       <packagereq type="mandatory">ca10-CommManager</packagereq>
+      <packagereq type="mandatory">ca10-service</packagereq>
       <packagereq type="mandatory">ital-main-app-gitdev</packagereq>
       <packagereq type="mandatory">ital-confignetwork-git</packagereq>
     </packagelist>
