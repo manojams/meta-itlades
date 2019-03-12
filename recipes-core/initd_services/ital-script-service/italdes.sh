@@ -109,12 +109,8 @@ cat /etc/iptables-save | iptables-restore -c
 echo "Avvio openvpn in daemon mode"
 openvpn --config /etc/openvpn/client.conf &> /dev/null &
 
-###########################################
-## Avvio applicazioni
-###########################################
-#stop spashscreen
-killall psplash
-umount -l /mnt/.psplash
+
+
 
 #alza l'audio al massimo
 amixer set Headphone 127 &> /dev/null
