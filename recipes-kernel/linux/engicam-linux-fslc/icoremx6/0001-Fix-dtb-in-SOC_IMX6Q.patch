@@ -1,0 +1,32 @@
+From 4d621e59c920e21d00ed1f2371e1fe37e684c419 Mon Sep 17 00:00:00 2001
+From: root <you@example.com>
+Date: Mon, 1 Apr 2019 11:51:28 +0200
+Subject: [PATCH] Fix dtb in SOC_IMX6Q
+
+---
+ arch/arm/boot/dts/Makefile | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/arch/arm/boot/dts/Makefile b/arch/arm/boot/dts/Makefile
+index c7f43b0..8e7b80c 100644
+--- a/arch/arm/boot/dts/Makefile
++++ b/arch/arm/boot/dts/Makefile
+@@ -254,6 +254,7 @@ dtb-$(CONFIG_SOC_IMX53) += \
+ 	imx53-tx53-x13x.dtb \
+ 	imx53-voipac-bsb.dtb
+ dtb-$(CONFIG_SOC_IMX6Q) += \
++        icorem6dl-italdes.dtb \
+ 	imx6dl-aristainetos_4.dtb \
+ 	imx6dl-aristainetos_7.dtb \
+ 	imx6dl-cubox-i.dtb \
+@@ -356,7 +357,6 @@ dtb-$(CONFIG_SOC_IMX6Q) += \
+ 	imx6dqscm-1gb-qwks-rev3-hdcp-fix-ldo.dtb \
+ 	imx6dqscm-1gb-qwks-rev3-btwifi-fix-ldo.dtb
+ dtb-$(CONFIG_SOC_IMX6SL) += \
+-	icorem6dl-italdes.dts \
+ 	imx6sl-evk.dtb \
+ 	imx6sl-evk-btwifi.dtb \
+ 	imx6sl-evk-ldo.dtb \
+-- 
+2.1.4
+
