@@ -40,11 +40,12 @@ IMAGE_INSTALL_append_mx6 = " \
     psplash \
     nano \
     openssh-misc \
-    sshpass \
+    openvpn \
     openct opensc \
     sqlite3 \
     qca \
     ntp \
+    ntpdate \
     tzdata \
     gst-meta-video \
     gstreamer1.0-plugins-imx \
@@ -63,7 +64,6 @@ IMAGE_INSTALL_append_mx6 = " \
     ital-common-files \
     ital-py-supervisor-gitprod \
     ital-script-service \
-    autossh \
     wvdial \
     "
 
