@@ -9,7 +9,7 @@ SRC_URI = "file://etc/iptables-save \
          file://home/root/configurazione.sh\
          file://home/root/comandi.txt\
          file://home/root/dhcp_enabled\
-         file://home/root/ntpd_check.sh\
+         file://home/root/ntpDate.sh\
          file://home/root/rfid_update.sh\
          file://home/root/service.txt\
          file://home/root/drop_cache.sh\
@@ -31,7 +31,7 @@ do_install () {
   install -m 0555 ${WORKDIR}/home/root/chk_vpu_err.sh  ${D}/home/root/chk_vpu_err.sh
   install -m 0555 ${WORKDIR}/home/root/configurazione.sh  ${D}/home/root/configurazione.sh
   install -m 0444 ${WORKDIR}/home/root/dhcp_enabled  ${D}/home/root/dhcp_enabled
-  install -m 0555 ${WORKDIR}/home/root/ntpd_check.sh  ${D}/home/root/ntpd_check.sh
+  install -m 0555 ${WORKDIR}/home/root/ntpDate.sh  ${D}/home/root/
   install -m 0555 ${WORKDIR}/home/root/rfid_update.sh  ${D}/home/root/rfid_update.sh
   install -m 0444 ${WORKDIR}/home/root/service.txt  ${D}/home/root/service.txt
   install -m 0444 ${WORKDIR}/home/root/comandi.txt  ${D}/home/root/comandi.txt
