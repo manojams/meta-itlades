@@ -22,4 +22,15 @@ KERNEL=="ttyACM*", KERNELS=="1-1:1.0", SYMLINK+="ttyREAR"
 KERNEL=="ttyACM*", KERNELS=="2-1.2:1.0", SYMLINK+="ttyDOOR"
 
 #recola convertitore USB/1WIRE
-SUBSYSTEM=="tty", ATTRS{idVendor}=="10c4", ATTRS{idProduct}=="ea60", SYMLINK+="ttyLOCK"
+#sembra avere dei problemi
+#SUBSYSTEM=="tty", ATTRS{idVendor}=="10c4", ATTRS{idProduct}=="ea60", SYMLINK+="ttyLOCK"
+
+#regola printer
+KERNEL=="ttyUSB*", ENV{ID_VENDOR_ID}=="0403", ENV{ID_MODEL_ID}=="6001", SYMLINK+="ttyPRINTER"
+
+#regola GSM Telit
+KERNEL=="ttyUSB*", ENV{ID_VENDOR_ID}=="1bc7", ENV{ID_MODEL_ID}=="1201", ATTRS{bInterfaceNumber}=="00", SYMLINK+="ttyMODEM1"
+KERNEL=="ttyUSB*", ENV{ID_VENDOR_ID}=="1bc7", ENV{ID_MODEL_ID}=="1201", ATTRS{bInterfaceNumber}=="03", SYMLINK+="ttyMODEM2"
+KERNEL=="ttyUSB*", ENV{ID_VENDOR_ID}=="1bc7", ENV{ID_MODEL_ID}=="1201", ATTRS{bInterfaceNumber}=="04", SYMLINK+="ttyMODEM3"
+KERNEL=="ttyUSB*", ENV{ID_VENDOR_ID}=="1bc7", ENV{ID_MODEL_ID}=="1201", ATTRS{bInterfaceNumber}=="05", SYMLINK+="ttyMODEM4"
+KERNEL=="ttyUSB*", ENV{ID_VENDOR_ID}=="1bc7", ENV{ID_MODEL_ID}=="1201", ATTRS{bInterfaceNumber}=="06", SYMLINK+="ttyMODEM5"

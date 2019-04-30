@@ -77,8 +77,7 @@ DISTRO_FEATURES_remove = "bluez5 bluetooth irda pcmcia wifi nfc usbgadget 3g"
 export IMAGE_BASENAME = "italdes-ca10-prod-minimal"
 
 update_rootfs() {
-  tar -xzvf ${IMAGE_ROOTFS}/home/root/ttyX.tar.gz -C ${IMAGE_ROOTFS}/home/root/
-  rm ${IMAGE_ROOTFS}/home/root/ttyX.tar.gz
+
 }
 
 ROOTFS_POSTPROCESS_COMMAND += "update_rootfs;"

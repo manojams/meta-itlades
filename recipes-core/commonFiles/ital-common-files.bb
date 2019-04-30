@@ -13,7 +13,6 @@ SRC_URI = "file://etc/iptables-save \
          file://home/root/rfid_update.sh\
          file://home/root/service.txt\
          file://home/root/drop_cache.sh\
-         file://home/root/ttyX.tar.gz;unpack=0 \
          "
 
 S = "${WORKDIR}"
@@ -27,7 +26,6 @@ do_install () {
 	install -m 0444 ${WORKDIR}/etc/udev/rules.d/99-italdes.rules ${D}/etc/udev/rules.d/99-italdes.rules
   install -d ${D}/home
   install -d ${D}/home/root
-  cp -rf  ${WORKDIR}/home/root/ttyX.tar.gz ${D}/home/root/
   install -m 0555 ${WORKDIR}/home/root/chk_vpu_err.sh  ${D}/home/root/chk_vpu_err.sh
   install -m 0555 ${WORKDIR}/home/root/configurazione.sh  ${D}/home/root/configurazione.sh
   install -m 0444 ${WORKDIR}/home/root/dhcp_enabled  ${D}/home/root/dhcp_enabled
