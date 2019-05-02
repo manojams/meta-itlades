@@ -1,7 +1,8 @@
 SCRIPT=/usr/bin/wvdial
 PROVIDER=Wind
 RUNAS=root
-NAME=wvdial
+NAME=Telit
+TTYMODEM=/dev/ttyMODEM3
 
 PIDFILE=/var/run/$NAME.pid
 LOGFILE=/sdcard/log/$NAME.log
@@ -12,9 +13,9 @@ start() {
     return 1
   fi
  local i=0
- while [ ! -e /dev/ttyUSB2  ] && [ "$i" -lt "20" ]; do
+ while [ ! -e $TTYMODEM  ] && [ "$i" -lt "20" ]; do
        (( ++i ))
-       echo 'Wait GSM for dev/ttyUSB2' >&2
+       echo 'Wait GSM ttyMODEM' >&2
        sleep 1
  done
 
