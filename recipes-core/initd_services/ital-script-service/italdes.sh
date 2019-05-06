@@ -97,20 +97,5 @@ fi
 echo "Imposto il Firewall"
 cat /etc/iptables-save | iptables-restore -c
 
-###########################################
-## openvpn
-###########################################
-#nota: il demone provvede automaticamente a gestire
-#le interruzioni di connettività. Appena la rete viene
-#ripristinata, riavvia automaticamente la VPN.
-#Possiamo quindi lanciarlo prima di ifup.
-#Solitamente openvpn viene lanciato come servizio
-#in uno degli script di avvio
-echo "Avvio openvpn in daemon mode"
-openvpn --config /etc/openvpn/client.conf &> /dev/null &
-
-
-
-
 #alza l'audio al massimo
 amixer set Headphone 127 &> /dev/null
