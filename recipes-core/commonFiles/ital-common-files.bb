@@ -6,7 +6,6 @@ SRC_URI = "file://etc/iptables-save \
 					file://etc/rotation \
 	       file://etc/udev/rules.d/99-italdes.rules\
          file://home/root/chk_vpu_err.sh\
-         file://home/root/configurazione.sh\
          file://home/root/comandi.txt\
          file://home/root/dhcp_enabled\
          file://home/root/ntpDate.sh\
@@ -27,7 +26,6 @@ do_install () {
   install -d ${D}/home
   install -d ${D}/home/root
   install -m 0555 ${WORKDIR}/home/root/chk_vpu_err.sh  ${D}/home/root/chk_vpu_err.sh
-  install -m 0555 ${WORKDIR}/home/root/configurazione.sh  ${D}/home/root/configurazione.sh
   install -m 0444 ${WORKDIR}/home/root/dhcp_enabled  ${D}/home/root/dhcp_enabled
   install -m 0555 ${WORKDIR}/home/root/ntpDate.sh  ${D}/home/root/
   install -m 0555 ${WORKDIR}/home/root/rfid_update.sh  ${D}/home/root/rfid_update.sh
