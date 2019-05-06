@@ -64,6 +64,8 @@ IMAGE_INSTALL_append_mx6 = " \
     ital-common-files \
     ital-py-supervisor-gitprod \
     ital-script-service \
+    ital-conf-vpn \
+    ital-script-vpn \
     wvdial \
     "
 
