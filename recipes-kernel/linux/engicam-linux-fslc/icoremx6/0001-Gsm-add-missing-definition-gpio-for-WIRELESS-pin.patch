@@ -1,0 +1,26 @@
+From bc2ec202cafbdcd880a6a6a480a3005f21ef4ffa Mon Sep 17 00:00:00 2001
+From: root <you@example.com>
+Date: Tue, 7 May 2019 10:19:14 +0200
+Subject: [PATCH] Gsm add missing definition gpio for WIRELESS pin
+
+---
+ arch/arm/boot/dts/icorem6dl-italdes.dts | 2 ++
+ 1 file changed, 2 insertions(+)
+
+diff --git a/arch/arm/boot/dts/icorem6dl-italdes.dts b/arch/arm/boot/dts/icorem6dl-italdes.dts
+index 5387aed..1e6ad54 100644
+--- a/arch/arm/boot/dts/icorem6dl-italdes.dts
++++ b/arch/arm/boot/dts/icorem6dl-italdes.dts
+@@ -332,7 +332,9 @@
+ 				MX6QDL_PAD_CSI0_DAT19__GPIO6_IO05  0x17059 /*GPIO_OUT1_SPARE*/
+ 				MX6QDL_PAD_CSI0_VSYNC__GPIO5_IO21  0x17059 /*GPIO_OUT2_SPARE*/
+ 				MX6QDL_PAD_CSI0_DAT14__GPIO6_IO00 0x17059 /*SOM_WAKEn_UMTS*/
++				MX6QDL_PAD_CSI0_DAT15__GPIO6_IO01 0x17059 /*GPIO_SOM_UMTS_WIRELESS_OFFn*/
+ 				MX6QDL_PAD_CSI0_DAT16__GPIO6_IO02 0x17059 /*SOM_UMTS_RESETn*/
++
+ 			>;
+ 		};
+ 		pinctrl_pwm1_3: pwm1grp-3 {
+-- 
+2.1.4
+

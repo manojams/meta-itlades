@@ -205,7 +205,7 @@ index 0000000..996acc1
 +
 +		GPIO_SOM_UMTS_WIRELESS_OFFn {
 + 		        gpio-export,name = "SOM_UMTS_WIRELESS_OFFn";
-+			gpio-export,output = <0>;
++			gpio-export,output = <1>;
 +			gpio-export,direction_may_change;
 + 		        gpios = <&gpio6 1 0>;
 + 		};
@@ -219,7 +219,7 @@ index 0000000..996acc1
 +		        gpio-export,name = "SOM_UMTS_RESETn";
 +			gpio-export,output = <1>;
 +			gpio-export,direction_may_change;
-+		        gpios = <&gpio6 2 1>;
++		        gpios = <&gpio6 2 0>;
 +		};
 +	};
 +};
