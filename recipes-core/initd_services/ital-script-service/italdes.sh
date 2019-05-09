@@ -65,15 +65,6 @@ umount /mnt
 #quindi creo il file segnaposto (nota sta in RAM, allo startup non è presente)
 dmesg | grep "time is not reliable" && touch /var/run/rtc_invalid_date
 
-###########################################
-## DNS e DHCP
-###########################################
-#se presente il flag segnaposto lancio il client DHCP
-#che va subito in background.
-#All'ottenimento del lease chiama uno script di default
-if [ -e "/home/root/dhcp_enabled" ]; then
-  echo "ETH: lancio il client DHCP"
-  udhcpc -b &
 #altrimenti imposto indirizzo IP statico
 #i parametri sono già presenti nel file /etc/network/interfaces
 else
