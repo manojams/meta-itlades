@@ -1,13 +1,19 @@
 SCRIPT=/usr/bin/wvdial
-PROVIDER=Wind
+PROVIDER=Telit
 RUNAS=root
-NAME=Telit
+NAME=wvdial
 TTYMODEM=/dev/ttyMODEM3
 
 PIDFILE=/var/run/$NAME.pid
 LOGFILE=/sdcard/log/$NAME.log
 
 start() {
+
+ if [ -f /sys/class/net/eth1/operstate ]; then
+    echo 'Not running since ETH1 is up' >&2
+    return 1
+  fi
+
   if [ -f /var/run/$PIDNAME ] && kill -0 $(cat /var/run/$PIDNAME); then
     echo 'Service already running' >&2
     return 1
