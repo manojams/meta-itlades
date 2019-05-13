@@ -11,7 +11,6 @@ do_install () {
 	install -d ${D}/etc
 	install -m 0444 ${WORKDIR}/wvdial.conf  ${D}/etc/
 }
-
-
+                
 PACKAGES = "${PN}"
 FILES_${PN} += "etc"
