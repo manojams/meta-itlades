@@ -1,0 +1,12 @@
+[oe-repo-italdes-rpm-ssl]
+name=Italdes CA10 Repository SSL
+baseurl=https://repo.italdes.it:22443/italdes-rpm
+sslverify=1
+sslclientcert=/home/root/certificate/repo.italdes.it.client.crt
+sslclientkey=/home/root/certificate/repo.italdes.it.client.key
+enabled=1
+
+[oe-repo-italdes-rpm-internal]
+name=Italdes CA10 Repository Internal
+baseurl=http://192.168.228.224/italdes-rpm
+enabled=0
