@@ -67,6 +67,9 @@ IMAGE_INSTALL_append_mx6 = " \
     ital-conf-vpn \
     ital-script-vpn \
     wvdial \
+    ital-wvdialChat \
+    ital-dnf-repo-cert \
+    sshpass \
     "
 
 DISTRO_FEATURES_append = " opengl"
@@ -78,8 +81,5 @@ DISTRO_FEATURES_remove = "bluez5 bluetooth irda pcmcia wifi nfc usbgadget 3g"
 
 export IMAGE_BASENAME = "italdes-ca10-prod-minimal"
 
-update_rootfs() {
-
-}
 
 ROOTFS_POSTPROCESS_COMMAND += "update_rootfs;"
