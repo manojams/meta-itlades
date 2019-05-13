@@ -16,6 +16,7 @@ RDEPENDS_${PN} = "\
     ${PYTHON_PN}-threading \
     ${PYTHON_PN}-paho-mqtt \
     ${PYTHON_PN}-xml \
+    ${PYTHON_PN}-pyserial \
     ital-py-supervisor-service \
     ital-py-app-git"
 
