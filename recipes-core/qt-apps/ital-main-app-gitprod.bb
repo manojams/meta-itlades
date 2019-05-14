@@ -5,7 +5,7 @@ inherit gitpkgv
 
 DEPENDS = "qtdeclarative qtgraphicaleffects qtmultimedia qtsvg qtserialport qca"
 SRCREV = "${AUTOREV}"
-SRC_URI = "git://git@192.168.12.15/qt-group/arm/blackarm-qt-ca10.git;protocol=ssh;branch=master"
+SRC_URI = "git://git@192.168.228.215/qt-group/arm/blackarm-qt-ca10.git;protocol=ssh;branch=master"
 
 #TARGET_CFLAGS +=
 

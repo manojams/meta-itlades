@@ -1,11 +1,12 @@
 SUMMARY = "Italdes Qt Main App"
 DESCRIPTION = "Italdes Qt main app"
 LICENSE = "CLOSED"
+inherit gitpkgv
 
 DEPENDS = "qtdeclarative qtgraphicaleffects qtmultimedia qtsvg qtserialport qca"
-
-SRCREV = "a00cc5a980a8ed1caef754bd9de996a5e901ac13"
-SRC_URI = "git://git@192.168.12.15/qt-group/arm/blackarm-qt-ca10.git;protocol=ssh;branch=ca10qml"
+#TAG = "v1.1"
+SRCREV = "${AUTOREV}"
+SRC_URI = "git://git@192.168.228.215/qt-group/arm/blackarm-qt-ca10.git;protocol=ssh;branch=ca10qmldev"
 
 #TARGET_CFLAGS +=
 
@@ -20,5 +21,8 @@ do_install() {
 
 #FILES_${PN}-dbg += "${datadir}/${P}/.debug"
 FILES_${PN} += "opt/bin/"
+
+PKGV = "${GITPKGVTAG}"
+#PV = "0.12-git${SRCPV}"
 
 RDEPENDS_${PN} = "qtdeclarative-qmlplugins qtgraphicaleffects-qmlplugins ital-qt-main-app-service"
