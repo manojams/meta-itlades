@@ -17,6 +17,7 @@ RDEPENDS_${PN} = "\
     ${PYTHON_PN}-paho-mqtt \
     ${PYTHON_PN}-xml \
     ${PYTHON_PN}-pyserial \
+    ${PYTHON_PN}-requests \
     ital-py-supervisor-service \
     ital-py-app-git"
 
