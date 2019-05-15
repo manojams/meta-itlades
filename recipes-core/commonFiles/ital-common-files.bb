@@ -24,13 +24,15 @@ do_install () {
 	install -m 0444 ${WORKDIR}/etc/udev/rules.d/99-italdes.rules ${D}/etc/udev/rules.d/99-italdes.rules
   install -d ${D}/home
   install -d ${D}/home/root
-  install -m 0555 ${WORKDIR}/home/root/chk_vpu_err.sh  ${D}/home/root/chk_vpu_err.sh
-  install -m 0555 ${WORKDIR}/home/root/ntpDate.sh  ${D}/home/root/
-  install -m 0555 ${WORKDIR}/home/root/rfid_update.sh  ${D}/home/root/rfid_update.sh
-  install -m 0444 ${WORKDIR}/home/root/service.txt  ${D}/home/root/service.txt
-  install -m 0444 ${WORKDIR}/home/root/comandi.txt  ${D}/home/root/comandi.txt
-  install -m 0555 ${WORKDIR}/home/root/drop_cache.sh  ${D}/home/root/drop_cache.sh
+	install -m 0444 ${WORKDIR}/home/root/comandi.txt  ${D}/home/root/comandi.txt
+	install -m 0444 ${WORKDIR}/home/root/service.txt  ${D}/home/root/service.txt
+	install -d ${D}/home/root/script
+  install -m 0555 ${WORKDIR}/home/root/chk_vpu_err.sh  ${D}/home/root/script/
+  install -m 0555 ${WORKDIR}/home/root/ntpDate.sh  ${D}/home/root/script/
+  install -m 0555 ${WORKDIR}/home/root/rfid_update.sh  ${D}/home/root/script/  
+  install -m 0555 ${WORKDIR}/home/root/drop_cache.sh  ${D}/home/root/script/
 }
 
 FILES_${PN} += "etc/"
 FILES_${PN} += "home/root/"
+FILES_${PN} += "home/root/script"

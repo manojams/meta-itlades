@@ -8,9 +8,8 @@ SRC_URI = "file://configurazione.sh\
 S = "${WORKDIR}"
 
 do_install () {
-  install -d ${D}/home/root
-  install -m 0555 ${WORKDIR}/configurazione.sh  ${D}/home/root/configurazione.sh
+  install -d ${D}/home/root/script
+  install -m 0555 ${WORKDIR}/configurazione.sh  ${D}/home/root/script/configurazione.sh
 }
 
-FILES_${PN} += "etc/"
-FILES_${PN} += "home/root/"
+FILES_${PN} += "home/root/script/"
