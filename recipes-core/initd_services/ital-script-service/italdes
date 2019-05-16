@@ -3,14 +3,20 @@ RUNAS=root
 NAME=italdes_service
 
 PIDFILE=/var/run/$NAME.pid
-LOGFILE=/var/log/$NAME.log
+LOGDIR=/home/root/log/
+LOGNAME=$NAME.log
+LOGFILE=$LOGDIR$LOGNAME
 
 start() {
+  if [ ! -d $LOGDIR ]; then
+      mkdir $LOGDIR
+  fi
+
   if [ -f /var/run/$PIDNAME ] && kill -0 $(cat /var/run/$PIDNAME); then
     echo 'Service already running' >&2
     return 1
   fi
-  echo 'Starting service…' >&2
+  echo "Starting service $NAME …" >&2
   local CMD="$SCRIPT &> \"$LOGFILE\" & echo \$!"
   su -c "$CMD" $RUNAS > "$PIDFILE"
   echo 'Service started' >&2

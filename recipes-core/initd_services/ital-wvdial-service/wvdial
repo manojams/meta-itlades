@@ -5,9 +5,14 @@ NAME=wvdial
 TTYMODEM=/dev/ttyMODEM3
 
 PIDFILE=/var/run/$NAME.pid
-LOGFILE=/sdcard/log/$NAME.log
+LOGDIR=/home/root/log/
+LOGNAME=$NAME.log
+LOGFILE=$LOGDIR$LOGNAME
 
 start() {
+  if [ ! -d $LOGDIR ]; then
+      mkdir $LOGDIR
+  fi
 
  if [ -f /sys/class/net/eth1/operstate ]; then
     echo 'Not running since ETH1 is up' >&2
@@ -26,7 +31,7 @@ start() {
  done
 
 
-  echo 'Starting service…' >&2
+  echo "Starting service $NAME …" >&2
   local CMD="$SCRIPT $PROVIDER &> \"$LOGFILE\" & echo \$!"
   su -c "$CMD" $RUNAS > "$PIDFILE"
   echo 'Service started' >&2
