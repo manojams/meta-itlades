@@ -4,7 +4,7 @@ LOOP=true
 
 while [ $LOOP == true ]; do
         /etc/init.d/ntpd stop
-        echo "Trying ntpdate"
+        #echo "Trying ntpdate"
         ntpdate guardian.italdes.it
         ret=$?
         /etc/init.d/ntpd start
@@ -12,7 +12,7 @@ while [ $LOOP == true ]; do
            echo "Ntp date OK"
            LOOP=false
         else
-           echo "Ntp date failure, sleep"
-           sleep 2
+           #echo "Ntp date failure, sleep"
+           sleep 3
         fi
 done
