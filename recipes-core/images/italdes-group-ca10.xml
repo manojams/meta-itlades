@@ -66,7 +66,7 @@
     <packagelist>
       <packagereq type="mandatory">packagegroup-qt5-qtcreator-debug</packagereq>
       <packagereq type="mandatory">fw-nandautosize</packagereq>
-      <packagereq type="mandatory">u-boot-eng-fw-utils</packagereq>
+      <packagereq type="mandatory">u-boot-fw-utils</packagereq>
       <packagereq type="mandatory">engicam-mtd-script</packagereq>
       <packagereq type="mandatory">mtd-utils</packagereq>
       <packagereq type="mandatory">imx-kobs</packagereq>

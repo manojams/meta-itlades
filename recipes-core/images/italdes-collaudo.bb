@@ -77,7 +77,7 @@ IMAGE_INSTALL_append = " \
 	imx-kobs \
 	mtd-utils-ubifs \
 	fw-nandautosize \
-	u-boot-eng-fw-utils \
+	u-boot-fw-utils \
 "
 
 #PACKAGES DEBUG
