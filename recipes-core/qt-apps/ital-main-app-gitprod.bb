@@ -13,6 +13,8 @@ S = "${WORKDIR}/git"
 
 require recipes-qt/qt5/qt5.inc
 
+EXTRA_QMAKEVARS_PRE += "CONFIG+=debug"
+
 do_install() {
     install -d ${D}/opt/bin/
     install -m 0755 ${B}/blackarm ${D}/opt/bin/
