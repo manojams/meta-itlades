@@ -69,6 +69,7 @@ IMAGE_INSTALL_append_mx6 = " \
     wvdial \
     ital-wvdialChat \
     ital-dnf-repo-cert \
+    ital-mqtt-cert \
     sshpass \
     "
 
