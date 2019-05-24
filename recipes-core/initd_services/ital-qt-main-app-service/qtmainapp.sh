@@ -9,7 +9,7 @@ logger -s "LOGFILE: $LOGFILE"
 logger -s "SCRIPT: $SCRIPT"
 
 cmd() {
-  $SCRIPT 2>&1 | tee -a $LOGFILE
+  $SCRIPT &> $LOGFILE
 }
 
 LOOP=$(cat "$LOOPFILE")
