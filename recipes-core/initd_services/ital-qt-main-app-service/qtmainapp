@@ -50,9 +50,17 @@ soft(){
   echo "false" > "$LOOPFILE"
 }
 
-
 uninstall() {
-
+  echo -n "Are you really sure you want to uninstall this service? That cannot be undone. [yes|No] "
+  local SURE
+  read SURE
+  if [ "$SURE" = "yes" ]; then
+    stop
+    rm -f "$PIDFILE"
+    echo "Notice: log file is not be removed: '$LOGFILE'" >&2
+    update-rc.d -f $NAME remove
+    rm -fv "$0"
+  fi
 }
 
 case "$1" in
@@ -64,6 +72,9 @@ case "$1" in
     ;;
   soft)
     soft
+    ;;
+  uninstall)
+    uninstall
     ;;
   retart)
     stop
