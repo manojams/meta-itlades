@@ -21,6 +21,9 @@ start() {
         logger -s 'Not running since ETH1 is up'
         return 1
     fi
+    else
+    logger -s 'ifdown eth1 since not UP'
+     ifdown eth1
   fi
 
   if [ -f /var/run/$PIDNAME ] && kill -0 $(cat /var/run/$PIDNAME); then
@@ -35,6 +38,10 @@ start() {
        sleep 1
  done
 
+ if [ ! -e $TTYMODEM ]; then
+       logger -s 'TTYMODEM not found, exit'
+       return 1
+  fi
 
   #echo "Starting service $NAME …" >&2
   logger -s "Starting service $NAME"
