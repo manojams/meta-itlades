@@ -15,8 +15,15 @@ start() {
   fi
 
  if [ -f /sys/class/net/eth1/operstate ]; then
-    echo 'Not running since ETH1 is up' >&2
-    return 1
+    state=$(</sys/class/net/eth1/operstate)
+    if [ "$state" == "up" ]; then
+        #echo 'Not running since ETH1 is up' >&2
+        logger -s 'Not running since ETH1 is up'
+        return 1
+    fi
+    else
+    logger -s 'ifdown eth1 since not UP'
+     ifdown eth1
   fi
 
   if [ -f /var/run/$PIDNAME ] && kill -0 $(cat /var/run/$PIDNAME); then
@@ -24,14 +31,20 @@ start() {
     return 1
   fi
  local i=0
- while [ ! -e $TTYMODEM  ] && [ "$i" -lt "20" ]; do
+ while [ ! -e $TTYMODEM  ] && [ "$i" -lt "30" ]; do
        (( ++i ))
-       echo 'Wait GSM ttyMODEM' >&2
+       #echo 'Wait GSM ttyMODEM' >&2
+       logger -s 'Wait GSM ttyMODEM'
        sleep 1
  done
 
+ if [ ! -e $TTYMODEM ]; then
+       logger -s 'TTYMODEM not found, exit'
+       return 1
+  fi
 
-  echo "Starting service $NAME …" >&2
+  #echo "Starting service $NAME …" >&2
+  logger -s "Starting service $NAME"
   local CMD="$SCRIPT $PROVIDER &> \"$LOGFILE\" & echo \$!"
   su -c "$CMD" $RUNAS > "$PIDFILE"
   echo 'Service started' >&2
