@@ -7,6 +7,10 @@ LOGDIR=/home/root/log/
 LOGNAME=$NAME.log
 LOGFILE=$LOGDIR$LOGNAME
 
+cmd() {
+  $SCRIPT &>  $LOGFILE
+}
+
 start() {
   if [ ! -d $LOGDIR ]; then
       mkdir $LOGDIR
@@ -17,8 +21,7 @@ start() {
     return 1
   fi
   echo "Starting service $NAME …" >&2
-  local CMD="$SCRIPT &> \"$LOGFILE\" & echo \$!"
-  su -c "$CMD" $RUNAS > "$PIDFILE"
+  cmd
   echo 'Service started' >&2
 }
 
