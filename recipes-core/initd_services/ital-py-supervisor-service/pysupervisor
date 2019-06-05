@@ -21,7 +21,7 @@ start() {
   #killall psplash
 
   echo "Starting service $NAME …" >&2
-  local CMD="$PYTHON $SCRIPT &> \"$LOGFILE\" & echo \$!"
+  local CMD="$PYTHON $SCRIPT &>> \"$LOGFILE\" & echo \$!"
   su -c "$CMD" $RUNAS > "$PIDFILE"
   echo 'Service started' >&2
 }

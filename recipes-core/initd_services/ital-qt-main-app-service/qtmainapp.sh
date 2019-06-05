@@ -8,8 +8,10 @@ logger -s "LOOPFILE: $LOOPFILE"
 logger -s "LOGFILE: $LOGFILE"
 logger -s "SCRIPT: $SCRIPT"
 
+#  $SCRIPT &> sed '/^WARNING: cipher_setiv/d' > $LOGFILE
+
 cmd() {
-  $SCRIPT &> $LOGFILE
+  $SCRIPT &>>  $LOGFILE
 }
 
 LOOP=$(cat "$LOOPFILE")
