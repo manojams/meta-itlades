@@ -3,14 +3,24 @@ SECTION = "CAN"
 LICENSE = "CLOSED"
 
 SRC_URI = "file://prognand \
-            file://prognand.sh "
+            file://prognand.sh \
+            file://fw_env.config \
+            file://uboot-env.txt \
+            "
 
 inherit update-rc.d
 INITSCRIPT_PARAMS = "defaults 99"
 INITSCRIPT_NAME = "prognand"
 
+S = "${WORKDIR}"
+
 do_install() {
-    install -d "${D}${sysconfdir}/init.d/"
-    install -m 500 "${WORKDIR}/prognand" "${D}${sysconfdir}/init.d/"
-    install -m 500 "${WORKDIR}/prognand.sh" "${D}${sysconfdir}/init.d/"
+    install -d ${D}${sysconfdir}/init.d/
+    install -m 500 ${WORKDIR}/prognand ${D}${sysconfdir}/init.d/
+    install -d ${D}/home/root/flash_nand
+    install -m 500 ${WORKDIR}/prognand.sh ${D}/home/root/flash_nand/
+    install -m 0444 ${WORKDIR}/fw_env.config ${D}/home/root/flash_nand/
+    install -m 0444 ${WORKDIR}/uboot-env.txt ${D}//home/root/flash_nand/
 }
+
+FILES_${PN} += "/home/root/flash_nand"
