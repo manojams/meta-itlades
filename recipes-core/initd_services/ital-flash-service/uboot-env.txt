@@ -1,0 +1,38 @@
+_mmcboot=run mmcargs; run mmcargs; if test ${boot_fdt} = yes || test ${boot_fdt} = try; then if run loadfdt; then bootm ${loadaddr} - ${fdt_addr}; else if test ${boot_fdt} = try; then bootm; else echo WARN: Cannot load the DT; fi; fi; else bootm; fi
+baudrate=115200
+boot_fdt=try
+bootargs=console=ttymxc3,115200 ubi.mtd=5 vt.global_cursor_default=0 cma=0MB video=mxcfb0:dev=lcd,LCD-DENST root=ubi0:rootfs rootfstype=ubifs mtdparts=gpmi-nand:2m(spl),2m(uboot),1m(env),8m(kernel),1m(dtb),-(rootfs),
+bootcmd=run $modeboot
+bootdelay=-2
+bootscript=echo Running bootscript from mmc ...; source
+console=ttymxc3
+fdt_addr=0x18000000
+fdt_high=0xffffffff
+fdtcontroladdr=1ef37f30
+fit_image=fit.itb
+fitboot=echo Booting FIT image from mmc ...; run mmcargs; bootm ${loadaddr}
+image=uImage
+ipaddr=192.168.0.2
+loadaddr=0x12000000
+loadbootscript=fatload mmc ${mmcdev}:${mmcpart} ${loadaddr} ${script};
+loadfdt=fatload mmc ${mmcdev}:${mmcpart} ${fdt_addr} ${fdt_file}
+loadfit=fatload mmc ${mmcdev}:${mmcpart} ${loadaddr} ${fit_image}
+loadimage=fatload mmc ${mmcdev}:${mmcpart} ${loadaddr} ${image}
+mmcargs=setenv bootargs console=${console},${baudrate} root=${mmcroot}
+mmcautodetect=yes
+mmcboot=echo Booting from mmc ...; if mmc rescan; then if run loadbootscript; then run bootscript; else if run loadfit; then run fitboot; else if run loadimage; then run _mmcboot; fi; fi; fi; fi
+mmcpart=1
+modeboot=nandboot
+mtddevname=spl
+mtddevnum=0
+mtdids=nand0=gpmi-nand
+mtdparts=mtdparts=gpmi-nand:2m(spl),2m(uboot),1m(env),8m(kernel),1m(dtb),-(rootfs)
+nandroot=ubi0:rootfs rootfstype=ubifs
+partition=nand0,0
+script=boot.scr
+serverip=192.168.0.1
+splashpos=m,m
+ubiargs=setenv bootargs console=${console},${baudrate} ubi.mtd=5 root=${nandroot} ${mtdparts}
+nandboot=echo Booting from nand ...; if mtdparts; then echo Starting nand boot ...; else mtdparts default; fi; run ubiargs; nand read ${loadaddr} kernel 0x800000; nand read ${fdt_addr} dtb 0x100000; if run check_image_nand; then bootm ${loadaddr} - ${fdt_addr}; else hab_failsafe; fi
+check_image_nand=hab_auth_img ${loadaddr} 0x800000
+lcd_panel=LCD-DENST
