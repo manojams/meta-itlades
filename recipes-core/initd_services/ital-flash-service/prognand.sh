@@ -13,7 +13,8 @@ umount -l /mnt/.psplash
 FILES_DIR=/production_files
 SERVER=192.168.228.224
 
-rm -rf $FILES_DIR/*
+rm -rf $FILES_DIR
+mkdir $FILES_DIR
 cd $FILES_DIR/
 wget $SERVER/production_files/icorem6dl-italdes.dtb
 if [ $? -ne 0 ]; then

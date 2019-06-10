@@ -32,7 +32,7 @@ do_install () {
 
 RDEPENDS_${PN} = "ca10-service"
 
-#INHIBIT_PACKAGE_DEBUG_SPLIT = "1"
+INHIBIT_PACKAGE_DEBUG_SPLIT = "1"
 PACKAGES = "${PN}"
 #INSANE_SKIP_${PN} += "dev-deps"
 INSANE_SKIP_${PN} += "already-stripped"
