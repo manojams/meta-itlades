@@ -61,33 +61,31 @@ fw_setenv -c /home/root/flash_nand/fw_env.config -s /home/root/flash_nand/uboot-
 flash_erase /dev/mtd3 0 0
 nandwrite -m -p /dev/mtd3 uImage-ivt_signed
 
+flash_erase /dev/mtd4 0 0
+nandwrite -m -p /dev/mtd4 imx6dl-icore.dtb
+
 echo -n -e \\x02 > /proc/$PROCESSO/fd/0
-ubiformat -y /dev/mtd4
+ubiformat -y /dev/mtd5
 
 echo -n -e \\x03 > /proc/$PROCESSO/fd/0
-ubiattach /dev/ubi_ctrl -m 4
-#ubiattach p /dev/mtd4
+ubiattach /dev/ubi_ctrl -m 5
 
 echo -n -e \\x04 > /proc/$PROCESSO/fd/0
 #-N volume name, -s volume size in bytes
 #Modulo 512 MB
-ubimkvol /dev/ubi0 -N rootfs -s495000000
+ubimkvol /dev/ubi0 -N rootfs -s490000000
 
 echo -n -e \\x05 > /proc/$PROCESSO/fd/0
 mkdir /rootfs 2> /dev/null
 
 echo -n -e \\x06 > /proc/$PROCESSO/fd/0
-#mount -t ubifs ubi0:rootfs /rootfs
-ubiupdatevol /dev/ubi0 /XXXXXXXXXXXXX.img
-
+ubiupdatevol /dev/ubi0_0 italdes-ca10-prod-minimal-italdesicorem6solo.ubifs
 
 echo -n -e \\x07 > /proc/$PROCESSO/fd/0
 mkdir /rootfs 2> /dev/null
-mount t ubifs ubi0:volume_name /rootfs
-
+mount -t ubifs ubi0:rootfs /rootfs
 
 echo -n -e \\x08 > /proc/$PROCESSO/fd/0
-#fw_setenv bootargs console=ttymxc3,115200 vt.global_cursor_default=0 cma=0MB video=mxcfb0:dev=lcd,LCD-DENST
-#fw_setenv lcd_panel LCD-DENST
-#sync
+
+sync
 echo -n -e \\x09 > /proc/$PROCESSO/fd/0
