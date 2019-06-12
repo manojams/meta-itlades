@@ -4,7 +4,7 @@ inherit distro_features_check
 #inherit populate_sdk
 #inherit populate_sdk_${@base_contains('MACHINE', 'italdesgeam6ul', 'qt5_geam6ul', 'qt5_icore', d)}
 
-EXTRA_IMAGE_FEATURES = "debug-tweaks ssh-server-openssh "
+EXTRA_IMAGE_FEATURES = "debug-tweaks ssh-server-openssh package-management"
 
 IMAGE_INSTALL_append_mx6 = " \
   firmware-imx-vpu-imx6q \
@@ -58,6 +58,7 @@ IMAGE_INSTALL_append_mx6 = " \
     mtd-utils \
     imx-kobs \
     mtd-utils-ubifs \
+    bash \
     fw-nandautosize \
     ital-installer-gitrel \
     ital-flash-service \

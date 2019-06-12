@@ -4,7 +4,7 @@ LICENSE = "CLOSED"
 inherit gitpkgv
 
 DEPENDS = "qtdeclarative qtgraphicaleffects qtmultimedia qtsvg qtserialport"
-SRCREV = "${AUTOREV}"
+SRCREV = "9c86e554ee65f89ee1b279b46375fdbe9c01f0d7"
 SRC_URI = "git://git@192.168.228.215/qt-group/arm/blackarm-installer-qt.git;protocol=ssh;branch=master"
 
 #TARGET_CFLAGS +=
