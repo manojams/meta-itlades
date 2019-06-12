@@ -1,9 +1,10 @@
 NAME=prognand
-LOGFILE=/hone/root/log/$NAME.log
+LOGFILE=/home/root/log/$NAME.log
 
 start() {
+  mkdir /home/root/log
   echo 'Starting service…' >&2
-  /home/root/flash_nand/prognand_sboot.sh &>> \"$LOGFILE\"
+  /home/root/flash_nand/prognand_sboot.sh &> $LOGFILE
 }
 
 
