@@ -5,8 +5,8 @@ inherit gitpkgv
 
 DEPENDS = "qtdeclarative qtsvg"
 
-#SRCREV = "0b581fdca73075ed5da6b27be82c0884c5c6778e"
-SRCREV = "${AUTOREV}"
+SRCREV = "3d13197c0ce5fd30568a9f45e53ae17fa6b737f8"
+#SRCREV = "${AUTOREV}"
 SRC_URI = "git://git@192.168.228.215/qt-group/arm/qt-python-service-app.git;protocol=ssh;branch=master"
 
 

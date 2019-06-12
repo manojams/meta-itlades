@@ -12,8 +12,7 @@
     <packagelist>
       <packagereq type="mandatory">ca10-CommManager</packagereq>
       <packagereq type="mandatory">ca10-service</packagereq>
-      <packagereq type="mandatory">ital-main-app-gitprod</packagereq>
-      <packagereq type="mandatory">ital-confignetwork-git</packagereq>
+      <packagereq type="mandatory">ital-main-app-gitdev</packagereq>
       <packagereq type="mandatory">packagegroup-qt5-qtcreator-debug</packagereq>
       <packagereq type="mandatory">ital-environment-dev-ext</packagereq>
     </packagelist>
@@ -30,7 +29,6 @@
       <packagereq type="mandatory">ca10-CommManager</packagereq>
       <packagereq type="mandatory">ca10-service</packagereq>
       <packagereq type="mandatory">ital-main-app-gitprod</packagereq>
-      <packagereq type="mandatory">ital-confignetwork-git</packagereq>
       <packagereq type="mandatory">ital-environment-dev-ext</packagereq>
     </packagelist>
   </group>
