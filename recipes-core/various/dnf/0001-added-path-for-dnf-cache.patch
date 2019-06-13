@@ -6,16 +6,12 @@ Subject: [PATCH] added path for dnf cache
 ---
  etc/dnf/dnf.conf | 1 +
  1 file changed, 1 insertion(+)
-
-diff --git a/etc/dnf/dnf.conf b/etc/dnf/dnf.conf
 index 81b3e44..7395713 100644
 --- a/etc/dnf/dnf.conf
 +++ b/etc/dnf/dnf.conf
-@@ -2,3 +2,4 @@
- gpgcheck=1
+@@ -1,5 +1,5 @@
+ [main]
+-gpgcheck=1
++gpgcheck=0
  installonly_limit=3
  clean_requirements_on_remove=True
-+cachedir=/sdcard/dnfcache
--- 
-2.1.4
-
