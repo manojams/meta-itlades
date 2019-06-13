@@ -59,7 +59,6 @@ IMAGE_INSTALL_append_mx6 = " \
     imx-kobs \
     mtd-utils-ubifs \
     bash \
-    fw-nandautosize \
     ital-installer-gitrel \
     ital-flash-service \
     "
