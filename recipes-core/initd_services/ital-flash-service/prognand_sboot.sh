@@ -51,6 +51,8 @@ if [ $? -ne 0 ]; then
    exit 1
 fi
 
+fw_printenv -c /home/root/flash_nand/fw_env.config | grep ethaddr > /home/root/flash_nand/ethaddr
+
 echo -n -e \\x00 > /proc/$PROCESSO/fd/0
 echo "mtd0"
 flash_erase /dev/mtd0 0 0
@@ -71,7 +73,8 @@ fi
 
 #mtd2
 echo "mtd2"
-fw_setenv -c /home/root/flash_nand/fw_env.config -s /home/root/flash_nand/uboot-env.txt
+fw_setenv -s /home/root/flash_nand/ethaddr
+fw_setenv -s /home/root/flash_nand/uboot-env.txt
 if [ $? -ne 0 ]; then
    echo "error fw_setenv"
    exit 1
