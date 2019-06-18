@@ -9,6 +9,7 @@ SRC_URI = "file://etc/iptables-save \
          file://home/root/script/ntpDate.sh\
          file://home/root/script/rfid_update.sh\
          file://home/root/script/drop_cache.sh\
+				 file://home/root/script/kill_psplash.sh\
 				 file://home/root/configuration/service.txt\
          "
 
@@ -27,6 +28,7 @@ do_install () {
 
 	install -d ${D}/home/root/script
   install -m 0555 ${WORKDIR}/home/root/script/chk_vpu_err.sh  ${D}/home/root/script/
+	install -m 0555 ${WORKDIR}/home/root/script/kill_psplash.sh  ${D}/home/root/script/
   install -m 0555 ${WORKDIR}/home/root/script/ntpDate.sh  ${D}/home/root/script/
   install -m 0555 ${WORKDIR}/home/root/script/rfid_update.sh  ${D}/home/root/script/
   install -m 0555 ${WORKDIR}/home/root/script/drop_cache.sh  ${D}/home/root/script/
