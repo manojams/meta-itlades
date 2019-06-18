@@ -32,7 +32,7 @@ partition=nand0,0
 script=boot.scr
 serverip=192.168.0.1
 splashpos=m,m
-ubiargs=setenv bootargs console=${console},${baudrate} ubi.mtd=5 root=${nandroot} ${mtdparts} video=mxcfb0:dev=lcd,LCD-DENST
+ubiargs=setenv bootargs console=${console},${baudrate} ubi.mtd=5 root=${nandroot} ${mtdparts} cma=0MB video=mxcfb0:dev=lcd,LCD-DENST
 nandboot=echo Booting from nand ...; if mtdparts; then echo Starting nand boot ...; else mtdparts default; fi; run ubiargs; nand read ${loadaddr} kernel 0x800000; nand read ${fdt_addr} dtb 0x100000; if run check_image_nand; then bootm ${loadaddr} - ${fdt_addr}; else hab_failsafe; fi
 check_image_nand=hab_auth_img ${loadaddr} 0x800000
 panel=LCD-DENST
