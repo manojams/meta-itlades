@@ -35,7 +35,7 @@ fi
 
 
 # Crea la configurazione VPN
-sshpass -p '88:zM.bH' ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no  helpdesk@$server sudo /home/helpdesk/vpn.sh $matricola
+sshpass -p 'Xv5)pd,g' ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no  sysadmin@$server sudo /home/helpdesk/vpn.sh $matricola
 if [ $? -ne 0 ] ; then
    echo -e "\n\n*** Errore nella connessione al server. ***\n\n"
    exit 1
@@ -45,7 +45,7 @@ echo "Connesso al server"
 # Configura la VPN
 cd /etc/openvpn
 rm -f italdes-????????.*
-sshpass -p '88:zM.bH' scp -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no helpdesk@$server:/etc/openvpn/easy-rsa/2.0/keys/italdes-$matricola.* .
+sshpass -p 'Xv5)pd,g' scp -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no sysadmin@$server:/etc/openvpn/easy-rsa/2.0/keys/italdes-$matricola.* .
 if [ $? -ne 0 ] ; then
    echo -e "\n\n*** Errore nella connessione al server. ***\n\n"
    exit 1
