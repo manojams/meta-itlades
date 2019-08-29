@@ -18,37 +18,128 @@ SERVER=192.168.228.224
 sleep 5
 PROCESSO=$(pidof installer_ba)
 
-rm -rf $FILES_DIR
-mkdir $FILES_DIR
+#rimosso eliminazione e ri-creazione cartella, i file da verificare si troveranno li
+#rm -rf $FILES_DIR
+#mkdir $FILES_DIR
 cd $FILES_DIR/
-wget $SERVER/production_files/SPL-nand_signed
-if [ $? -ne 0 ]; then
-   echo "error wget SPL-nand_signed"
-   exit 1
+
+#IMPORTANTE: lo script per funzionare necessita di sshpass installato
+
+TOCHECK=SPL-nand_signed
+LOCALHASH="0000000000000000000000000000000000000000000000000000000000000000"
+if [ -f "$TOCHECK" ]
+then
+  echo "$TOCHECK found in local directory"
+  LOCALHASH=`sha256sum $TOCHECK | awk '{print $1}'`
+else
+  echo "$TOCHECK not found in directory"
 fi
-wget $SERVER/production_files/u-boot-ivt.img-nand_signed
-if [ $? -ne 0 ]; then
-   echo "error wget u-boot-ivt.img-nand_signed"
-   exit 1
+REMOTEHASH=$(sshpass -p'53dk,SWD' ssh -o StrictHostKeyChecking=no sysadmin@192.168.228.224 sha256sum /var/www/html/production_files/$TOCHECK | awk '{print $1}')
+
+if [ $LOCALHASH != $REMOTEHASH ]
+then
+  echo "$TOCHECK in local and remote directory are different"
+  rm $TOCHECK
+  wget $SERVER/production_files/$TOCHECK
+  if [ $? -ne 0 ]; then
+     echo "error wget $TOCHECK"
+     exit 1
+  fi
+else
+  echo "$TOCHECK in local and remote directory are equal"
 fi
 
-wget $SERVER/production_files/uImage-ivt_signed
-if [ $? -ne 0 ]; then
-   echo "error wget uImage-ivt_signed"
-   exit 1
+TOCHECK=u-boot-ivt.img-nand_signed
+if [ -f "$TOCHECK" ]
+then
+  echo "$TOCHECK found in local directory"
+  LOCALHASH=`sha256sum $TOCHECK | awk '{print $1}'`
+else
+  echo "$TOCHECK not found in directory"
+fi
+REMOTEHASH=$(sshpass -p'53dk,SWD' ssh -o StrictHostKeyChecking=no sysadmin@192.168.228.224 sha256sum /var/www/html/production_files/$TOCHECK | awk '{print $1}')
+
+if [ $LOCALHASH != $REMOTEHASH ]
+then
+  echo "$TOCHECK in local and remote directory are different"
+  rm $TOCHECK
+  wget $SERVER/production_files/$TOCHECK
+  if [ $? -ne 0 ]; then
+     echo "error wget $TOCHECK"
+     exit 1
+  fi
+else
+  echo "$TOCHECK in local and remote directory are equal"
 fi
 
-wget $SERVER/production_files/italdes-ca10-prod-minimal-italdesicorem6solo.ubifs
-if [ $? -ne 0 ]; then
-   echo "error wget italdes-ca10-prod-minimal-italdesicorem6solo.ubifs"
-   exit 1
+TOCHECK=uImage-ivt_signed
+if [ -f "$TOCHECK" ]
+then
+  echo "$TOCHECK found in local directory"
+  LOCALHASH=`sha256sum $TOCHECK | awk '{print $1}'`
+else
+  echo "$TOCHECK not found in directory"
+fi
+REMOTEHASH=$(sshpass -p'53dk,SWD' ssh -o StrictHostKeyChecking=no sysadmin@192.168.228.224 sha256sum /var/www/html/production_files/$TOCHECK | awk '{print $1}')
+
+if [ $LOCALHASH != $REMOTEHASH ]
+then
+  echo "$TOCHECK in local and remote directory are different"
+  rm $TOCHECK
+  wget $SERVER/production_files/$TOCHECK
+  if [ $? -ne 0 ]; then
+     echo "error wget $TOCHECK"
+     exit 1
+  fi
+else
+  echo "$TOCHECK in local and remote directory are equal"
+fi
+
+TOCHECK=italdes-ca10-prod-minimal-italdesicorem6solo.ubifs
+if [ -f "$TOCHECK" ]
+then
+  echo "$TOCHECK found in local directory"
+  LOCALHASH=`sha256sum $TOCHECK | awk '{print $1}'`
+else
+  echo "$TOCHECK not found in directory"
+fi
+REMOTEHASH=$(sshpass -p'53dk,SWD' ssh -o StrictHostKeyChecking=no sysadmin@192.168.228.224 sha256sum /var/www/html/production_files/$TOCHECK | awk '{print $1}')
+
+if [ $LOCALHASH != $REMOTEHASH ]
+then
+  echo "$TOCHECK in local and remote directory are different"
+  rm $TOCHECK
+  wget $SERVER/production_files/$TOCHECK
+  if [ $? -ne 0 ]; then
+     echo "error wget $TOCHECK"
+     exit 1
+  fi
+else
+  echo "$TOCHECK in local and remote directory are equal"
 fi
 
 echo "Dtb.."
-wget $SERVER/production_files/uImage-icorem6dl-italdes.dtb
-if [ $? -ne 0 ]; then
-   echo "error wget uImage-icorem6dl-italdes.dtb"
-   exit 1
+TOCHECK=uImage-icorem6dl-italdes.dtb
+if [ -f "$TOCHECK" ]
+then
+  echo "$TOCHECK found in local directory"
+  LOCALHASH=`sha256sum $TOCHECK | awk '{print $1}'`
+else
+  echo "$TOCHECK not found in directory"
+fi
+REMOTEHASH=$(sshpass -p'53dk,SWD' ssh -o StrictHostKeyChecking=no sysadmin@192.168.228.224 sha256sum /var/www/html/production_files/$TOCHECK | awk '{print $1}')
+
+if [ $LOCALHASH != $REMOTEHASH ]
+then
+  echo "$TOCHECK in local and remote directory are different"
+  rm $TOCHECK
+  wget $SERVER/production_files/$TOCHECK
+  if [ $? -ne 0 ]; then
+     echo "error wget $TOCHECK"
+     exit 1
+  fi
+else
+  echo "$TOCHECK in local and remote directory are equal"
 fi
 
 fw_printenv -c /home/root/flash_nand/fw_env.config | grep ethaddr > /home/root/flash_nand/ethaddr
