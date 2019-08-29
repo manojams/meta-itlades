@@ -61,6 +61,7 @@ IMAGE_INSTALL_append_mx6 = " \
     bash \
     ital-installer-gitrel \
     ital-flash-service \
+    sshpass \
     "
 
 DISTRO_FEATURES_append = " opengl"
