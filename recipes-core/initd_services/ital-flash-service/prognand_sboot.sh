@@ -18,6 +18,24 @@ SERVER=192.168.228.224
 sleep 5
 PROCESSO=$(pidof installer_ba)
 
+#controllo se cavo ethernet collegato
+if [ -d "/sys/class/net/eth1" ]
+then
+	if [  $(< /sys/class/net/eth1/operstate) == "up" ]
+	then
+		echo "ethernet correctly plugged"
+	else
+		echo -n -e \\x0A > /proc/$PROCESSO/fd/0
+		echo "ethernet non up"
+		exit 1
+	fi
+else
+	echo -n -e \\x0A > /proc/$PROCESSO/fd/0
+	echo "ethernet not plugged"
+	exit 1
+fi
+
+
 #rimosso eliminazione e ri-creazione cartella, i file da verificare si troveranno li
 #rm -rf $FILES_DIR
 #mkdir $FILES_DIR
