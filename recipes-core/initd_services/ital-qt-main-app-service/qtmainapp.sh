@@ -19,6 +19,7 @@ while [ $LOOP == "true" ]; do
   logger -s "LOOP: $LOOP"
   logger -s "CMD: $CMD"
   cmd
+  sleep 3
   LOOP=$(cat "$LOOPFILE")
 done
 
