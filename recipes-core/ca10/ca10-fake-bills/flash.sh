@@ -3,7 +3,7 @@
 blackarmPATH=/opt/bin/blackarm
 
 #firmw_name_main=YT2.480.0618CX_V3.1B01012.S
-firmw_name_nv=YT2.480.0622CX_V2.C01B101_Mf1137B004_V2.1000B60.bin
+firmw_name_nv=YT2.480.0622CX_V2.C01B113_Mf1137B006_V2.1000B68.bin
 #firmw_name_fpga=xxx
 
 firmw_path=/home/root/grg/firmware/v-fake/
