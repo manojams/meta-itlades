@@ -2,7 +2,7 @@
 
 blackarmPATH=/opt/bin/blackarm
 
-firmw_name_main=YT2.480.0618CX_V3.1B02049.S
+firmw_name_main=YT2.480.0618CX_V3.1B02057.S
 firmw_name_nv=YT2.480.0622CX_V3.C01B115_M71004A038_V2.1000B71_X7.1004E23.bin
 #firmw_name_fpga=xxx
 
