@@ -76,7 +76,7 @@ dmesg | grep "time is not reliable" && touch /var/run/rtc_invalid_date
 
 #altrimenti imposto indirizzo IP statico
 #i parametri sono già presenti nel file /etc/network/interfaces
-else
+if [ -e "/home/root/nameserver.txt" ]; then
   echo "ETH: Configurazione statica"
   ifdown eth0
   ifup eth0
