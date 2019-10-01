@@ -1,0 +1,9 @@
+/var/log/pysupervisor.log {
+rotate 15
+copytruncate
+compress
+delaycompress
+maxsize 50M
+daily
+olddir /sdcard/log/
+}

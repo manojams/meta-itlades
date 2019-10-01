@@ -5,7 +5,7 @@ NAME=wvdial
 TTYMODEM=/dev/ttyMODEM3
 
 PIDFILE=/var/run/$NAME.pid
-LOGDIR=/home/root/log/
+LOGDIR=/var/log/
 LOGNAME=$NAME.log
 LOGFILE=$LOGDIR$LOGNAME
 

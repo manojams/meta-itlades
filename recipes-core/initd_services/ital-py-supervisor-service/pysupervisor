@@ -4,7 +4,7 @@ RUNAS=root
 NAME=pysupervisor
 
 PIDFILE=/var/run/$NAME.pid
-LOGDIR=/home/root/log/
+LOGDIR=/var/log/
 LOGNAME=$NAME.log
 LOGFILE=$LOGDIR$LOGNAME
 
@@ -18,7 +18,7 @@ start() {
   fi
 
   #stop spashscreen
-  /home/root/script/kill_psplash.sh 
+  /home/root/script/kill_psplash.sh
 
   echo "Starting service $NAME …" >&2
   local CMD="$PYTHON $SCRIPT &>> \"$LOGFILE\" & echo \$!"

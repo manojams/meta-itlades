@@ -71,6 +71,8 @@ IMAGE_INSTALL_append_mx6 = " \
     ital-dnf-repo-cert \
     ital-mqtt-cert \
     sshpass \
+    cronie \
+    logrotate \
     "
 
 DISTRO_FEATURES_append = " opengl"

@@ -3,7 +3,7 @@ RUNAS=root
 NAME=qtpyapp
 
 PIDFILE=/var/run/$NAME.pid
-LOGDIR=/home/root/log/
+LOGDIR=/var/log/
 LOGNAME=$NAME.log
 LOGFILE=$LOGDIR$LOGNAME
 

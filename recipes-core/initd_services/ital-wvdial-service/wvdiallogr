@@ -1,0 +1,9 @@
+/var/log/wvdial.log {
+rotate 15
+copytruncate
+compress
+delaycompress
+maxsize 10M
+daily
+olddir /sdcard/log/
+}
