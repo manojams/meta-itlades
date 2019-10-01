@@ -4,7 +4,7 @@ inherit gitpkgv
 
 inherit setuptools3
 
-SRCREV = "cd9db484a10b8ff32e79d4bf854a948ec4e6e812"
+SRCREV = "6d138596cbdd1c254e703f4cbf9bf31344d8b54e"
 SRC_URI = "git://git@192.168.228.215/qt-group/arm/python_manager.git;protocol=ssh;branch=master"
 
 #DEPENDS += "${PYTHON_PN}-pytest-runner-native"
@@ -18,6 +18,7 @@ RDEPENDS_${PN} = "\
     ${PYTHON_PN}-xml \
     ${PYTHON_PN}-pyserial \
     ${PYTHON_PN}-requests \
+    ${PYTHON_PN}-psutil \
     ital-py-supervisor-service \
     ital-py-app-git"
 
