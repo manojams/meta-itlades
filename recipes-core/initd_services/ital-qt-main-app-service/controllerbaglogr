@@ -1,0 +1,9 @@
+/var/log/bagcontroller.log {
+rotate 15
+copytruncate
+compress
+delaycompress
+maxsize 100M
+daily
+olddir /sdcard/log/
+}
