@@ -12,7 +12,8 @@ start() {
   if [ ! -d $LOGDIR ]; then
       mkdir $LOGDIR
   fi
-  if [ -f /var/run/$PIDNAME ] && kill -0 $(cat /var/run/$PIDNAME); then
+  LINES=$(ps | grep $SCRIPT | wc -l)
+  if [ $LINES -gt 1 ]; then
     echo 'Service already running' >&2
     return 1
   fi
