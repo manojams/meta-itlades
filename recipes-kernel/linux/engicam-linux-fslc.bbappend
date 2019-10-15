@@ -8,4 +8,5 @@ SRC_URI += "file://defconfig \
 	    file://0001-Fix-dtb-in-SOC_IMX6Q.patch \
             file://0001-Removed-iriginal-goodix.c.patch \
             file://0002-Added-goodix.c-modified-by-Engicam.patch \
-	          file://0002-Logo-kernel-Italdes-vert.patch	"
+	    file://0002-Logo-kernel-Italdes-vert-800x480_black.patch \
+	  "
