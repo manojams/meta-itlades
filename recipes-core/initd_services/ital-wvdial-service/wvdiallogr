@@ -1,5 +1,6 @@
-/var/log/wvdial.log {
+/home/root/log/wvdial.log {
 rotate 15
+dateformat -%Y%m%d_%s
 copytruncate
 compress
 delaycompress

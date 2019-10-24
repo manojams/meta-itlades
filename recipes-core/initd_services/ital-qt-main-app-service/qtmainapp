@@ -2,7 +2,7 @@ SCRIPTNAME=blackarm
 SCRIPT=/opt/bin/$SCRIPTNAME
 NAME=qtmainapp
 
-LOGDIR=/var/log/
+LOGDIR=/home/root/log/
 LOGNAME=$NAME.log
 LOGFILE=$LOGDIR$LOGNAME
 LOOPFILE=/var/run/$NAME.loop

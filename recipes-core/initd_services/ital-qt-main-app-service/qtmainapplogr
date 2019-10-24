@@ -1,5 +1,6 @@
-/var/log/qtmainapp.log {
-rotate 15
+/home/root/log/qtmainapp.log {
+rotate 30
+dateformat -%Y%m%d_%s
 copytruncate
 compress
 delaycompress
