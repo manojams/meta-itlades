@@ -1,6 +1,6 @@
 /home/root/log/pysupervisor.log {
 rotate 30
-dateformat -%Y%m%d_%s
+dateformat -%d%m%Y_%s
 copytruncate
 compress
 delaycompress

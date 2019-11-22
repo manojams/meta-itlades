@@ -1,10 +1,10 @@
 /home/root/log/qtmainapp.log {
 rotate 30
-dateformat -%Y%m%d_%s
+dateformat -%d%m%Y_%s
 copytruncate
 compress
 delaycompress
-maxsize 100M
+maxsize 50M
 daily
 olddir /sdcard/log/
 }

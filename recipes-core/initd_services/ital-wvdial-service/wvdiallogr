@@ -1,10 +1,10 @@
 /home/root/log/wvdial.log {
 rotate 15
-dateformat -%Y%m%d_%s
+dateformat -%d%m%Y_%s
 copytruncate
 compress
 delaycompress
-maxsize 10M
+maxsize 50M
 daily
 olddir /sdcard/log/
 }
