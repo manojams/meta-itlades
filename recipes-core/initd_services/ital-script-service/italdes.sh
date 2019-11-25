@@ -16,10 +16,10 @@ export LD_PRELOAD=/lib/libc.so.6
 # - valido se il boot è fatto da NAND, altrimenti viene montata
 #   la partizione del kernel della SD
 # - montato prima della pendrive per consentire di spostarvi dei files
-if [ -e "/dev/mmcblk0p1" ]; then
+mkdir /sdcard
+if [ -e "/dev/mmcblk0" ]; then
   echo "Monto la SD Card"
-  mkdir /sdcard
-  mount /dev/mmcblk0p1 /sdcard
+  mount -o noatime /dev/mmcblk0 /sdcard
 fi
 
 #se non esiste la cartella log sulla SDCard, la creo

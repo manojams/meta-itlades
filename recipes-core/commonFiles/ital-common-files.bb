@@ -11,6 +11,7 @@ SRC_URI = "file://etc/iptables-save \
          file://home/root/script/drop_cache.sh\
 				 file://home/root/script/kill_psplash.sh\
 				 file://home/root/configuration/service.txt\
+				 file://home/root/script/sdcard_format.sh\
          "
 
 S = "${WORKDIR}"
@@ -32,6 +33,7 @@ do_install () {
   install -m 0555 ${WORKDIR}/home/root/script/ntpDate.sh  ${D}/home/root/script/
   install -m 0555 ${WORKDIR}/home/root/script/rfid_update.sh  ${D}/home/root/script/
   install -m 0555 ${WORKDIR}/home/root/script/drop_cache.sh  ${D}/home/root/script/
+	install -m 0555 ${WORKDIR}/home/root/script/sdcard_format.sh  ${D}/home/root/script/
 }
 
 FILES_${PN} += "etc/"

@@ -73,6 +73,7 @@ IMAGE_INSTALL_append_mx6 = " \
     sshpass \
     cronie \
     logrotate \
+    e2fsprogs-mke2fs \
     "
 
 DISTRO_FEATURES_append = " opengl"
