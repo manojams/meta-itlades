@@ -18,6 +18,13 @@ SERVER=192.168.228.224
 sleep 5
 PROCESSO=$(pidof installer_ba)
 
+#controllo che sshpass sia installato
+type sshpass >/dev/null 2>&1 || {
+	echo -n -e \\x0B > /proc/$PROCESSO/fd/0
+	echo >&2 "sshpass required but it's not installed"
+	exit 1
+}
+
 #controllo se cavo ethernet collegato
 if [ -d "/sys/class/net/eth1" ]
 then
