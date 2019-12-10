@@ -4,8 +4,9 @@ LICENSE = "CLOSED"
 inherit gitpkgv
 
 DEPENDS = "qtdeclarative qtgraphicaleffects qtmultimedia qtsvg qtserialport qca"
-SRCREV = "d98c5a67befed0d226556a6e0b9844011690a33b"
-SRC_URI = "git://git@192.168.228.215/qt-group/arm/blackarm-qt-ca10.git;protocol=ssh;branch=master"
+SRCREV = "511368af4a2691c463b332d613e29a6f8b3f66ae"
+
+SRC_URI = "git://git@192.168.228.215/qt-group/arm/blackarm-qt-ca10.git;protocol=ssh;branch=production"
 
 #TARGET_CFLAGS +=
 
