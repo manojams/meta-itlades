@@ -1,0 +1,25 @@
+diff --git a/Makefile b/Makefile
+index 26db4e7..bd38b8b 100644
+--- a/Makefile
++++ b/Makefile
+@@ -373,6 +373,7 @@ KBUILD_CFLAGS   := -Wall -Wstrict-prototypes \
+ 		   -Wno-format-security \
+ 		   -fno-builtin -ffreestanding $(CSTD_FLAG)
+ KBUILD_CFLAGS	+= -fshort-wchar -fno-strict-aliasing
++KBUILD_CFLAGS   += -DCONFIG_LOG -DCONFIG_SPL_MAX_LOG_LEVEL -DCONFIG_MAX_LOG_LEVEL
+ KBUILD_AFLAGS   := -D__ASSEMBLY__
+ 
+ # Don't generate position independent code
+diff --git a/board/engicam/common/spl.c b/board/engicam/common/spl.c
+index 4d293c8..9857bf66 100644
+--- a/board/engicam/common/spl.c
++++ b/board/engicam/common/spl.c
+@@ -201,7 +201,7 @@ struct mx6sdl_iomux_grp_regs mx6sdl_grp_ioregs = {
+ /* mt41j256 */
+ static struct mx6_ddr3_cfg mt41j256 = {
+ 	.mem_speed = 1066,
+-	.density = 2,
++	.density = 4,
+ 	.width = 16,
+ 	.banks = 8,
+ 	.rowaddr = 13,

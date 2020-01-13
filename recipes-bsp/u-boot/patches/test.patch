@@ -1,0 +1,26 @@
+diff --git a/arch/arm/include/asm/arch-mx6/imx-regs.h b/arch/arm/include/asm/arch-mx6/imx-regs.h
+index 4f01b20..09fb510 100644
+--- a/arch/arm/include/asm/arch-mx6/imx-regs.h
++++ b/arch/arm/include/asm/arch-mx6/imx-regs.h
+@@ -363,7 +363,7 @@
+ #if !(defined(CONFIG_MX6SX) || \
+ 	defined(CONFIG_MX6UL) || defined(CONFIG_MX6ULL) || \
+ 	defined(CONFIG_MX6SLL) || defined(CONFIG_MX6SL))
+-#define IRAM_SIZE                    0x00040000
++#define IRAM_SIZE                    0x00080000
+ #else
+ #define IRAM_SIZE                    0x00020000
+ #endif
+diff --git a/board/engicam/common/spl.c b/board/engicam/common/spl.c
+index 4d293c8..304c14a 100644
+--- a/board/engicam/common/spl.c
++++ b/board/engicam/common/spl.c
+@@ -204,7 +204,7 @@ static struct mx6_ddr3_cfg mt41j256 = {
+ 	.density = 2,
+ 	.width = 16,
+ 	.banks = 8,
+-	.rowaddr = 13,
++	.rowaddr = 14,
+ 	.coladdr = 10,
+ 	.pagesz = 2,
+ 	.trcd = 1375,
