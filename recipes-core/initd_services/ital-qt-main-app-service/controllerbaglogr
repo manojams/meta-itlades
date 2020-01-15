@@ -1,4 +1,4 @@
-/home/root/log/bagcontroller.log {
+/sdcard/log/bagcontroller.log {
 rotate 30
 dateformat -%Y%m%d_%s
 copytruncate
@@ -6,5 +6,5 @@ compress
 delaycompress
 maxsize 100M
 daily
-olddir /sdcard/log/
+olddir /sdcard/log/backup/
 }

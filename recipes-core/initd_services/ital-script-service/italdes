@@ -3,7 +3,7 @@ RUNAS=root
 NAME=italdes_service
 
 PIDFILE=/var/run/$NAME.pid
-LOGDIR=/home/root/log/
+LOGDIR=/sdcard/log/
 LOGNAME=$NAME.log
 LOGFILE=$LOGDIR$LOGNAME
 

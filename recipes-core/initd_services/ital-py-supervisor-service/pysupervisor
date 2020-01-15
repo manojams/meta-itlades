@@ -4,7 +4,7 @@ RUNAS=root
 NAME=pysupervisor
 
 PIDFILE=/var/run/$NAME.pid
-LOGDIR=/home/root/log/
+LOGDIR=/sdcard/log/
 LOGNAME=$NAME.log
 LOGFILE=$LOGDIR$LOGNAME
 

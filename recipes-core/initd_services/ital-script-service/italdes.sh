@@ -26,11 +26,12 @@ fi
 if ! [ -d '/sdcard/log' ]; then
         echo "creo cartella log"
         mkdir /sdcard/log
+        mkdir /sdcard/log/backup
 fi
 #idem
 if ! [ -d '/sdcard/media' ]; then
         echo "creo cartella multimedia"
-        mkdir /sdcard/multimedia
+        mkdir /sdcard/media
 fi
 
 ###########################################
