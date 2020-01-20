@@ -79,13 +79,17 @@ IMAGE_INSTALL_append_mx6 = " \
     lrzsz \
     "
 
-
-
 #Antonio aggiunto per utenti ssh il 10-01-2020
 inherit extrausers
 EXTRA_USERS_PARAMS = " useradd italdesfx; \
                        usermod -p $(openssl passwd italdesfxPSW2020) italdesfx; \
-		       usermod -p $(openssl passwd italdes2019) root;"
+		       usermod -p $(openssl passwd italdes2019) root; \
+		       usermod -g shutdown italdesfx; "
+
+fakeroot update_dot_bashrc () {
+echo 'alias reboot="/sbin/shutdown -r now"' >> ${IMAGE_ROOTFS}/home/italdesfx/.bashrc
+}
+IMAGE_PREPROCESS_COMMAND += "update_dot_bashrc; "
 
 DISTRO_FEATURES_append = " opengl"
 
@@ -95,6 +99,8 @@ IMAGE_INSTALL_remove ="qt3d nativesdk-qt3d qt3d-native ruby-native wpa-supplican
 DISTRO_FEATURES_remove = "bluez5 bluetooth irda pcmcia wifi nfc usbgadget 3g"
 
 export IMAGE_BASENAME = "italdes-ca10-prod-minimal"
+
+
 
 
 ROOTFS_POSTPROCESS_COMMAND += "update_rootfs;"
