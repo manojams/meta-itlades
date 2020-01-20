@@ -6,6 +6,7 @@ inherit distro_features_check
 
 EXTRA_IMAGE_FEATURES = "debug-tweaks ssh-server-openssh package-management"
 
+
 IMAGE_INSTALL_append_mx6 = " \
   firmware-imx-vpu-imx6q \
   qtquick1 \
@@ -78,6 +79,8 @@ IMAGE_INSTALL_append_mx6 = " \
     lrzsz \
     "
 
+
+
 #Antonio aggiunto per utenti ssh il 10-01-2020
 inherit extrausers
 EXTRA_USERS_PARAMS = " useradd italdesfx; \
@@ -95,3 +98,4 @@ export IMAGE_BASENAME = "italdes-ca10-prod-minimal"
 
 
 ROOTFS_POSTPROCESS_COMMAND += "update_rootfs;"
+ROOTFS_POSTPROCESS_COMMAND_remove = "ssh_allow_empty_password;"
