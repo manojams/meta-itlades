@@ -8,7 +8,7 @@ DEPENDS = "qtdeclarative qtgraphicaleffects qtmultimedia qtsvg qtserialport qca"
 SRCREV = "${AUTOREV}"
 SRC_URI = "git://git@192.168.228.215/qt-group/arm/blackarm-qt-ca10.git;protocol=ssh;branch=master"
 
-#TARGET_CFLAGS +=
+EXTRA_QMAKEVARS_PRE += "CONFIG+=testbag"
 
 S = "${WORKDIR}/git"
 
