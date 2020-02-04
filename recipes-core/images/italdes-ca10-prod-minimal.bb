@@ -81,13 +81,13 @@ IMAGE_INSTALL_append_mx6 = " \
 
 #Antonio aggiunto per utenti ssh il 10-01-2020
 inherit extrausers
-EXTRA_USERS_PARAMS = " useradd italdesfx; \
-                       usermod -p $(openssl passwd italdesfxPSW2020) italdesfx; \
+EXTRA_USERS_PARAMS = " useradd italdes; \
+                       usermod -p $(openssl passwd italdesPSW2020) italdes; \
 		       usermod -p $(openssl passwd italdes2019) root; \
-		       usermod -g shutdown italdesfx; "
+		       usermod -g shutdown italdes; "
 
 fakeroot update_dot_bashrc () {
-echo 'alias reboot="/sbin/shutdown -r now"' >> ${IMAGE_ROOTFS}/home/italdesfx/.bashrc
+echo 'alias reboot="/sbin/shutdown -r now"' >> ${IMAGE_ROOTFS}/home/italdes/.bashrc
 }
 IMAGE_PREPROCESS_COMMAND += "update_dot_bashrc; "
 
