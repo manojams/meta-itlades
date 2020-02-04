@@ -13,7 +13,7 @@ SRC_URI = "file://etc/iptables-save \
 	   file://home/root/configuration/service.txt\
 	   file://home/root/script/sdcard_format.sh\
 	   file://home/italdes/screenshot.sh\
-
+	   file://home/root/script/ssh_auth_yes_no.sh \
          "
 
 S = "${WORKDIR}"
@@ -36,6 +36,7 @@ do_install () {
   	install -m 0555 ${WORKDIR}/home/root/script/rfid_update.sh  ${D}/home/root/script/
   	install -m 0555 ${WORKDIR}/home/root/script/drop_cache.sh  ${D}/home/root/script/
 	install -m 0555 ${WORKDIR}/home/root/script/sdcard_format.sh  ${D}/home/root/script/
+	install -m 0555 ${WORKDIR}/home/root/script/ssh_auth_yes_no.sh  ${D}/home/root/script/
 
 	install -d ${D}/home/italdes
 	install -m 0555 ${WORKDIR}/home/italdes/screenshot.sh ${D}/home/italdes/
