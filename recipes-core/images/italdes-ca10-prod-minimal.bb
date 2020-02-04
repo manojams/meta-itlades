@@ -73,9 +73,16 @@ IMAGE_INSTALL_append_mx6 = " \
     sshpass \
     cronie \
     logrotate \
+    ital-conf-ssh \
     e2fsprogs-mke2fs \
     lrzsz \
     "
+
+#Antonio aggiunto per utenti ssh il 10-01-2020
+inherit extrausers
+EXTRA_USERS_PARAMS = " useradd italdesfx; \
+                       usermod -p $(openssl passwd italdesfxPSW2020) italdesfx; \
+		       usermod -p $(openssl passwd italdes2019) root;"
 
 DISTRO_FEATURES_append = " opengl"
 
