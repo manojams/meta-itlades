@@ -77,6 +77,7 @@ IMAGE_INSTALL_append_mx6 = " \
     ital-conf-ssh \
     e2fsprogs-mke2fs \
     lrzsz \
+    ffmpeg \
     "
 
 #Antonio aggiunto per utenti ssh il 10-01-2020
