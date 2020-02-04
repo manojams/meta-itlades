@@ -13,4 +13,7 @@ do_install() {
     install -d "${D}${sysconfdir}/init.d/"
     install -m 500 "${WORKDIR}/italdes" "${D}${sysconfdir}/init.d/"
     install -m 500 "${WORKDIR}/italdes.sh" "${D}${sysconfdir}/init.d/"
+    install -d ${D}/sdcard/
 }
+
+FILES_${PN} += "sdcard"
