@@ -1,0 +1,2 @@
+guardian_prod = https://guardian.italdes.it:30443/
+guardian_dev = https://guardian.italdes.it:30443/
