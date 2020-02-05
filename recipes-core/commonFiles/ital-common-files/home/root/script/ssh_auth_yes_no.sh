@@ -39,31 +39,16 @@ echo "***********START ENABLE AUTHENTICATION**********"
 if [ $# -gt 0 ];then
 
 	if [ $1 = 'YES' ];then
-		
 		auth_yes
-
+		/etc/init.d/sshd restart
 	elif [ $1 = 'NO' ];then
-
-			
 		auth_no
-
+		/etc/init.d/sshd restart
 	else
-
 	echo "ERROR ! wrong argument --> Usage: $0 $USAGE"
-		
 	fi
 else
 	echo "no argument: defaut YES ssh Authentication settings"
-
 	 auth_yes
-
+	 /etc/init.d/sshd restart
 fi
-
-
-
-
-
-
-
-
-
