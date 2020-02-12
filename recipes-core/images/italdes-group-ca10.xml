@@ -71,6 +71,7 @@
       <packagereq type="mandatory">tslib-conf</packagereq>
       <packagereq type="mandatory">tslib-tests</packagereq>
       <packagereq type="mandatory">tslib-calibrate</packagereq>
+      <packagereq type="mandatory">lsof</packagereq>
     </packagelist>
   </group>
 </comps>
