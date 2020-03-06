@@ -1,10 +1,11 @@
-/sdcard/log/qtmainapp.log {
+/sdcard/log/backup/qtlog-*.log {
 rotate 30
 dateformat -%d%m%Y_%s
-copytruncate
 compress
-delaycompress
 maxsize 50M
 daily
-olddir /sdcard/log/backup/
+missingok
+postrotate
+        find /sdcard/log/backup/ -name "qtlog-*.log" -type f -exec rm {} \;
+endscript
 }
