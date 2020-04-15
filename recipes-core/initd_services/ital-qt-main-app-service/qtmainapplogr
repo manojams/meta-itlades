@@ -2,10 +2,10 @@
 rotate 30
 dateformat -%d%m%Y_%s
 compress
-maxsize 50M
+maxsize 1M
 daily
 missingok
-postrotate
+lastaction
         find /sdcard/log/backup/ -name "qtlog-*.log" -type f -exec rm {} \;
 endscript
 }

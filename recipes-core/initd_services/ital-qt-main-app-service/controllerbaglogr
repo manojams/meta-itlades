@@ -1,10 +1,11 @@
-/sdcard/log/bagcontroller.log {
+/sdcard/log/backup/bagcontroller.log* {
 rotate 30
-dateformat -%Y%m%d_%s
-copytruncate
+dateformat -%d%m%Y_%s
 compress
-delaycompress
-maxsize 100M
+maxsize 1M
 daily
-olddir /sdcard/log/backup/
+missingok
+lastaction
+        find /sdcard/log/backup/ -name "bagcontroller.log*" -type f -exec rm {} \;
+endscript
 }

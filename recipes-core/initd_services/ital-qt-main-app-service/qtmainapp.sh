@@ -5,14 +5,20 @@ SCRIPT=$2
 LOGFILE=$3
 
 logger -s "LOOPFILE: $LOOPFILE"
+logger -s "LOGFILE: $LOGFILE"
 logger -s "SCRIPT: $SCRIPT"
 
 #  $SCRIPT &> sed '/^WARNING: cipher_setiv/d' > $LOGFILE
 
+cmd() {
+  $SCRIPT > /dev/null 2>&1
+}
+
 LOOP=$(cat "$LOOPFILE")
 while [ $LOOP == "true" ]; do
   logger -s "LOOP: $LOOP"
-  $SCRIPT
+  logger -s "CMD: $CMD"
+  cmd
   sleep 3
   LOOP=$(cat "$LOOPFILE")
 done
