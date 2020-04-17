@@ -1,4 +1,4 @@
-SCRIPT=/usr/lib/python3.5/site-packages/italdes/supervisor/main.py
+SCRIPT=/usr/lib/python3.5/site-packages/src/italdes/supervisor/main.py
 PYTHON=/usr/bin/python3.5
 RUNAS=root
 NAME=pysupervisor
