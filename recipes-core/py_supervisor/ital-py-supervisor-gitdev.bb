@@ -22,6 +22,6 @@ RDEPENDS_${PN} = "\
     ${PYTHON_PN}-psutil \
     ital-py-supervisor-service \
     ital-py-app-git \
-    python-aws-iot-device-sdk-python"
+    ${PYTHON_PN}-aws-iot-device-sdk-python"
 
 PKGV = "${GITPKGV}"

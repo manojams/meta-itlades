@@ -4,12 +4,13 @@ inherit gitpkgv
 
 inherit setuptools3
 
-SRCREV = "23fbc3cf0709929c457ea9679a24ca5a4f10fe33"
-SRC_URI = "git://git@192.168.228.215/qt-group/arm/python_manager.git;protocol=ssh;branch=master"
+SRCREV = "471dfd4fb364f8cfd00dd6da183bb75d189fb175"
+SRC_URI = "git://git@192.168.228.215/qt-group/arm/python_manager.git;protocol=ssh;branch=production"
 
 #DEPENDS += "${PYTHON_PN}-pytest-runner-native"
 
 S = "${WORKDIR}/git"
+
 
 RDEPENDS_${PN} = "\
     ${PYTHON_PN}-logging \
@@ -20,6 +21,7 @@ RDEPENDS_${PN} = "\
     ${PYTHON_PN}-requests \
     ${PYTHON_PN}-psutil \
     ital-py-supervisor-service \
-    ital-py-app-git"
+    ital-py-app-git \
+    ${PYTHON_PN}-aws-iot-device-sdk-python"
 
 PKGV = "${GITPKGVTAG}"
