@@ -42,9 +42,14 @@ do_install () {
 	install -m 0555 ${WORKDIR}/home/root/script/ssh_auth_yes_no.sh  ${D}/home/root/script/
 	install -d ${D}/home/italdes
 	install -m 0555 ${WORKDIR}/home/italdes/screenshot.sh ${D}/home/italdes/
+
+	install -d ${D}/opt/db
+	chmod -R 777 ${D}/opt/db
+
 }
 
 FILES_${PN} += "etc/"
 FILES_${PN} += "home/root/configuration"
 FILES_${PN} += "home/root/script"
 FILES_${PN} += "home/italdes"
+FILES_${PN} += "opt/db"
