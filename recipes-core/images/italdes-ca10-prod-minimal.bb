@@ -43,6 +43,9 @@ IMAGE_INSTALL_append_mx6 = " \
     openssh-misc \
     openvpn \
     openct opensc \
+    openssh-ssh \
+    openssh-sshd \
+    openssh-scp \
     sqlite3 \
     qca \
     ntp \
