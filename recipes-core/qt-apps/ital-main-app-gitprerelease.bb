@@ -4,12 +4,11 @@ LICENSE = "CLOSED"
 inherit gitpkgv
 
 DEPENDS = "qtdeclarative qtgraphicaleffects qtmultimedia qtsvg qtserialport qca"
-#TAG = "v1.1"
 SRCREV = "${AUTOREV}"
 SRC_URI = "git://git@192.168.228.215/qt-group/arm/blackarm-qt-ca10.git;protocol=ssh;branch=pre_release"
 
 EXTRA_QMAKEVARS_PRE += "CONFIG+=testbag"
-EXTRA_QMAKEVARS_PRE += "CONFIG+=debug"
+#EXTRA_QMAKEVARS_PRE += "CONFIG+=debug"
 
 
 S = "${WORKDIR}/git"
@@ -24,8 +23,8 @@ do_install() {
 #FILES_${PN}-dbg += "${datadir}/${P}/.debug"
 FILES_${PN} += "opt/bin/"
 
-PKGV = "${GITPKGV}"
+PV .= "+git${SRCPV}"
+#PKGV = "${GITPKGV}"
 #PKGV = "${GITPKGVTAG}"
-#PV = "0.12-git${SRCPV}"
 
 RDEPENDS_${PN} = "qtdeclarative-qmlplugins qtgraphicaleffects-qmlplugins ital-qt-main-app-service"

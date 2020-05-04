@@ -5,7 +5,7 @@ inherit gitpkgv
 
 DEPENDS = "qtdeclarative qtsvg"
 
-SRCREV = "166cee86c02b4ce5660e9683f68e44b0ae5b6e91"
+SRCREV = "c189461272326541b649a8afb2ba57ce4a711a8b"
 #SRCREV = "${AUTOREV}"
 SRC_URI = "git://git@192.168.228.215/qt-group/arm/qt-python-service-app.git;protocol=ssh;branch=master"
 
@@ -20,6 +20,6 @@ do_install() {
 }
 
 FILES_${PN} += "opt/bin/"
-PKGV = "${GITPKGVTAG}"
+PKGV = "${GITPKGV}"
 
 RDEPENDS_${PN} = "qtdeclarative-qmlplugins qtgraphicaleffects-qmlplugins ital-qt-py-app-service"

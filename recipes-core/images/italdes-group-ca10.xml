@@ -17,6 +17,21 @@
     </packagelist>
   </group>
 
+<group>
+   <id>italdes-group-ca10-apps-preprod</id>
+   <default>false</default>
+   <uservisible>true</uservisible>
+   <display_order>1024</display_order>
+   <name>italdes-group-ca10-apps-prod</name>
+   <description>CA10</description>
+    <packagelist>
+      <packagereq type="mandatory">ca10-CommManager</packagereq>
+      <packagereq type="mandatory">ca10-service</packagereq>
+      <packagereq type="mandatory">ital-main-app-gitprerelease</packagereq>
+    </packagelist>
+  </group>
+
+
   <group>
    <id>italdes-group-ca10-apps-prod</id>
    <default>false</default>
