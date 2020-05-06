@@ -26,6 +26,12 @@ start() {
      ifdown eth1
   fi
 
+  if [ -e /home/root/nameserver.txt ]; then
+     logger -s 'file Nameserver found hence not running'
+     return 1
+  fi
+
+
   if [ -f /var/run/$PIDNAME ] && kill -0 $(cat /var/run/$PIDNAME); then
     echo 'Service already running' >&2
     return 1
