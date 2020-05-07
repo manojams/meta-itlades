@@ -1,5 +1,5 @@
 /sdcard/log/wvdial.log {
-rotate 15
+rotate 90
 dateformat -%d%m%Y_%s
 copytruncate
 compress
