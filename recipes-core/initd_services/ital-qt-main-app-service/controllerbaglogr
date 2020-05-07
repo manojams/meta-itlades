@@ -1,5 +1,4 @@
 /sdcard/log/backup/bagcontroller.log*[0-9] {
-rotate 30
 dateformat -%d%m%Y_%s
 compress
 maxsize 1M
@@ -7,5 +6,6 @@ daily
 missingok
 lastaction
 	find /sdcard/log/backup/ -name "bagcontroller.log*[0-9]" -type f -exec rm {} \;
+	find /sdcard/log/backup/ -name "bagcontroller.log*.gz" -type f -mtime +90 -exec rm -f {} \;
 endscript
 }
