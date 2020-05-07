@@ -1,5 +1,5 @@
 /sdcard/log/pysupervisor.log {
-rotate 30
+rotate 90
 dateformat -%d%m%Y_%s
 copytruncate
 compress
