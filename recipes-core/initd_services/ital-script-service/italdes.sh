@@ -41,14 +41,6 @@ if ! [ -d '/sdcard/media' ]; then
         mkdir /sdcard/media
 fi
 
-###########################################
-## DNS e DHCP
-###########################################
-if [ -e /home/root/nameserver.txt ]; then
-echo "file nameserver.txt non trovato, imposto i DNS di default"
-    echo "nameserver 8.8.8.8" >  /run/resolv.conf
-    echo "nameserver 8.8.4.4" >> /run/resolv.conf
-fi
 
 ###########################################
 ## Aggiornamento da pendrive

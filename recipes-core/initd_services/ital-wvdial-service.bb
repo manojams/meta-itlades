@@ -6,7 +6,7 @@ SRC_URI = "file://wvdial \
           file://wvdiallogr "
 
 inherit update-rc.d
-INITSCRIPT_PARAMS = "defaults 99"
+INITSCRIPT_PARAMS = "defaults 20"
 INITSCRIPT_NAME = "wvdial"
 
 do_install() {

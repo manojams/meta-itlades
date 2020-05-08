@@ -14,24 +14,6 @@ start() {
       mkdir $LOGDIR
   fi
 
- if [ -f /sys/class/net/eth1/operstate ]; then
-    state=$(</sys/class/net/eth1/operstate)
-    if [ "$state" == "up" ]; then
-        #echo 'Not running since ETH1 is up' >&2
-        logger -s 'Not running since ETH1 is up'
-        return 1
-    fi
-    else
-    logger -s 'ifdown eth1 since not UP'
-     ifdown eth1
-  fi
-
-  if [ -e /home/root/nameserver.txt ]; then
-     logger -s 'file Nameserver found hence not running'
-     return 1
-  fi
-
-
   if [ -f /var/run/$PIDNAME ] && kill -0 $(cat /var/run/$PIDNAME); then
     echo 'Service already running' >&2
     return 1
