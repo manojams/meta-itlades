@@ -22,6 +22,9 @@ RDEPENDS_${PN} = "\
     ${PYTHON_PN}-psutil \
     ital-py-supervisor-service \
     ital-py-app-git \
-    ${PYTHON_PN}-aws-iot-device-sdk-python"
+    ${PYTHON_PN}-aws-iot-device-sdk-python \
+    ${PYTHON_PN}-dependency-injector"
 
-PKGV = "${GITPKGV}"
+#PKGV = "${GITPKGV}"
+PV .= "+git${SRCPV}"
+
