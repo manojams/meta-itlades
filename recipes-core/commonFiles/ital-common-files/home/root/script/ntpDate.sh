@@ -1,18 +1,16 @@
 #! /bin/sh
-echo "avvio NTP"
+#echo "Start ntpdate-sync"
 LOOP=true
 
 while [ $LOOP == true ]; do
-        /etc/init.d/ntpd stop
-        #echo "Trying ntpdate"
-        ntpdate guardian.italdes.it
+        #echo "Trying ntpdate-sync"
+        /usr/bin/ntpdate-sync
         ret=$?
-        /etc/init.d/ntpd start
         if [ $ret -eq 0 ]; then
-           echo "Ntp date OK"
+           #echo "ntpdate-sync OK"
            LOOP=false
         else
-           #echo "Ntp date failure, sleep"
-           sleep 3
+           #echo "ntpdate-sync failure, sleep"
+           sleep 20
         fi
 done
