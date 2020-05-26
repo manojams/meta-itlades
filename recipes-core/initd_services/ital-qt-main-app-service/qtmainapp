@@ -3,8 +3,6 @@ SCRIPT=/opt/bin/$SCRIPTNAME
 NAME=qtmainapp
 
 LOGDIR=/sdcard/log/
-LOGNAME=$NAME.log
-LOGFILE=$LOGDIR$LOGNAME
 LOOPFILE=/var/run/$NAME.loop
 
 start() {
@@ -23,7 +21,7 @@ start() {
   #su -c "$CMD" $RUNAS > "$PIDFILE"
   echo 'Service started' >&2
 
-  /etc/init.d/qtmainapp.sh $LOOPFILE $SCRIPT $LOGFILE &
+  /etc/init.d/qtmainapp.sh $LOOPFILE $SCRIPT &
 }
 
 stop() {
@@ -57,7 +55,6 @@ uninstall() {
   if [ "$SURE" = "yes" ]; then
     stop
     rm -f "$PIDFILE"
-    echo "Notice: log file is not be removed: '$LOGFILE'" >&2
     update-rc.d -f $NAME remove
     rm -fv "$0"
   fi

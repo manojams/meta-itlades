@@ -2,16 +2,18 @@
 
 LOOPFILE=$1
 SCRIPT=$2
-LOGFILE=$3
+
+ERRNAME=qterr
+LOGDIR=/sdcard/log/
+LOGERR=$ERRNAME.log
+ERRFILE=$LOGDIR$LOGERR
 
 logger -s "LOOPFILE: $LOOPFILE"
-logger -s "LOGFILE: $LOGFILE"
 logger -s "SCRIPT: $SCRIPT"
-
-#  $SCRIPT &> sed '/^WARNING: cipher_setiv/d' > $LOGFILE
+logger -s "ERRFILE: $ERRFILE"
 
 cmd() {
-  $SCRIPT > /dev/null 2>&1
+  $SCRIPT > /dev/null 2>$ERRFILE
 }
 
 LOOP=$(cat "$LOOPFILE")
