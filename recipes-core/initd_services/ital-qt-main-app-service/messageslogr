@@ -1,0 +1,11 @@
+/sdcard/log/messages.log*[0-9]{
+rotate 90
+dateext
+dateformat -%d%m%Y_%s
+copytruncate
+compress
+delaycompress
+maxsize 50M
+daily
+olddir /sdcard/log/backup/
+}

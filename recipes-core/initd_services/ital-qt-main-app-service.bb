@@ -1,11 +1,13 @@
-SUMMARY = "Italdes Service for starting the qt amin app"
+SUMMARY = "Italdes Service for starting the qt main app"
 SECTION = "CAN"
 LICENSE = "CLOSED"
 
 SRC_URI = "file://qtmainapp \
           file://qtmainapp.sh\
           file://qtmainapplogr \
-          file://controllerbaglogr "
+          file://controllerbaglogr \
+          file://messageslogr \
+          "
 
 #inherit update-rc.d
 #INITSCRIPT_PARAMS = "defaults 99"
@@ -18,5 +20,5 @@ do_install() {
     install -d "${D}${sysconfdir}/logrotate.d/"
     install -m 644 "${WORKDIR}/qtmainapplogr" "${D}${sysconfdir}/logrotate.d/"
     install -m 644 "${WORKDIR}/controllerbaglogr" "${D}${sysconfdir}/logrotate.d/"
-
+    install -m 644 "${WORKDIR}/messageslogr" "${D}${sysconfdir}/logrotate.d/"
 }
