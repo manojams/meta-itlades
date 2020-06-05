@@ -22,7 +22,7 @@
    <default>false</default>
    <uservisible>true</uservisible>
    <display_order>1024</display_order>
-   <name>italdes-group-ca10-apps-prod</name>
+   <name>italdes-group-ca10-apps-preprod</name>
    <description>CA10</description>
     <packagelist>
       <packagereq type="mandatory">ca10-CommManager</packagereq>
