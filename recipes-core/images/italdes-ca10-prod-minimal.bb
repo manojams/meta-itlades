@@ -82,6 +82,7 @@ IMAGE_INSTALL_append_mx6 = " \
     lrzsz \
     ffmpeg \
     zip \
+    curl \
     "
 
 #Antonio aggiunto per utenti ssh il 10-01-2020
