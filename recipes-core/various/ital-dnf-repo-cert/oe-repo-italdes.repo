@@ -2,6 +2,7 @@
 name=Italdes CA10 Repository SSL
 baseurl=https://repo.italdes.it:22443/italdes-rpm
 sslverify=1
+sslcacert=/home/root/certificate/repo.italdes.it.client.intermediate.crt
 sslclientcert=/home/root/certificate/repo.italdes.it.client.crt
 sslclientkey=/home/root/certificate/repo.italdes.it.client.key
 enabled=1
