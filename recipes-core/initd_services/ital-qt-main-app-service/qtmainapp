@@ -1,49 +1,47 @@
 SCRIPTNAME=blackarm
 SCRIPT=/opt/bin/$SCRIPTNAME
+RUNAS=root
 NAME=qtmainapp
 
-LOGDIR=/sdcard/log/
+PIDFILE=/var/run/$NAME.pid
 LOOPFILE=/var/run/$NAME.loop
+LOGDIR=/sdcard/log/
 
 start() {
   if [ ! -d $LOGDIR ]; then
       mkdir $LOGDIR
   fi
-
-  LINES=$(ps | grep $SCRIPT | wc -l)
-  if [ $LINES -gt 1 ]; then
+  if [ -f "$PIDFILE" ] && kill -0 $(cat "$PIDFILE"); then
     echo 'Service already running' >&2
     return 1
   fi
-  echo "Starting service $NAME …" >&2
+  echo "Starting service $NAME  ^` " >&2
 
   echo "true" > "$LOOPFILE"
-  #su -c "$CMD" $RUNAS > "$PIDFILE"
+  local CMD="/etc/init.d/qtmainapp.sh \"$LOOPFILE\" \"$SCRIPT\" & echo \$!"
+  su -c "$CMD" $RUNAS > "$PIDFILE"
   echo 'Service started' >&2
-
-  /etc/init.d/qtmainapp.sh $LOOPFILE $SCRIPT &
 }
 
 stop() {
-    LINES=$(ps | grep $SCRIPTNAME | wc -l)
-  if [ $LINES -eq 1 ]; then
+  if [ ! -f "$PIDFILE" ] || ! kill -0 $(cat "$PIDFILE"); then
     echo 'Service not running' >&2
     return 1
   fi
-  echo 'Stopping service…' >&2
+  echo 'Stopping service ^` ' >&2
   rm -f "$LOOPFILE"
   echo "false" > "$LOOPFILE"
-  killall $SCRIPTNAME
+  kill -15 $(cat "$PIDFILE") && rm -f "$PIDFILE"
+  killall "$SCRIPTNAME"
   echo 'Service stopped' >&2
 }
 
 soft(){
-  LINES=$(ps | grep $SCRIPTNAME | wc -l)
-  if [ $LINES -eq 1 ]; then
+  if [ ! -f "$PIDFILE" ] || ! kill -0 $(cat "$PIDFILE"); then
     echo 'Service not running' >&2
     return 1
   fi
-  echo 'Stopping service…' >&2
+  echo 'Stopping service ^` ' >&2
   rm -f "$LOOPFILE"
   echo "false" > "$LOOPFILE"
 }
@@ -78,5 +76,5 @@ case "$1" in
     start
     ;;
   *)
-    echo "Usage: $0 {start|stop|restart|uninstall}"
+    echo "Usage: $0 {start|stop|soft|restart|uninstall}"
 esac
