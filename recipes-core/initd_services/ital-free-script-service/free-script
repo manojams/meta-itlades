@@ -1,0 +1,76 @@
+SCRIPTNAME=free-script.sh
+SCRIPT=/etc/init.d/$SCRIPTNAME
+NAME=free-script
+LOOPFILE=/var/run/$NAME.loop
+
+start() {
+
+  LINES=$(ps | grep $SCRIPT | wc -l)
+  if [ $LINES -gt 1 ]; then
+    echo 'Service already running' >&2
+    return 1
+  fi
+  echo "Starting service $NAME …" >&2
+
+  echo "true" > "$LOOPFILE"
+  echo 'Service started' >&2
+
+  $SCRIPT &
+}
+
+stop() {
+    LINES=$(ps | grep $SCRIPTNAME | wc -l)
+  if [ $LINES -eq 1 ]; then
+    echo 'Service not running' >&2
+    return 1
+  fi
+  echo 'Stopping service…' >&2
+  rm -f "$LOOPFILE"
+  echo "false" > "$LOOPFILE"
+  killall $SCRIPTNAME
+  echo 'Service stopped' >&2
+}
+
+soft(){
+  LINES=$(ps | grep $SCRIPTNAME | wc -l)
+  if [ $LINES -eq 1 ]; then
+    echo 'Service not running' >&2
+    return 1
+  fi
+  echo 'Stopping service…' >&2
+  rm -f "$LOOPFILE"
+  echo "false" > "$LOOPFILE"
+}
+
+uninstall() {
+  echo -n "Are you really sure you want to uninstall this service? That cannot be undone. [yes|No] "
+  local SURE
+  read SURE
+  if [ "$SURE" = "yes" ]; then
+    stop
+    rm -f "$PIDFILE"
+    update-rc.d -f $NAME remove
+    rm -fv "$0"
+  fi
+}
+
+case "$1" in
+  start)
+    start
+    ;;
+  stop)
+    stop
+    ;;
+  soft)
+    soft
+    ;;
+  uninstall)
+    uninstall
+    ;;
+  restart)
+    stop
+    start
+    ;;
+  *)
+    echo "Usage: $0 {start|stop|restart|uninstall}"
+esac
